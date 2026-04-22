@@ -1,33 +1,33 @@
-# 🎓 SOPR Quiz Master PRO
+SOPR Quiz Master PRO
 
-Un'applicazione desktop interattiva e modulare progettata per lo studio intensivo e la simulazione di esami per **Sistemi Operativi (SOPR)**. L'applicativo è ottimizzato per gestire database di oltre 160 domande con un'interfaccia fluida, professionale e responsiva.
+Applicazione desktop modulare progettata per lo studio e la simulazione di esami per Sistemi Operativi (SOPR). L'applicativo è progettato per gestire database di oltre 160 domande.
+Features Principali
 
----
+    Architettura Modulare (MVC): Codice organizzato in Model, View e Controller.
 
-## ✨ Features Principali
+    Navigazione "Random Access": Sidebar laterale per navigare direttamente verso qualsiasi domanda del database.
 
-* **Architettura Modulare (MVC)**: Codice organizzato in Model, View e Controller per la massima manutenibilità e scalabilità.
-* **Navigazione "Random Access"**: Una sidebar laterale interattiva permette di saltare istantaneamente a qualsiasi domanda del database.
-* **Layout Totalmente Responsivo**: Grazie a un sistema di Row e Container espandibili, il testo delle domande e le opzioni si adattano alla larghezza della finestra, andando a capo correttamente senza mai uscire dai bordi.
-* **Isolamento dei Processi (Subprocessing)**: Risoluzione definitiva dei problemi di *Context Switching* su macOS. L'apertura del Finder avviene in un processo Python isolato per non bloccare l'Event Loop di Flet.
-* **Gestione Dinamica del Punteggio**: Possibilità di cambiare le risposte anche dopo la verifica. Il sistema aggiorna il punteggio totale in tempo reale (aggiungendo o sottraendo punti) in base all'ultima scelta effettuata.
-* **Feedback Visivo Chiaro**: Le risposte corrette vengono indicate sia con messaggi testuali che con lettere identificative (a, b, c...) per una correzione immediata.
+    Layout Responsivo: Il testo delle domande e le opzioni si adattano dinamicamente alla larghezza della finestra.
 
----
+    Isolamento dei Processi (Subprocessing): Risoluzione dei problemi di Context Switching su macOS. L'apertura del file picker avviene in un processo Python isolato per non bloccare l'Event Loop principale di Flet.
 
-## 🛠️ Requisiti di Sistema e Installazione
+    Gestione Dinamica del Punteggio: Il sistema aggiorna il punteggio totale in tempo reale permettendo di modificare la scelta anche dopo la prima verifica.
 
-### 1. Installazione di Tkinter (Fondamentale per macOS)
-L'applicazione utilizza Tkinter per il selettore dei file. Su macOS, se usi Python installato tramite Homebrew, devi installare manualmente il supporto grafico:
+    Feedback Visivo: Le risposte corrette vengono indicate tramite messaggi testuali e lettere identificative (a, b, c...).
 
-```bash
+Requisiti di Sistema e Installazione
+1. Installazione di Tkinter (Richiesto per macOS)
+
+L'applicazione utilizza Tkinter per il selettore dei file. Su macOS, utilizzando Python installato tramite Homebrew, è necessario installare manualmente il supporto grafico:
+Bash
+
 brew install tcl-tk
 brew install python-tk
 
 (Su Fedora/Linux: sudo dnf install python3-tkinter)
 2. Configurazione dell'Ambiente Virtuale
 
-Per mantenere il sistema pulito, crea un ambiente virtuale dedicato:
+Crea e attiva un ambiente virtuale dedicato:
 Bash
 
 # Entra nella cartella del progetto
@@ -41,14 +41,14 @@ source quiz/bin/activate
 
 3. Installazione delle Dipendenze
 
-Con l'ambiente attivo, installa la libreria grafica Flet:
+Con l'ambiente attivo, installa la libreria Flet:
 Bash
 
 pip install flet
 
-🚀 Come avviare l'Applicazione
+Come avviare l'Applicazione
 
-Ogni volta che vuoi avviare il quiz, assicurati di essere nella cartella del progetto e digita:
+Posizionati nella root del progetto e avvia lo script principale:
 Bash
 
 # Attiva l'ambiente (se non è già attivo)
@@ -57,24 +57,24 @@ source quiz/bin/activate
 # Avvia l'applicazione
 python3 src/main.py
 
-All'avvio, clicca sul pulsante "Seleziona File JSON" e seleziona uno dei file presenti nella cartella data/ (es. sopr_quiz_completo.json).
-📁 Struttura del Progetto Modularizzato
+Tramite il pulsante "Seleziona File JSON", carica uno dei file presenti nella directory data/ (es. sopr_quiz_completo.json).
+Struttura del Progetto
 
-L'applicazione è divisa in moduli logici per facilitare la manutenzione:
+Il codice sorgente è suddiviso nei seguenti moduli:
 
-    src/main.py: Il "Regista". Gestisce la navigazione tra le pagine (Home e Quiz).
+    src/main.py: Gestisce l'inizializzazione e la navigazione tra le view dell'applicazione.
 
-    src/models.py: Il "Cervello". Contiene la classe QuizState che gestisce i dati, i punti e le risposte.
+    src/models.py: Contiene la classe QuizState per la gestione dello stato, dei dati e del calcolo dei punteggi.
 
-    src/views.py: Il "Pittore". Contiene tutte le funzioni grafiche per disegnare le schermate in Flet.
+    src/views.py: Raccoglie i componenti UI e le funzioni di rendering dell'interfaccia Flet.
 
-    src/utils.py: Il "Sistemista". Contiene la logica per richiamare il Finder in un processo isolato.
+    src/utils.py: Gestisce i processi esterni e l'isolamento delle chiamate di sistema (file dialog).
 
-    data/: Contiene i database delle domande in formato JSON.
+    data/: Directory destinata ai database delle domande.
 
-📝 Formato Dati (JSON)
+Formato Dati (JSON)
 
-L'app legge file JSON strutturati in questo modo:
+Il parser dell'applicazione richiede file JSON formattati con la seguente struttura:
 JSON
 
 [
