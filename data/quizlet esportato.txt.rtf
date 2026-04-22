@@ -1,0 +1,1701 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2868
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+Relativamente alla possibile architettura di un bus di comunicazione a supporto del memory mapping \
+\
+a. Il Mux di tipo lw ha lo scopo di selezionare quale periferica \'e8 abilitata a collegarsi alla porta dati di ingresso della cpu durante le operazioni di scrittura.\
+\
+b. E' possibile che gli spazi di indirizzamento delle periferiche siano parzialmente sovrapposti nel caso di memoria condivisa fra i processori\
+\
+c. la cpu usa parte del decoder centralizzato su una periferica sollecita i decoder interni a ciascuna delle periferiche, al contrario delle letture che da parte del processore dei dati da una periferica\
+\
+d. per le operazioni di scrittura tipo sw il decoder del bus \'e8 indispensabile\
+\
+e. Il dato in scrittura sulle periferiche viene inviato in parallelo a tutte le porte dati in scrittura delle periferiche presenti nel sistema /&/ Il dato in scrittura sulle periferiche viene inviato in parallelo a tutte le porte dati in scrittura delle periferiche presenti nel sistema.\
+ Il Mux di tipo lw ha lo scopo di selezionare quale periferica \'e8 abilitata a collegarsi alla porta dati di ingresso della cpu durante le operazioni di scrittura. %$% Se la invocazione della fork() non va a buon fine \'e8 vero che:\
+\
+a. Sia il processo figlio che il processo padre vengono terminati\
+\
+b. Al processo padre viene restituito il valore -1\
+\
+c. Il processo figlio viene terminato\
+\
+d. Al processo figlio viene assegnato il pid 1\
+\
+e. Al processo figlio viene restituito il valore -1 /&/ Al processo padre viene restituito il valore -1 %$% Domanda: Il problema produttore consumatore affrontato con la memoria condivisa richiede l'utilizzo di un buffer:\
+\
+a. Sempre illimitato, in modo che il consumatore non deve mai attendere nuovi oggetti\
+\
+b. Limitato: lo scambio avviene sempre tramite utilizzo di contatori\
+\
+c. Illimitato: il produttore non potr\'e0 inserire nuovi oggetti finch\'e9 l'ultimo non \'e8 stato consumato.\
+\
+d. Limitato, il consumatore dovr\'e0 attendere in caso di buffer vuoto.\
+\
+e. Limitato, il produttore dovr\'e0 attendere in caso di buffer vuoto. /&/ Limitato, il consumatore dovr\'e0 attendere in caso di buffer vuoto. %$% Domanda: Si consideri il seguente scenario: Un sistema multiprocessore sul quale opera un applicativo multithread basato sul many-to-many threading model e che \'e8 l'unico processo in esecuzione. Il numero di thread user-level threads \'e8 pi\'f9 grande del numero di processori, e il numero di kernel thread \'e8 uguale al numero di processori.\
+\
+a. Non sempre tutti gli user level thread sono in esecuzione\
+\
+b. Non \'e8 possibile che tutti i processori siano idle\
+\
+c. Tutti i kernel level thread sono sempre in esecuzione\
+\
+d. Nessun processore rimarr\'e0 mai idle\
+\
+e. E' possibile che tutti i processori siano utilizzati simultaneamente /&/ E' possibile che tutti i processori siano utilizzati simultaneamente, Non sempre tutti gli user level thread sono in esecuzione %$% Domanda: Secondo quanto visto nel materiale del corso, la funzionalit\'e0 della set on less than dell'ISA MIPS, caso della specifica slt $4, $2, $3 espressa in linguaggio Assembly: \'e8 la seguente\
+\
+a. if(REGS[$2]<REGS[$3]) REGS[$4] = 1\
+\
+b. if(REGS[$2]<= REGS[$3]) REGS[$4] = 1\
+\
+c. if(REGS[$2]>REGS[$4]) REGS[$3] = 1\
+\
+d. if(REGS[$2]>REGS[$3]) REGS[$4] = 0\
+\
+e. if(REGS[$2]<REGS[$3]) REGS[$4] = 1 /&/ Risposta: La funzionalit\'e0 corretta \'e8: if(REGS[$2]<REGS[$3]) REGS[$4] = 1 %$% Flashcard 6\
+Domanda: Affinch\'e9 l'implementazione della chiamata a subroutine (questa attivit\'e0 viene svolta in automatico dal compilatore) sia correttamente funzionante \'e8 necessario che:\
+\
+a. Vengano introdotte istruzioni assembly per salvare il contenuto di tutti i registri general purpose\
+\
+b. Vengano introdotte istruzioni assembly per il salvataggio dei registri sporcati dalla funzione chiamante\
+\
+c. venga allocato spazio per tutti i dati privati di ciascuna nel suo frame di attivazione\
+\
+d. Vengano introdotte istruzioni assembly per ripristino dei registri sporcati dalla funzione chiamata\
+\
+e. Al termine della funzione chiamata sia introdotta un istruzione jr $31 che funziona in coppia con la jal della funzione chiamante /&/ Vengano introdotte istruzioni assembly per il ripristino dei registri sporcati dalla funzione chiamata. \
+\
+Al termine della funzione chiamata sia introdotta un istruzione jr $31 che funziona in coppia con la jal della funzione chiamante.\
+\
+venga allocato spazio per tutti i dati privati di ciascuna nel suo frame di attivazione. %$% Domanda: Il PCB di un processo:\
+\
+a. Non contiene dati sullo scheduling della CPU\
+\
+b. Contiene solo informazioni sullo stato del processo\
+\
+c. Contiene fra le altre cose lo stato del processo e il valore dei registri della CPU\
+\
+d. Viene utilizzato esclusivamente nei sistemi Linux\
+\
+e. Serve al compilatore per dimensionare lo stack /&/ Contiene fra le altre cose lo stato del processo e il valore dei registri della CPU %$% Domanda: Il seguente supporto HW per protezione memoria: [Image of "CPU" diagram]\
+\
+a. In caso di verificarsi delle condizioni di accesso illegale scatena un interrupt che comunque completa l'esecuzione dell'accesso in memoria prima di lanciare la routine associata\
+\
+b. Rende impossibile al codice utente di accedere alle periferiche\
+\
+c. Prevede che i registri base e limite siano modificati dal kernel prima di mandare in esecuzione il codice utente. Opzionalmente il kernel pu\'f2 cambiare modalit\'e0 di esecuzione prima di mandare in esecuzione il codice utente\
+\
+d. E' valido per qualunque modalit\'e0 di allocazione di memoria si utilizzi\
+\
+e. Prevede che il contenuto dei registri base e limite siano dei parametri del kernel /&/ Rende impossibile al codice utente di accedere alle periferiche %$% Domanda: Relativamente ai modelli di multi threading:\
+\
+a. Il modello molti a molti \'e8 l'unico che richiede il supporto del kernel\
+\
+b. Il modello uno a uno prevede che non vengano usate le librerie di supporto agli user thread\
+\
+c. Il modello molti a uno prevede che il numero dei thread utente sia sempre molto maggiore del numero dei thread kernel\
+\
+d. Il modello uno a uno \'e8 gestito tramite librerie a livello utente\
+\
+e. Il modello molti a molti \'e8 possibile solo in caso di supporto del sistema operativo /&/ Il modello uno a uno prevede che non vengano usate le librerie di supporto agli user thread %$% Flashcard 10\
+Domanda: Relativamente ai threads \'e8 vero che:\
+\
+a. Rispetto alla percentuale di utilizzo della cpu non ci sono correlazioni con la tipologia di thread utilizzati\
+\
+b. La cancellazione di un thread utente ha lo stesso costo della cancellazione di un thread kernel\
+\
+c. I thread utente sono schedati tramite implementazione a livello di libreria utente\
+\
+d. I thread utente hanno meno overhead dei thread kernel\
+\
+e. I thread utente massimizzano la concorrenza rispetto ai thread kernel /&/ I thread utente hanno meno overhead dei thread kernel\
+\
+I thread utente sono schedati tramite implementazione a livello di libreria utente %$% Relativamente al seguente schema che codifica gli stati di esecuzione di un processo \'e8 vero che: [Image of "new, ready, running, waiting, terminated" diagram]\
+\
+a. Esiste una sola coda di processi waiting e una sola coda di processi ready\
+\
+b. Il passaggio da running a waiting pu\'f2 dipendere da una decisione dello scheduler\
+\
+c. Il passaggio da waiting a ready avviene anche sulla base di una decisione dello scheduler\
+\
+d. Il passaggio da ready a running avviene sulla base di una decisione dell'algoritmo di scheduling\
+\
+e. Il passaggio da running a ready dipende dal timer /&/ Il passaggio da ready a running avviene sulla base di una decisione dell'algoritmo di scheduling. \
+\
+Il passaggio da running a ready dipende dal timer %$% Relativamente al thread pool:\
+\
+a. E' basato su un numero fisso di thread creati all'avvio della applicazione, i singoli thread vengono attivati e disattivati all'occorrenza e il numero complessivo di thread attivi cambia continuamente.\
+\
+b. Quando un thread ha terminato l'esecuzione di una attivit\'e0 viene disattivato e reso nuovamente reso disponibile per nuova attivazione\
+\
+c. Viene utilizzato in caso di raggiungimento del massimo numero di thread allocabili\
+\
+d. Ha un numero di thread allocati predefinito basato sulle priorit\'e0 del processo\
+\
+e. Ciascun thread del pool \'e8 sempre collegato a un diverso processo/task a livello kernel\
+\
+f. Viene utilizzato ad esempio in caso di applicazioni webserver multithread /&/ E' basato su un numero fisso di thread creati all'avvio della applicazione, i singoli thread vengono attivati e disattivati all'occorrenza e il numero complessivo di thread attivi cambia continuamente.\
+\
+Viene utilizzato ad esempio in caso di applicazioni webserver multithread. \
+Quando un thread ha terminato l'esecuzione di una attivit\'e0 viene disattivato e reso nuovamente reso disponibile per nuova attivazione %$% Qual \'e8 la differenza tra thread a livello utente e thread a livello kernel?\
+\
+a. I thread a livello utente sono gestiti dal sistema operativo, mentre i thread a livello kernel sono gestiti dalle librerie utente.\
+\
+b.I thread a livello utente hanno meno overhead dei thread a livello kernel.\
+\
+c. I thread a livello kernel possono essere eseguiti in parallelo su pi\'f9 processori, mentre i thread a livello utente no.\
+\
+d. I thread a livello utente sono pi\'f9 facili da implementare rispetto ai thread a livello kernel.\
+\
+e. I thread a livello utente sono schedulati dalle librerie utente, mentre i thread a livello kernel sono schedulati dal sistema operativo. [1-3] /&/ I thread a livello utente sono schedulati dalle librerie utente, mentre i thread a livello kernel sono schedulati dal sistema operativo. \
+I thread a livello utente hanno meno overhead dei thread a livello kernel. %$% Descrivere il funzionamento del modello di multithreading molti-a-molti.\
+\
+a. Ogni thread utente \'e8 associato a un thread kernel dedicato.\
+\
+b. Molteplici thread utente possono essere associati a un singolo thread kernel.\
+\
+c. Multiplexing di molti thread utente su un numero inferiore di thread kernel. [4, 5]\
+\
+d. Non \'e8 possibile utilizzare il modello molti-a-molti senza il supporto del kernel. /&/ Multiplexing di molti thread utente su un numero inferiore di thread kernel.\
+\
+ \{Il modello molti a molti \'e8 possibile solo in caso di supporto del sistema operativo.\} %$% Cosa succede quando viene invocata la funzione fork() in un programma C?\
+\
+a. Il processo figlio riceve una copia di tutti i dati del processo padre.\
+\
+b. Sia il processo padre che il processo figlio continuano l'esecuzione dall'istruzione successiva alla fork().\
+\
+c. Al processo padre viene restituito l'ID del processo figlio, mentre al processo figlio viene restituito 0.\
+\
+d. Se la fork() ha esito negativo, al processo padre viene restituito -1. \
+\
+e. Il processo padre viene terminato. /&/ Risposta: La risposta corretta \'e8: Se la fork() ha esito negativo, al processo padre viene restituito -1. \
+Al processo padre viene restituito l'ID del processo figlio, mentre al processo figlio viene restituito 0.\
+ Il processo figlio riceve una copia di tutti i dati del processo padre.\
+Sia il processo padre che il processo figlio continuano l'esecuzione dall'istruzione successiva alla fork(). %$% Cosa contiene il Process Control Block (PCB) di un processo?\
+\
+a. Lo stato del processo (new, ready, running, waiting, terminated).\
+\
+b. Il valore dei registri della CPU.\
+\
+c. Informazioni sulla gestione della memoria.\
+\
+d. Informazioni sullo scheduling della CPU. \
+\
+e. Dati statistici sull'utilizzo delle risorse. /&/ Contiene fra le altre cose lo stato del processo e il valore dei registri della CPU. %$% Quali sono le possibili transizioni di stato di un processo?\
+\
+a. Da new a running.\
+\
+b. Da running a terminated.\
+\
+c. Da running a waiting a causa di una richiesta di I/O o di un evento.\
+\
+d. Da waiting a ready quando l'evento atteso si verifica. \
+\
+e. Da ready a running quando lo scheduler seleziona il processo per l'esecuzione. /&/ Il passaggio da ready a running avviene sulla base di una decisione dell'algoritmo di scheduling.\
+\{ Il passaggio da running a ready dipende dal timer.\} %$% Spiegare il concetto di thread pool e i suoi vantaggi.\
+\
+a. Un thread pool \'e8 un gruppo di thread pre-allocati e pronti per l'esecuzione.\
+\
+b. Riduce l'overhead di creazione e distruzione dei thread per ogni attivit\'e0.\
+\
+c. Permette un migliore utilizzo delle risorse del sistema, in quanto i thread inattivi non consumano risorse.\
+\
+d. Utile per applicazioni server che gestiscono numerose richieste client.\
+\
+e. Ogni thread del pool \'e8 permanentemente associato a un processo specifico. /&/ E' basato su un numero fisso di thread creati all'avvio della applicazione, i singoli thread vengono attivati e disattivati all'occorrenza e il numero complessivo di thread attivi cambia continuamente. Viene utilizzato ad esempio in caso di applicazioni webserver multithread. Quando un thread ha terminato l'esecuzione di una attivit\'e0 viene disattivato e reso nuovamente reso disponibile per nuova attivazione. %$% **File 1:**\
+\
+* **Domanda:** Quali di queste descrizioni del concetto di processo sono corrette? \
+ * a. Una infrastruttura software che consente al kernel di accedere alle risorse condivise \
+ * b. Una infrastruttura software di supporto alla comunicazione fra le applicazioni\
+ * c. Una infrastruttura software di supporto all'accesso allo scheduling \
+ * d. Una infrastruttura software che ha anche lo scopo di far s\'ec che il programma in esecuzione percepisca di essere l'unico a usufruire di tutte le risorse del sistema di elaborazione, anche se le condivide con altri programmi in esecuzione\
+ * e. Una infrastruttura software di supporto alla monoprogrammazione \
+ * f. Una infrastruttura software di supporto all'accesso alle periferiche /&/ * **Risposta:** Un'infrastruttura software che ha anche lo scopo di far s\'ec che il programma in esecuzione percepisca di essere l'unico a usufruire di tutte le risorse del sistema di elaborazione, anche se le condivide con altri programmi in esecuzione. %$% **File 2:**\
+\
+* **Domanda:** Per quanto spiegato nel materiale del corso, \'e8 vero che l'assembler:\
+ * a. Si occupa di produrre il codice per il salvataggio e ripristino dei registri della CPU\
+ * b. Si occupa di tradurre le istruzioni Assembly espresse in formato testuale in stringhe di bit\
+ * c. Si occupa di risolvere le label presenti nel codice assembly\
+ * d. Si occupa di produrre il codice per la gestione della memoria automatica \
+ * e. Trasforma un algoritmo espresso in linguaggio ad alto livello in una sequenza di istruzioni Assembly \
+ * f. Si occupa di definire quali registri vengono utilizzati per implementare una funzione\
+ * g. Si occupa di calcolare quante istruzioni vanno saltate per ogni jump o branch /&/ * **Risposta:** Si occupa di calcolare quante istruzioni vanno saltate per ogni jump o branch, Si occupa di tradurre le istruzioni Assembly espresse in formato testuale in stringhe di bit, Si occupa di risolvere le label presenti nel codice assembly. %$% **File 3:**\
+\
+* **Domanda:** Quali sono le modalit\'e0 di esecuzione di una moderna CPU secondo quanto visto a lezione e nel materiale del corso?\
+ * a. Modalit\'e0 kernel e modalit\'e0 controllo accessi \
+ * b. Almeno due: kernel e user\
+ * c. Tre: input, output e kernel \
+ * d. Modalit\'e0 privilegiata e modalit\'e0 utente\
+ * e. Tre: Trasferimento dati, modifica dati, interrupt \
+ * f. Modalit\'e0 esecuzione, modalit\'e0 lettura e modalit\'e0 scrittura \
+ * g. Solo la modalit\'e0 kernel /&/ * **Risposta:** Almeno due: kernel e user, Modalit\'e0 privilegiata e modalit\'e0 utente. %$% **File 4:**\
+\
+* **Domanda:** Relativamente alla architettura SW Round Robin per sistemi di elaborazione Bare Metal / Embedded:\
+ * a. E' in grado di gestire solo applicazioni con vincoli di interazione real time relativamente molto limitati\
+ * b. Non ha alcuna applicazione pratica \
+ * c. E' basato su un ciclo principale che si occupa di processamento dei dati, mentre la comunicazione con le periferiche \'e8 implementata tramite routine di interrupt \
+ * d. E' basata su un ciclo principale (loop infinito) che si occupa di gestire sia processamento dati che lettura scrittura dalle periferiche\
+ * e. Esegue i task uno alla volta e poi si interrompe /&/ * **Risposta:** E' basata su un ciclo principale (loop infinito) che si occupa di gestire sia processamento dati che lettura scrittura dalle periferiche, E' in grado di gestire solo applicazioni con vincoli di interazione real time relativamente molto limitati. %$% **File 5:**\
+\
+* **Domanda:** Secondo quanto visto nel materiale del corso, la funzionalit\'e0 della branch if qual dell'ISA MIPS, caso della specifica espressa in linguaggio Assembly: beq $2, $3, label1\
+ * a. if(REGS[S2]>=REGS[S3]) PC = imm\
+ * b. if(REGS[S2]>=REGS[S3]) PC = PC +4+imm \
+ * c. if(REGS[S2]>=REGS[S3]) PC = PC -1+imm \
+ * d. if(REGS[S2]>=REGS[S3]) PC = PC +imm\
+ * e. if(REGS[S2]>=REGS[S3]) PC = PC +4+imm /&/ * **Risposta:** if(REGS[S2]>=REGS[S3]) PC = PC +4+imm if(REGS[S2]>=REGS[S3]) PC = PC +4+imm. %$% **File 6:**\
+\
+* **Domanda:** Per rendere funzionante questo codice, secondo quanto visto a lezione: \
+ * a. E' indispensabile salvare e ripristinare lo stato da parte delle subroutine sub1 e sub2\
+ * b. Non sono necessarie modifiche \
+ * c. E' sufficiente che vengano inserite 2 opportune istruzioni Assembly \
+ * d. E' sufficiente che venga salvato e ripristinato lo stato della funzione sub1\
+ * e. E' sufficiente che vengano inserite 4 opportune istruzioni Assembly /&/ * **Risposta:** E' sufficiente che vengano inserite 4 opportune istruzioni Assembly, E' sufficiente che venga salvato e ripristinato lo stato della funzione sub1. %$% **File 7:**\
+\
+* **Domanda:** Secondo quanto visto nel materiale del corso, la funzionalit\'e0 della load word dell'ISA MIPS, caso della specifica espressa in linguaggio Assembly: lw $3, 0x0100($2) \'e8 la seguente:\
+ * a. REGS[S3] = REGS[S2]+Mem[0x0100]\
+ * b. Mem[S3] = REGS[S2]+0x0100\
+ * c. REGS[S3] = Mem[REGS[S2]+0x0100]\
+ * d. Mem[REGS[S2]+0x0100]=REGS[S3]\
+ * e. REGS[S2] = Mem[REGS[S3]+0x0100] /&/ * **Risposta:** REGS[S3] = Mem[REGS[S2]+0x0100] REGS[S3] = Mem[REGS[S2]+0x0100]. %$% **File 8:**\
+\
+* **Domanda:** Secondo quanto visto nel materiale del corso, una istruzione in formato direttamente eseguibile dalla CPU:\
+ * a. Viene composta secondo il formato dell'ISA alla quale appartiene\
+ * b. In caso di architettura di Harvard viene copiata nell'IR della CPU attraverso il bus istruzioni\
+ * c. Viene definita dal compilatore \
+ * d. Non appartiene a nessun ISA specifico \
+ * e. E' una stringa di bit che sta in memoria istruzioni /&/ * **Risposta:** E' una stringa di bit che sta in memoria istruzioni, Viene composta secondo il formato dell'ISA alla quale appartiene, In caso di architettura di Harvard viene copiata nell'IR della CPU attraverso il bus istruzioni. %$% **File 9:**\
+\
+* **Domanda:** Quale dei seguenti corrisponde a un formato di istruzione dell'ISA MIPS?\
+ * a. Opcode, rt, immediate, PC\
+ * b. Opcode, rs, rx, sx, lr\
+ * c. Opcode, rs, rt, immediate \
+ * d. Opcode, rs, rt, rd, shamt, function\
+ * e. Opcode, flags /&/ * **Risposta:** Opcode, rs, rt, immediate. Opcode, rs, rt, rd, shamt, function. %$% Domanda: Secondo quanto visto nel materiale del corso, la funzionalit\'e0 della branch beqz $s2, $s3, label1 caso della specifica espressa in linguaggio Assembly:\
+\uc0\u9679 \
+a. if(REGS[$2]!=REGS[$3]) PC = PC+4+imm\
+\uc0\u9679 \
+b. if(REGS[$2]==REGS[$3]) PC = imm\
+\uc0\u9679 \
+c. if(REGS[$2]==REGS[$3]) PC = PC+imm\
+\uc0\u9679 \
+d. if(REGS[$2]==REGS[$3]) PC = PC+4+imm\
+\uc0\u9679 \
+e. if(REGS[$2]!=REGS[$3]) PC = PC+1+imm /&/ Risposta corretta: if(REGS[$2]==REGS[$3]) PC = PC+4+imm %$% Domanda: Il PCB di un processo:\
+\uc0\u9679 \
+a. Non contiene dati sullo scheduling della CPU\
+\uc0\u9679 \
+b. Contiene solo informazioni sullo stato del processo\
+\uc0\u9679 \
+c. Viene utilizzato esclusivamente nei sistemi Linux\
+\uc0\u9679 \
+d. Contiene fra le altre cose lo stato del processo e il valore dei registri della CPU\
+\uc0\u9679 \
+e. Serve al compilatore per dimensionare lo stack /&/ Risposta corretta: Contiene fra le altre cose lo stato del processo e il valore dei registri della CPU %$% Domanda: Relativamente ai thread, \'e8 vero che:\
+\uc0\u9679 \
+a. Un thread a livello kernel di un processo pu\'f2 usare le syscall senza rischiare di bloccare gli altri thread dello stesso processo\
+\uc0\u9679 \
+b. Un thread a livello utente non pu\'f2 mai scrivere sullo stack di un altro thread\
+\uc0\u9679 \
+c. A livello utente possono condividere i file, mentre a livello kernel non possono\
+\uc0\u9679 \
+d. Utilizzando i kernel thread parte della gestione della sincronizzazione pu\'f2 essere a carico del programmatore\
+\uc0\u9679 \
+e. Possono ma non necessariamente devono, condividere i file, il codice, lo stack e i dati globali /&/ Risposta corretta:\
+\uc0\u9679 \
+Un thread a livello kernel di un processo pu\'f2 usare le syscall senza rischiare di bloccare gli altri thread dello stesso processo.\
+\uc0\u9679 \
+Utilizzando i kernel thread parte della gestione della sincronizzazione pu\'f2 essere a carico del programmatore. %$% Domanda: Relativamente ai modelli di multi threading:\
+\uc0\u9679 \
+a. Il modello molti a molti \'e8 l'unico che richiede il supporto del kernel\
+\uc0\u9679 \
+b. Il modello molti a uno prevede che il numero dei thread utente sia sempre molto maggiore del numero dei thread kernel\
+\uc0\u9679 \
+c. Il modello uno a uno \'e8 gestito tramite librerie a livello utente\
+\uc0\u9679 \
+d. Il modello molti a uno \'e8 possibile solo in caso di supporto del sistema operativo\
+\uc0\u9679 \
+e. Il modello uno a uno prevede che non vengano usate le librerie di supporto agli user thread /&/ Risposta corretta: Il modello uno a uno prevede che non vengano usate le librerie di supporto agli user thread %$% Domanda: Relativamente allo schema di seguito relativo alla comunicazione fra processi, \'e8 vero che:\
+\uc0\u9679 \
+a. Entrambi gli schemi utilizzano memoria condivisa\
+\uc0\u9679 \
+b. Lo scambio di messaggi utilizza lo schema b\
+\uc0\u9679 \
+c. Lo schema a \'e8 riferibile ai socket\
+\uc0\u9679 \
+d. Le pipe utilizzano lo schema b\
+\uc0\u9679 \
+e. La memoria condivisa pu\'f2 essere utilizzata per scambiare le informazioni anche bypassando l'intervento del kernel /&/ Risposta corretta:\
+\uc0\u9679 \
+Lo schema a \'e8 riferibile ai socket.\
+\uc0\u9679 \
+La memoria condivisa pu\'f2 essere utilizzata per scambiare le informazioni anche bypassando l'intervento del kernel.\
+Flashcard 6: %$% Domanda: Relativamente ai threads \'e8 vero che:\
+\uc0\u9679 \
+a. I thread a livello kernel riducono l'occupazione della memoria rispetto ai processi\
+\uc0\u9679 \
+b. Gli user thread minimizzano l'esigenza di gestire la protezione delle risorse condivise da parte del programmatore\
+\uc0\u9679 \
+c. Gli user thread minimizzano l'esigenza di gestire la sincronizzazione da parte del programmatore\
+\uc0\u9679 \
+d. I thread possono sempre utilizzare le system call senza bloccare altri thread\
+\uc0\u9679 \
+e. Sono potenzialmente convenienti perch\'e9 possono minimizzare l'overhead legato al context switch\
+\uc0\u9679 \
+f. Gli user thread riducono l'occupazione della memoria /&/ Risposta corretta:\
+\uc0\u9679 \
+Sono potenzialmente convenienti perch\'e9 possono minimizzare l'overhead legato al context switch.\
+\uc0\u9679 \
+I thread a livello kernel riducono l'occupazione della memoria rispetto ai processi.\
+\uc0\u9679 \
+Gli user thread riducono l'occupazione della memoria. %$% Domanda: Oltre ad eventuali altre cose, i thread condividono:\
+\uc0\u9679 \
+a. Stack, codice e risorse\
+\uc0\u9679 \
+b. Program Counter, Registri e stack\
+\uc0\u9679 \
+c. Registri, dati e program counter\
+\uc0\u9679 \
+d. Codice e file\
+\uc0\u9679 \
+e. Dati, Stack e risorse /&/ Risposta corretta: Codice e file %$% Domanda: Quali sono i modelli fondamentali di comunicazione fra processi (IPC)\
+\uc0\u9679 \
+a. Condivisione e scambio di memoria\
+\uc0\u9679 \
+b. Memoria condivisa e scambio di messaggi\
+\uc0\u9679 \
+c. Memoria condivisa e memoria paginata\
+\uc0\u9679 \
+d. Parallelismo e time sharing\
+\uc0\u9679 \
+e. Modularit\'e0 e convenienza\
+\uc0\u9679 \
+f. Scambio di messaggi e modularit\'e0 /&/ Risposta corretta: Memoria condivisa e scambio di messaggi %$% Domanda: Relativamente al memory mapping \'e8 vero che\
+\uc0\u9679 \
+a. Il processore accede alle periferiche usando load e store\
+\uc0\u9679 \
+b. Permette l'accesso alle periferiche ma esclusivamente in sola lettura o in sola scrittura\
+\uc0\u9679 \
+c. Dal punto di vista della comunicazione con la cpu rende le periferiche simili a memorie special purpose\
+\uc0\u9679 \
+d. Funziona solo se memoria e periferiche hanno spazi di indirizzamento non sovrapposti\
+\uc0\u9679 \
+e. Permette alle periferiche di accedere alla memoria istruzioni /&/ Risposta corretta:\
+\uc0\u9679 \
+Il processore accede alle periferiche usando load e store.\
+\uc0\u9679 \
+Funziona solo se memoria e periferiche hanno spazi di indirizzamento non sovrapposti.\
+\uc0\u9679 \
+Dal punto di vista della comunicazione con la cpu rende le periferiche simili a memorie special purpose. %$% Domanda: Relativamente al seguente schema che codifica gli stati di esecuzione di un processo \'e8 vero che:\
+\uc0\u9679 \
+a. Il passaggio da ready a running avviene sulla base di una decisione dell'algoritmo di scheduling\
+\uc0\u9679 \
+b. Il passaggio da running a waiting pu\'f2 dipendere da una decisione dello scheduler\
+\uc0\u9679 \
+c. Esiste una sola coda di processi waiting e una sola coda di processi ready\
+\uc0\u9679 \
+d. Il passaggio da waiting a ready avviene anche sulla base di una decisione dello scheduler\
+\uc0\u9679 \
+e. Il passaggio da running a ready dipende dal timer /&/ Risposta corretta:\
+\uc0\u9679 \
+Il passaggio da ready a running avviene sulla base di una decisione dell'algoritmo di scheduling.\
+\uc0\u9679 \
+Il passaggio da running a ready dipende dal timer. %$% ### **Domanda 1**\
+Secondo quanto visto nel materiale del corso, relativamente alla architettura Round Robin qual \'e8 il punto pi\'f9 interruttivo per sistemi di elaborazione Bare Metal / Embedded?\
+**Risposte possibili:**\
+a. Esegue i task uno alla volta e poi si interrompe \
+b. Risolve la principale critica che \'e8 lo sviluppo di applicazioni indipendenti: la debbono condividere le stesse CPU\
+c. Implementa routine tramite interrupt\
+d. Non richiede la gestione di problematiche relative ad accesso concorrente a dati condivisi tra thread indipendenti\
+e. \'c8 basato su un ciclo principale (loop infinito) che si occupa di gestire sia processamenti dati che letture scrittura dalle periferiche /&/ **Risposta corretta:**\
+\
+e. \'c8 basato su un ciclo principale (loop infinito) che si occupa di gestire sia processamenti dati che letture scrittura dalle periferiche e implementa routine tramite interrupt %$% ### **Domanda 2**\
+\
+Si definisce sistema Bare Metal\
+\
+**Risposte possibili:**\
+\
+a. Un sistema operativo che gira su un sistema hardware senza visualizzazione \
+b. Un sistema di elaborazione con il HW che supporta direttamente un sistema di elaborazione, senza macchine virtuali coinvolte\
+c. Un sistema HW in grado di implementare istruzioni Assembly di un programma eseguibile senza che sia stato introdotto un sistema operativo\
+d. Qualunque sistema di elaborazione HW e SW\
+e. Un sistema di elaborazione HW privo di sistema operativo /&/ **Risposta corretta:**\
+\
+c. Un sistema HW in grado di implementare istruzioni Assembly di un programma eseguibile senza che sia stato introdotto un sistema operativo %$% ### **Domanda 3**\
+\
+Per rendere funzionante questo codice, secondo quanto visto a lezione\
+\
+0x00 lug $5 \
+0x100 li $5, 55 ...\
+0x114 add $5, $5, $3\
+\
+0x500 cmpi... \
+0x504 bgt $31,... \
+0x508 addi...\
+0x510 jal sub2 \
+0x514 jr $31\
+\
+sub2:\
+0x600 sub... \
+0x604 addi...\
+0x608 jr $31\
+\
+**Risposte possibili:**\
+\
+a. \'c8 sufficiente che vengano inserite 4 opportune istruzioni Assembly \
+b. Non sono necessarie modifiche \
+c. \'c8 sufficiente che vengano inserite 2 opportune istruzioni Assembly\
+d. \'c8 sufficiente che venga salvato e ripristinato lo stato della funzione sub1\
+e. \'c8 indispensabile salvare e ripristinare lo stato da parte della subroutine sub2 e solo sub2 /&/ **Risposta corretta:**\
+Le risposte corrette sono: \'c8 sufficiente che vengano inserite 4 opportune istruzioni Assembly. E sufficiente venga salvato e ripristinato lo stato della funzione sub1 %$% ### **Domanda 4**\
+\
+Secondo quanto visto nel materiale del corso, la funzionalit\'e0 della set on less than dell'ISA MIPS, caso specifico espressa in linguaggio Assembly: \
+\
+slt $2, $3, $3\
+\
+\'e8 la seguente:\
+\
+**Risposte possibili:**\
+\
+a. if(REGS[$2] < REGS[$3]) REGS[$4] = 1\
+b. if(REGS[$2] < REGS[$3]) REGS[$4] = 0\
+c. if(REGS[$2] < REGS[$4]) REGS[$3] = 1\
+d. if(REGS[$2] < REGS[$3]) REGS[$2] = 1\
+e. if(REGS[$3] < REGS[$2]) REGS[$4] = 1 /&/ **Risposta corretta:** \
+\
+La risposta corretta non \'e8 presente tra le opzioni. %$% ### **Domanda 5**\
+\
+Cos'\'e8 il frame di attivazione della funzione?\
+\
+**Risposte possibili:**\
+\
+a. Una zona di memoria che serve, fra le altre cose, a salvare tutti i parametri passati alla funzione invocata\
+b. Una parte della memoria direttamente visibile al programmatore\
+c. Una speciale zona di memoria allocata in fase di frame e non disponibile in memoria\
+d. Una porzione di memoria allocata alla invocazione di una funzione che ha la dimensione dei dati necessari alla funzione per il suo ciclo di vita \
+e. Una porzione di memoria di grandezza fissata ma modificabile con una system call /&/ **Risposta corretta:** \
+\
+d. Una porzione di memoria allocata alla invocazione di una funzione che ha la dimensione dei dati necessari alla funzione per il suo ciclo di vita %$% ### **Domanda 6**\
+\
+Il seguente supporto HW per protezione memoria:\
+\
+[immagine del supporto HW per la protezione di memoria]\
+\
+**Risposte possibili:**\
+a. Prevede che il contenuto del kernel e base register x, siano gestiti in memoria dallo spazio di indirizzamento contiguo allocato per il processo in esecuzione\
+b. Rende impossibile a codice utente di accedere alle periferiche\
+c. \'c8 valido per qualunque modalit\'e0 di allocazione di memoria si utilizzi\
+d. Prevede che base register e limite siano modificati dal kernel prima di mandare in esecuzione codice utente, opzionalmente il codice utente pu\'f2 cambiare modalit\'e0 esecuzione in modalit\'e0 privilegiata\
+e. In caso di accesso di memoria da lanciare il segnale associato a un interrupt che comunque completa l'esecuzione dell'accesso in memoria prima di lanciare la routine legale /&/ **Risposta corretta:**\
+\
+d. Prevede che base register e limite siano modificati dal kernel prima di mandare in esecuzione codice utente, opzionalmente il codice utente pu\'f2 cambiare modalit\'e0 esecuzione in modalit\'e0 privilegiata %$% ### **Domanda 7**\
+\
+\'c8 vero che uno dei casi in cui il kernel viene eseguito \'e8:\
+\
+**Risposte possibili:**\
+\
+a. Quando si esegue un un processo, qualunque esso sia, per tutto il tempo\
+b. Durante l'esecuzione di una System call\
+c. In caso di esecuzione di codice assembly\
+d. In seguito alla generazione di una eccezione\
+e. All'avvio del sistema, dopo il reset\
+f. In caso di esecuzione di una routine di interrupt da periferica\
+g. Quando un processo del kernel invoca una System call /&/ **Risposta corretta:**\
+\
+b. Durante l'esecuzione di una System call\
+e. All'avvio del sistema, dopo il reset\
+d. In seguito alla generazione di una eccezione\
+f. In caso di esecuzione di una routine di interrupt da periferica\
+**Spiegazione della risposta corretta:**\
+Le risposte corrette sono: Durante l'esecuzione di una System call. All'avvio del sistema, dopo il reset. In caso di esecuzione di una routine di interrupt da periferica. In seguito alla generazione di una eccezione %$% ### **Domanda 8**\
+\
+Un possibile meccanismo HW di protezione memoria implementato dal kernel in caso di allocazione contigua della memoria per proteggere le risorse e gli accessi illegali del codice utente \'e8 descritto dallo schema seguente. Il kernel utilizza le System call per accedere alle risorse protette. \'c8 vero che:\
+\
+[immagine del supporto HW per la protezione di memoria]\
+\
+**Risposte possibili:**\
+\
+a. L'invocazione della system call viene sempre invocata dal codice utente\
+b. Le system call servono solo per accedere alle periferiche\
+c. L'invocazione della system call pu\'f2 venire invocata dal codice utente se fa un fork del processo kernel\
+d. Durante le esecuzioni delle system call spesso il codice utente e kernel si parlano \
+e. Durante le system call \'e8 possibile che pi\'f9 processo passino direttamente dallo stato running allo stato ready /&/ **Risposta corretta:**\
+\
+a. L'invocazione della system call viene sempre invocata dal codice utente\
+\
+**Spiegazione delle risposte errate:**\
+\
+* c. L'invocazione della system call pu\'f2 venire invocata dal codice utente se fa un fork del processo kernel - **Falso, solo codice kernel**\
+* e. Durante le system call \'e8 possibile che pi\'f9 processo passino direttamente dallo stato running allo stato ready - **Falso, si passa allo stato ready direttamente da running solo in caso di esaurimento del quanto di tempo o interruzione del timer dedicato** %$% ### **Domanda 9**\
+\
+Relativamente alle architetture di SO, \'e8 vero che:\
+\
+**Risposte possibili:**\
+\
+a. Le architetture monolitiche sono relativamente meno performanti di quelle layered\
+b. L'architettura di Linux \'e8 monolitica ma modulare\
+c. Le architetture a microkernel minimizzano i numeri di cambi di modalit\'e0 della CPU\
+d. Le architetture microkernel in caso particolare di cambio di modalit\'e0 rispetto a detta monolitico a layered\
+e. Le architetture monolitiche sono relativamente meno manutenibili di quelle layered /&/ **Risposta corretta:**\
+\
+b. L'architettura di Linux \'e8 monolitica ma modulare\
+e. Le architetture monolitiche sono relativamente meno manutenibili di quelle layered \
+\
+**Spiegazione della risposta corretta:**\
+\
+Le risposte corrette sono: L'architettura di Linux \'e8 monolitica ma modulare. Le architetture monolitiche sono relativamente meno manutenibili di quelle layered %$% ### **Domanda 10**\
+\
+Quali di queste descrizioni del concetto di processo sono corrette\
+\
+**Risposte possibili:**\
+\
+a. Una infrastruttura software che ha anche lo scopo di far si che il programma in esecuzione percepisca di essere l'unico a usufruire di tutte le risorse del sistema di elaborazione, anche se le condivide con altri programmi in esecuzione \
+b. Una infrastruttura software che consente al kernel di accedere allo scheduling\
+c. Una infrastruttura software di supporto all'accesso alle risorse condivise\
+d. Una infrastruttura software di supporto alla comunicazione fra applicazioni\
+e. Una infrastruttura software di supporto alla monoprogrammazione\
+f. Una infrastruttura software di supporto all'accesso alle periferiche /&/ **Risposta corretta:**\
+\
+a. Una infrastruttura software che ha anche lo scopo di far si che il programma in esecuzione percepisca di essere l'unico a usufruire di tutte le risorse del sistema di elaborazione, anche se le condivide con altri programmi in esecuzione \
+\
+**Spiegazione della risposta corretta:**\
+\
+La risposta corretta \'e8: Una infrastruttura software che ha anche lo scopo di far si che il programma in esecuzione percepisca di essere l'unico a usufruire di tutte le risorse del sistema di elaborazione, anche se le condivide con altri programmi in esecuzione %$% ### **Domanda 11**\
+\
+Per quanto spiegato nel materiale del corso, \'e8 vero che l'assembler:\
+\
+**Risposte possibili:**\
+\
+a. Si occupa di produrre il codice per il salvataggio e il ripristino dei registri della CPU\
+b. Si occupa di tradurre le istruzioni Assembly espresse in formato testuale in stringhe di bit \
+c. Si occupa di calcolare quanti registri vengono utilizzati per implementare una funzione\
+d. Si occupa di definire quali registri vengono utilizzati per ogni salto o branch\
+e. Trasforma un label in altro label nel linguaggio assembly \
+f. Si occupa di risolvere le label presenti nel codice assembly \
+g. Trasforma un programma espresso in linguaggio ad alto livello in sequenza di istruzioni Assembly /&/ **Risposta corretta:**\
+\
+b. Si occupa di tradurre le istruzioni Assembly espresse in formato testuale in stringhe di bit \
+f. Si occupa di risolvere le label presenti nel codice assembly \
+\
+**Spiegazione della risposta corretta:**\
+\
+Le risposte corrette sono: Si occupa di calcolare quanti registri vengono utilizzati per ogni salto o branch. Si occupa di tradurre le istruzioni Assembly espresse in formato testuale in stringhe di bit. Si occupa di risolvere le label presenti nel codice assembly\
+\
+**Spiegazione della risposta errata:**\
+\
+* c. Si occupa di calcolare quanti registri vengono utilizzati per implementare una funzione - **Sbagliato, lo fa il compilatore** %$% ### **Domanda 12**\
+\
+L'esecuzione del seguente codice assembly, sulla base dell'ISA MIPS vista nel materiale del corso:\
+\
+main:\
+0x00 lug $5 \
+0x100 li $5, 55 ...\
+0x114 add $5, $5, $3\
+\
+sub1:\
+0x500 cmpi... \
+0x504 bgt $31,... \
+0x508 addi...\
+0x510 jal sub2 \
+0x514 jr $31\
+\
+sub2:\
+0x600 sub... \
+0x604 addi...\
+0x608 jr $31\
+\
+**Risposte possibili:**\
+\
+a. \'c8 malfunzionante perch\'e9 non viene salvato e ripristinato lo stato dei registri\
+b. \'c8 malfunzionante in quanto all'istruzione al indirizzo 0x114 sovra scrive un registro in maniera errata\
+c. \'c8 malfunzionante in quanto sovra scrive il registro $31 durante esecuzione della sub2 \
+d. \'c8 funzionante\
+e. \'c8 malfunzionante in quanto la routine sub2 non torna correttamente dopo esecuzione della jr /&/ **Risposta corretta:**\
+\
+a. \'c8 malfunzionante perch\'e9 non viene salvato e ripristinato lo stato dei registri\
+\
+**Spiegazione della risposta errata:**\
+\
+* c. \'c8 malfunzionante in quanto sovra scrive il registro $31 durante esecuzione della sub2 - **La sovrascrittura di $31 si verifica durante esecuzione della sub1** %$% ### **Domanda 13**\
+\
+Quali sono le modalit\'e0 di esecuzione di una moderna CPU (secondo quanto visto a lezione e nel materiale del corso)\
+\
+**Risposte possibili:**\
+\
+a. Modalit\'e0 esecuzione, modalit\'e0 lettura e modalit\'e0 scrittura\
+b. Almeno due: kernel e user\
+c. Tre: input, output e kernel\
+d. Tre: privilegiata, dati, interrupt\
+e. Modalit\'e0 privilegiata e modalit\'e0 utente\
+f. Solo la modalit\'e0 kernel\
+g. Modalit\'e0 kernel e modalit\'e0 controllo accessi /&/ **Risposta corretta:**\
+\
+e. Modalit\'e0 privilegiata e modalit\'e0 utente\
+\
+**Spiegazione della risposta corretta:**\
+\
+Le risposte corrette sono: Almeno due: kernel e user. Modalit\'e0 privilegiata e modalit\'e0 utente %$% ### **Domanda 14**\
+\
+Relativamente ai thread \'e8 vero che:\
+\
+**Risposte possibili:**\
+\
+a. Gli user thread minimizzano l'esigenza di gestire la sincronizzazione da parte del programmatore\
+b. I thread a livello kernel inducono l'occupazione della memoria rispetto ai process\
+c. I thread a livello kernel semplificano le system call senza bloccare altri thread\
+d. Gli user thread riducono l'occupazione della memoria\
+e. Sono potenzialmente convenienti perch\'e9 possono minimizzare l'overhead legato al context switch\
+f. Gli user thread minimizzano l'esigenza di gestire la protezione della concorrenza da parte del programmatore /&/ **Risposta corretta:**\
+\
+e. Sono potenzialmente convenienti perch\'e9 possono minimizzare l'overhead legato al context switch\
+\
+**Spiegazione della risposta corretta:**\
+\
+Le risposte corrette sono: Sono potenzialmente convenienti perch\'e9 possono minimizzare l'overhead legato al context switch. I thread a livello kernel inducono l'occupazione della memoria rispetto ai processi. Gli user thread riducono l'occupazione della memoria.\
+\
+**Spiegazione delle risposte errate:**\
+\
+* f. Gli user thread minimizzano l'esigenza di gestire la protezione della concorrenza da parte del programmatore - **Falso, \'e8 vero il contrario perch\'e9 molte risorse sono condivise, fra cui lo spazio in memoria dedicato agli stack** %$% ### **Domanda 15**\
+\
+Relativamente alle architetture di SO, \'e8 vero che:\
+\
+**Risposte possibili:**\
+\
+a. Le architetture monolitiche sono relativamente meno performanti di quelle layered\
+b. L'architettura di Linux \'e8 monolitica ma modulare\
+c. Le architetture a microkernel minimizzano i numeri di cambi di modalit\'e0 della CPU\
+d. Le architetture microkernel in caso particolare di cambio di modalit\'e0 rispetto a detta monolitico a layered\
+e. Le architetture monolitiche sono relativamente meno manutenibili di quelle layered /&/ **Risposta corretta:**\
+\
+b. L'architettura di Linux \'e8 monolitica ma modulare\
+e. Le architetture monolitiche sono relativamente meno manutenibili di quelle layered \
+\
+**Spiegazione della risposta corretta:**\
+\
+Le risposte corrette sono: L'architettura di Linux \'e8 monolitica ma modulare. Le architetture monolitiche sono relativamente meno manutenibili di quelle layered %$% ### **Domanda 16**\
+\
+Relativamente ai thread \'e8 vero che:\
+\
+**Risposte possibili:**\
+\
+a. Un thread a livello kernel di un processo pu\'f2 usare le syscall senza rischi di bloccare gli altri thread dello stesso processo\
+b. Possono ma non necessariamente devono, condividere file, I/O codice, lo stack e i dati globali\
+c. Un thread a livello utente non pu\'f2 scrivere sullo stack di un altro thread\
+d. Utilizzando i kernel thread parte della gestione della sincronizzazione pu\'f2 essere a carico del programmatore\
+e. A livello utente possono condividere i file, mentre a livello kernel non possono /&/ **Risposta corretta:**\
+\
+a. Un thread a livello kernel di un processo pu\'f2 usare le syscall senza rischi di bloccare gli altri thread dello stesso processo\
+d. Utilizzando i kernel thread parte della gestione della sincronizzazione pu\'f2 essere a carico del programmatore\
+\
+**Spiegazione della risposta corretta:**\
+\
+Le risposte corrette sono: Un thread a livello kernel di un processo pu\'f2 usare le syscall senza rischi di bloccare gli altri thread dello stesso processo. Utilizzando i kernel thread parte della gestione della sincronizzazione pu\'f2 essere a carico del programmatore\
+\
+**Spiegazione della risposta errata:**\
+\
+* c. Un thread a livello utente non pu\'f2 scrivere sullo stack di un altro thread - **Falso, pu\'f2 farlo perch\'e9 lo stack \'e8 di norma protetto dal kernel. \'c8 ragionevole non si faccia perch\'e9 in caso contrario causa problemi.** %$% ### **Domanda 17**\
+Si consideri il seguente scenario:\
+Un sistema multiprocessore sul quale opera un'applicazione multithread basato sul *many - to - many threading model* e che \'e8 l'unico processo in esecuzione. \
+Il numero di *user-level thread* \'e8 pi\'f9 grande del numero di processori, e il numero di *kernel thread* \'e8 uguale al numero di processori.\
+**Risposte possibili:**\
+a. Tutti i kernel level thread sono sempre in esecuzione \
+b. Non sempre tutti gli user level thread sono in esecuzione\
+c. Nessun processore rimarr\'e0 mai idle\
+d. Non \'e8 possibile che tutti i processori siano idle\
+e. \'c8 possibile che tutti i processori siano utilizzati simultaneamente /&/ **Risposta corretta:**\
+\
+b. Non sempre tutti gli user level thread sono in esecuzione\
+e. \'c8 possibile che tutti i processori siano utilizzati simultaneamente\
+\
+**Spiegazione della risposta corretta:**\
+\
+Le risposte corrette sono: \
+Non sempre tutti gli user level thread sono in esecuzione \
+\'c8 possibile che tutti i processori siano utilizzati simultaneamente\
+\
+**Spiegazione della risposta errata:**\
+\
+* a. Tutti i kernel level thread sono sempre in esecuzione - **Falso: Uno o pi\'f9 dei kernel thread si potrebbe mettere in waiting** %$% ### **Domanda 18**\
+\
+Il problema produttore consumatore affrontato con memoria condivisa richiede l'utilizzo di un buffer:\
+\
+**Risposte possibili:**\
+\
+a. Illimitato, il produttore non potr\'e0 inserire nuovi oggetti finch\'e9 l'ultimo non \'e8 stato consumato. \
+b. Sempre limitato, in modo che il consumatore non deve mai attendere nuovi oggetti \
+c. Limitato, il produttore dovr\'e0 attendere in caso di buffer vuoto\
+d. Limitato, lo scambio avviene sempre tramite utilizzo di contatori \
+e. Limitato, il consumatore dovr\'e0 attendere in caso di buffer vuoto. /&/ **Risposta corretta:**\
+\
+e. Limitato, il consumatore dovr\'e0 attendere in caso di buffer vuoto. \
+\
+**Spiegazione delle risposte errate:**\
+\
+* c. Limitato, il produttore dovr\'e0 attendere in caso di buffer vuoto - **Falso: il produttore attende in caso di buffer pieno**\
+* d. Limitato, lo scambio avviene sempre tramite utilizzo di contatori - **Falso: non sempre sono necessari contatori** %$% ### **Domanda 19**\
+\
+Il PCB di un processo:\
+\
+**Risposte possibili:**\
+\
+a. Serve al compilatore per dimensionare lo stack\
+b. Non contiene dati sullo scheduling della CPU\
+c. Viene utilizzato esclusivamente nei sistemi Linux\
+d. Contiene fra le altre cose lo stato del processo e il valore dei registri della CPU \
+e. Contiene solo informazioni sullo stato del processo /&/ **Risposta corretta:**\
+\
+d. Contiene fra le altre cose lo stato del processo e il valore dei registri della CPU \
+\
+**Spiegazione della risposta errata:**\
+\
+* b. Non contiene dati sullo scheduling della CPU - **Falso: Li contiene** %$% ### **Domanda 20**\
+\
+Relativamente al lancio di un processo (nuova applicazione) da parte di un processo in esecuzione, su sistema Linux, \'e8 vero che:\
+\
+**Risposte possibili:**\
+\
+a. Il processo figlio invoca la fork, il padre invoca la exec e cui passa come parametro il nome completo del file eseguibile della nuova applicazione\
+b. Il processo padre invoca la fork, il figlio invoca la exec e cui passa come parametro il nome completo del file eseguibile della nuova applicazione\
+c. Il processo figlio invoca la fork e cui passa come parametro il nome completo del file eseguibile della nuova applicazione\
+d. Il processo padre invoca la fork e il figlio lancia direttamente l'eseguibile con uno script a linea di comando\
+e. Il processo padre invoca la system call exec e cui passa come parametro il nome completo del file eseguibile della nuova applicazione /&/ **Risposta corretta:**\
+\
+b. Il processo padre invoca la fork, il figlio invoca la exec e cui passa come parametro il nome completo del file eseguibile della nuova applicazione\
+\
+**Spiegazione della risposta errata:**\
+\
+* e. Il processo padre invoca la system call exec e cui passa come parametro il nome completo del file eseguibile della nuova applicazione - **Falso, il padre fa la fork ed \'e8 il figlio che invoca la exec** %$% ### **Domanda 21**\
+\
+Relativamente ai thread pool:\
+\
+**Risposte possibili:**\
+\
+a. Viene utilizzato ad esempio in caso di applicazioni webserver multithread\
+b. Quando un thread ha terminato l'esecuzione di una attivit\'e0 viene disattivato e reso nuovamente reso disponibile per una nuova attivazione \
+c. Ha un numero di thread allocati predefiniti sempre basato sulle priorit\'e0 del processo\
+d. Viene utilizzato in caso di raggiungimento del massimo numero di thread allocabili\
+e. \'c8 basato su un numero fisso di thread creati all'avvio della applicazione, i singoli thread vengono attivati e disattivati all'occorrenza e il numero complessivo di thread cambia continuamente \
+f. Ciascun thread del pool \'e8 sempre collegato a un diverso processo/task a livello kernel /&/ **Risposta corretta:**\
+\
+a. Viene utilizzato ad esempio in caso di applicazioni webserver multithread\
+b. Quando un thread ha terminato l'esecuzione di una attivit\'e0 viene disattivato e reso nuovamente reso disponibile per una nuova attivazione \
+e. \'c8 basato su un numero fisso di thread creati all'avvio della applicazione, i singoli thread vengono attivati e disattivati all'occorrenza e il numero complessivo di thread cambia continuamente \
+\
+**Spiegazione della risposta corretta:**\
+\
+Le risposte corrette sono: \'c8 basato su un numero fisso di thread creati all'avvio della applicazione, i singoli thread vengono attivati e disattivati all'occorrenza e il numero complessivo di thread cambia continuamente. Viene utilizzato ad esempio in caso di applicazioni webserver multithread. Quando un thread ha terminato l'esecuzione di una attivit\'e0 viene disattivato e reso nuovamente reso disponibile per una nuova attivazione\
+\
+**Spiegazione della risposta errata:**\
+\
+* c. Ha un numero di thread allocati predefiniti sempre basato sulle priorit\'e0 del processo - **Falso: la priorit\'e0 del processo non c'entra nulla** %$% ### **Domanda 22**\
+\
+Secondo quanto visto nel materiale del corso, la funzionalit\'e0 della branch if equal bne dell'ISA MIPS, caso specifico espressa in linguaggio Assembly:\
+\
+beq $2, $3, label1\
+\
+\'e8 la seguente:\
+\
+**Risposte possibili:**\
+\
+a. if(REGS[$2]==REGS[$3]) PC = PC + imm\
+b. if(REGS[$2]==REGS[$3]) PC = PC + 4+imm\
+c. if(REGS[$2]!=REGS[$3]) PC = PC+4+imm\
+d. if(REGS[$2]==REGS[$3]) PC = imm\
+e. if(REGS[$2]==REGS[$3]) PC = PC-imm /&/ **Risposta corretta:**\
+\
+c. if(REGS[$2]!=REGS[$3]) PC = PC+4+imm\
+\
+**Spiegazione della risposta corretta:**\
+\
+La risposta corretta \'e8:\
+La funzionalit\'e0 corretta \'e8:\
+if(REGS[$2]!=REGS[$3]) PC = PC+4+imm\
+La risposta corretta \'e8:\
+if(REGS[$2]!=REGS[$3]) PC = PC+4+imm %$% ### **Domanda 23**\
+Le transizioni di stato possibili per un processo sono le seguenti:\
+\
+**Risposte possibili:**\
+\
+a. Da waiting a ready\
+b. Da waiting a waiting per un evento di altro tipo\
+c. Da running a ready\
+d. Da ready a running\
+e. Da waiting a completed\
+f. Da ready a waiting\
+g. Da running a waiting\
+h. Da completed a completed /&/ **Risposta corretta:**\
+\
+a. Da waiting a ready\
+c. Da running a ready\
+d. Da ready a running\
+f. Da ready a waiting\
+g. Da running a waiting\
+\
+**Spiegazione della risposta corretta:**\
+\
+Le risposte corrette sono: Da ready a running. Da waiting a ready. Da ready a waiting. Da running a waiting\
+\
+**Spiegazione della risposta errata:**\
+\
+* h. Da completed a completed - **Non \'e8 una transizione possibile, da ready si passa in running** %$% ### **Domanda 24**\
+\
+L'istruzione jal (jump and link), utilizzata per l'implementazione della chiamata a funzione\
+\
+**Risposte possibili:**\
+\
+a. Viene utilizzata dal compilatore in coppia con l'istruzione j\
+b. Salva in HW il contenuto dei registri sporcati dalla funzione chiamata nel frame di attivazione funzione \
+c. Scrive nel $31 l'indirizzo della istruzione successiva da eseguire ed esegue un salto\
+d. Salva l'indirizzo di ritorno della istruzione della cui salva \
+e. Salva nel registro $31 l'indirizzo di istruzione della funzione /&/ **Risposta corretta:**\
+\
+c. Scrive nel $31 l'indirizzo della istruzione successiva da eseguire ed esegue un salto\
+\
+**Spiegazione della risposta corretta:**\
+\
+Le risposte corrette sono: Scrive nel $31 l'indirizzo della istruzione successiva da eseguire ed esegue un salto, viene utilizzata dal compilatore in coppia con l'istruzione jr\
+\
+**Spiegazione delle risposte errate:**\
+\
+* b. Salva in HW il contenuto dei registri sporcati dalla funzione chiamata nel frame di attivazione funzione - **Salva solo indirizzo di ritorno in $31**\
+* e. Salva nel registro $31 l'indirizzo di istruzione della funzione - **Non \'e8 vero, salva $31** %$% Domanda 1:\
+\uc0\u9679 \
+Un processo in stato di READY:\
+\uc0\u9675 \
+\'e8 in esecuzione sulla CPU.\
+\uc0\u9675 \
+\'e8 in attesa di un evento.\
+\uc0\u9675 \
+\'e8 pronto per essere messo in esecuzione sulla CPU.\
+\uc0\u9675 \
+\'e8 terminato. /&/ Risposta: \'e8 pronto per essere messo in esecuzione sulla CPU. %$% Domanda 2:\
+\uc0\u9679 \
+Cosa rappresenta la coda READY?\
+\uc0\u9675 \
+l'insieme dei processi in memoria centrale.\
+\uc0\u9675 \
+l'insieme dei processi in stato di READY.\
+\uc0\u9675 \
+l'insieme dei processi in attesa di I/O.\
+\uc0\u9675 \
+l'insieme dei processi terminati. /&/ Risposta: l'insieme dei processi in stato di READY. %$% Domanda 3:\
+\uc0\u9679 \
+Lo scheduler a breve termine (short-term scheduler):\
+\uc0\u9675 \
+decide quali processi caricare in memoria.\
+\uc0\u9675 \
+decide quale processo della coda READY deve andare in esecuzione sulla CPU.\
+\uc0\u9675 \
+decide quali processi possono eseguire operazioni di I/O.\
+\uc0\u9675 \
+gestisce la memoria virtuale. /&/ Risposta: decide quale processo della coda READY deve andare in esecuzione sulla CPU. %$% Domanda 4:\
+\uc0\u9679 \
+Quale delle seguenti transizioni di stato NON \'e8 possibile?\
+\uc0\u9675 \
+RUNNING -> READY\
+\uc0\u9675 \
+BLOCKED -> READY\
+\uc0\u9675 \
+READY -> RUNNING\
+\uc0\u9675 \
+RUNNING -> BLOCKED /&/ Risposta: BLOCKED -> READY non mi pare notebook \'e8 un tossico %$% Domanda 5:\
+\uc0\u9679 \
+Un thread:\
+\uc0\u9675 \
+condivide il code segment con gli altri thread dello stesso processo.\
+\uc0\u9675 \
+non condivide lo stack con gli altri thread dello stesso processo.\
+\uc0\u9675 \
+non condivide il data segment con gli altri thread dello stesso processo.\
+\uc0\u9675 \
+\'e8 un processo pesante (heavyweight process). /&/ Risposta: condivide il code segment con gli altri thread dello stesso processo. %$% Domanda 6:\
+\uc0\u9679 \
+Quale affermazione sui thread \'e8 FALSA?\
+\uc0\u9675 \
+I thread di uno stesso processo condividono l'address space.\
+\uc0\u9675 \
+La creazione di un thread \'e8 pi\'f9 rapida della creazione di un processo.\
+\uc0\u9675 \
+Il passaggio da un thread all'altro dello stesso processo \'e8 pi\'f9 rapido del passaggio tra due processi.\
+\uc0\u9675 \
+I thread sono indipendenti l'uno dall'altro e non possono comunicare tra loro. /&/ Risposta: I thread sono indipendenti l'uno dall'altro e non possono comunicare tra loro. %$% Domanda 7:\
+\uc0\u9679 \
+Quale dei seguenti NON \'e8 un vantaggio dei thread?\
+\uc0\u9675 \
+Riduzione del tempo di creazione.\
+\uc0\u9675 \
+Riduzione del tempo di switching.\
+\uc0\u9675 \
+Migliore utilizzo della CPU in presenza di I/O.\
+\uc0\u9675 \
+Maggiore complessit\'e0 nella gestione della concorrenza. /&/ Risposta: Maggiore complessit\'e0 nella gestione della concorrenza. %$% Domanda 8:\
+\uc0\u9679 \
+I thread kernel:\
+\uc0\u9675 \
+sono gestiti direttamente dal sistema operativo.\
+\uc0\u9675 \
+sono gestiti da una libreria a livello utente.\
+\uc0\u9675 \
+non possono essere utilizzati in sistemi multiprocessore.\
+\uc0\u9675 \
+sono pi\'f9 efficienti dei thread utente. /&/ Risposta: sono gestiti direttamente dal sistema operativo. %$% Domanda 9:\
+\uc0\u9679 \
+In un sistema multiprocessore, un processo multithread:\
+\uc0\u9675 \
+pu\'f2 essere eseguito su pi\'f9 processori contemporaneamente.\
+\uc0\u9675 \
+pu\'f2 essere eseguito solo su un processore alla volta.\
+\uc0\u9675 \
+non pu\'f2 sfruttare il parallelismo offerto dai multiprocessori.\
+\uc0\u9675 \
+\'e8 equivalente a un processo single-thread. /&/ Risposta: pu\'f2 essere eseguito su pi\'f9 processori contemporaneamente. %$% Domanda 10:\
+\uc0\u9679 \
+Nel modello many-to-one:\
+\uc0\u9675 \
+pi\'f9 thread utente sono mappati su un singolo thread kernel.\
+\uc0\u9675 \
+un thread utente \'e8 mappato su un thread kernel.\
+\uc0\u9675 \
+pi\'f9 thread utente sono mappati su pi\'f9 thread kernel.\
+\uc0\u9675 \
+non \'e8 possibile utilizzare thread kernel. /&/ Risposta: pi\'f9 thread utente sono mappati su un singolo thread kernel. %$% Quale modello di threading offre il miglior supporto per il parallelismo su sistemi multiprocessore?\
+\
+a many-to-one\
+\
+b one-to-one\
+\
+c many-to-many\
+\
+d nessuno dei precedenti /&/ Risposta: many-to-many %$% Relativamente al thread pool:\
+Scegli una o pi\'f9 alternative:\
+a. Ciascun thread del pool \'e8 sempre collegato a un diverso processo/task a livello kernel \
+b. Viene utilizzato ad esempio in caso di applicazioni webserver multithread\
+c. \'c8 basato su un numero fisso di thread creati all'avvio della applicazione, i singoli thread vengono attivati e disattivati all'occorrenza e il numero complessivo di thread attivi cambia continuamente\
+d. Quando un thread ha terminato l'esecuzione di una attivit\'e0 viene disattivato e reso nuovamente reso disponibile per nuova attivazione\
+e. Viene utilizzato in caso di raggiungimento del massimo numero di thread allocabili \
+f. Ha un numero di thread allocati predefinito basato sempre sulle priorit\'e0 del processo /&/ **Giallo:**\
+* b. Viene utilizzato ad esempio in caso di applicazioni webserver multithread **Vero**\
+* c. \'c8 basato su un numero fisso di thread creati all'avvio della applicazione, i singoli thread vengono attivati e disattivati all'occorrenza e il numero complessivo di thread attivi cambia continuamente **Corretto**\
+* d. Quando un thread ha terminato l'esecuzione di una attivit\'e0 viene disattivato e reso nuovamente reso disponibile per nuova attivazione **Vero** %$% Oltre ad eventuali altre cose, i thread condividono:\
+Scegli una o pi\'f9 alternative:\
+a. Dati, Stack e risorse \
+b. Program Counter, Registri e stack \
+c. Codice e file \
+d. Registri, dati e program counter \
+e. Stack, codice e risorse /&/ **Giallo:** \
+* c. Codice e file **Vero, anche se non sono le uniche cose, anche i dati globali e altre risorse** %$% Le transizioni di stato possibili per un processo sono le seguenti:\
+Scegli una o pi\'f9 alternative:\
+a. Da waiting a ready\
+b. Da waiting a waiting per un evento di altro tipo \
+c. Da running a waiting \
+d. Da ready a waiting \
+e. Da running a ready \
+f. Da ready a completed \
+g. Da waiting a completed \
+h. Da ready a running /&/ **Giallo:** \
+* a. Da waiting a ready **Vero**\
+* c. Da running a waiting **Vero**\
+* e. Da running a ready **Vero**\
+* h. Da ready a running **Vero** %$% E' vero che uno dei casi in cui il kernel viene eseguito \'e8:\
+Scegli una o pi\'f9 alternative:\
+a. Durante l'esecuzione di una System call \
+b. In caso di esecuzione di una routine di interrupt da periferica\
+c. All'avvio del sistema, dopo il reset \
+d. Quando \'e8 in esecuzione un processo, qualunque esso sia, per tutto il tempo \
+e. In caso di esecuzione di codice assembly \
+f. In seguito alla generazione di una eccezione \
+g. Quando un processo del kernel invoca una System call /&/ **Giallo:** \
+* a. Durante l'esecuzione di una System call **Vero**\
+* b. In caso di esecuzione di una routine di interrupt da periferica **Vero**\
+* c. All'avvio del sistema, dopo il reset **Vero**\
+* f. In seguito alla generazione di una eccezione **Vero** %$% Secondo quanto visto nel materiale del corso, la funzionalit\'e0 della set on less than dell'ISA MIPS, caso della specifica espressa in linguaggio Assembly:\
+slt $4, $2, $3\
+\'e8 la seguente\
+Scegli una o pi\'f9 alternative:\
+a. if(REGS[$2]>REGS[$4]) REGS[$3] = 1 \
+b. if(REGS[$2] <= REGS[$3]) REGS[$4] = 1 \
+c. if(REGS[$2]<REGS[$3]) REGS[$4] = 1 \
+d. if(REGS[$2]>REGS[$3]) REGS[$4] = 1\
+e. if(REGS[$2]<REGS[$3]) REGS[$4] = 0 /&/ **Giallo:** \
+* c. if(REGS[$2]<REGS[$3]) REGS[$4] = 1 **Vero** %$% Se la invocazione della fork() non va a buon fine \'e8 vero che:\
+Scegli una o pi\'f9 alternative:\
+a. Al processo figlio viene assegnato il pid 1 \
+b. Sia il processo figlio che il processo padre vengono terminati \
+c. Il processo figlio viene terminato \
+d. Al processo figlio viene restituito il valore -1 \
+e. Al processo padre viene restituito il valore -1 /&/ **Giallo:** \
+* e. Al processo padre viene restituito il valore -1 **Vero** %$% Sono vere le seguenti affermazioni relative ai threads\
+Scegli una o pi\'f9 alternative:\
+a. In caso di processi comunicanti tramite pipes non \'e8 obbligatorio usare i processi ma si possono comunque usare i thread \
+b. In caso di task scorrelati \'e8 indifferente utilizzare processi o threads \
+c. I thread non sono adatti all'implementazione di una applicazione server che deve servire molti client in parallelo che svolgono operazioni diverse \
+d. Se si implementa una stessa applicazione sotto forma di task concorrenti \'e8 meglio usare i processi \
+e. L'utilizzo di passaggio informazioni tramite buffer circolare gestito in memoria condivisa \'e8 meno efficiente dell'utilizzo delle pipes /&/ **Giallo:** \
+* a. In caso di processi comunicanti tramite pipes non \'e8 obbligatorio usare i processi ma si possono comunque usare i thread **Vero: non sembrerebbe una scelta ottimizzata a prima vista ma si pu\'f2 fare** %$% Circa la funzionalit\'e0 di interrupt\
+Scegli una o pi\'f9 alternative:\
+a. Alla conclusione della routine ripristina sempre il valore del registro 31 in caso di ISA MIPS \
+b. Consente l'esecuzione di sottoprogrammi in maniera asincrona rispetto al flusso di esecuzione principale \
+c. Via software si occupa prima di salvare e quindi di ripristinare lo stato di tutti i registri interni del processore \
+d. Esegue codice in modalit\'e0 utente \
+e. E' una funzionalit\'e0 esclusivamente software /&/ **Giallo:** \
+* b. Consente l'esecuzione di sottoprogrammi in maniera asincrona rispetto al flusso di esecuzione principale **Vero** %$% Relativamente al lancio di un processo (nuova applicazione) da parte di un processo gi\'e0 in esecuzione, su sistema linux, \'e8 vero che:\
+Scegli una o pi\'f9 alternative:\
+a. Il processo figlio invoca la fork, cui passa come parametro il nome completo del file eseguibile della nuova applicazione \
+b. Il processo padre invoca la system call exec cui passa come parametro il nome completo del file eseguibile della nuova applicazione \
+c. Il processo padre invoca la fork, il figlio invoca la exec cui passa come parametro il nome completo del file eseguibile della nuova applicazione \
+d. Il processo padre invoca la fork, il figlio lancia direttamente l'eseguibile con uno script a linea di comando \
+e. Il processo figlio invoca la fork, il padre invoca la exec cui passa come parametro il nome completo del file eseguibile della nuova applicazione /&/ **Giallo:** \
+* c. Il processo padre invoca la fork, il figlio invoca la exec cui passa come parametro il nome completo del file eseguibile della nuova applicazione **Vero** %$% Relativamente ai modelli di multi threading:\
+Scegli una o pi\'f9 alternative:\
+ a. Il modello uno a uno prevede che non vengano usate le librerie di supporto agli user thread \
+ b. Il modello molti a molti \'e8 l'unico che richiede il supporto del kernel \
+ c. Il modello uno a uno \'e8 possibile solo in caso di supporto del sistema operativo \
+ d. Il modello uno a uno \'e8 gestito tramite librerie a livello utente \
+ e. Il modello molti a uno prevede che il numero dei thread utente sia sempre molto maggiore del numero dei thread kernel /&/ **Giallo:** \
+* a. Il modello uno a uno prevede che non vengano usate le librerie di supporto agli user thread **Vero: si tratta di soli kernel threads** %$% Il problema produttore consumatore affrontato con la memoria condivisa richiede l'utilizzo di un buffer:\
+Scegli una o pi\'f9 alternative:\
+ a. Limitato: lo scambio avviene sempre tramite utilizzo di contatori \
+ b. Sempre illimitato, in modo che il consumatore non deve mai attendere nuovi oggetti\
+ c. Limitato, il consumatore dovr\'e0 attendere in caso di buffer vuoto. \
+ d. Illimitato, il produttore non potr\'e0 inserire nuovi oggetti finch\'e9 l'ultimo non \'e8 stato consumato. \
+ e. Limitato, il produttore dovr\'e0 attendere in caso di buffer vuoto. /&/ **Giallo:**\
+* c. Limitato, il consumatore dovr\'e0 attendere in caso di buffer vuoto. **Vero**\
+* e. Limitato, il produttore dovr\'e0 attendere in caso di buffer vuoto. **Vero** %$% Nello schema di bus di sistema che collega la CPU alle periferiche descritto nei sistemi di elaborazione monoprocessore di esempio visti durante il corso, il ruolo del multiplexer controllato dal decoder del bus \'e8:\
+Scegli una o pi\'f9 alternative:\
+ a. Evitare l'utilizzo di decoder interni alle periferiche \
+ b. Supportare l'accesso alle periferiche sia in scrittura che in lettura \
+ c. Collegare la giusta periferica in modo che possa scrivere sulla porta di ingresso della CPU. \
+ d. Collegare la giusta periferica in modo che possa leggere dalla porta di uscita della CPU. \
+ e. Fare in modo che non ci siano registri sorgente che in parallelo possano tentare di scrivere valori opposti su uno stesso registro destinazione \
+ f. Disaccoppiare le letture dalle scritture /&/ c. Collegare la giusta periferica in modo che possa scrivere sulla porta di ingresso della CPU. **Vero** %$% Cos'\'e8 il frame di attivazione della funzione?\
+Scegli una o pi\'f9 alternative:\
+* a. Una porzione di memoria di grandezza fissata ma modificabile con una system call\
+* b. Una parte della memoria direttamente visibile al programmatore\
+* c. Una zona di memoria che serve, fra le altre cose, a salvare tutti i parametri passati alla funzione invocata\
+* d. Una porzione di memoria allocata alla invocazione di una funzione che ha la dimensione dei dati necessari alla funzione per il suo ciclo di vita \
+* e. Uno speciale zona di memoria da attivare in caso di frame non disponibile in memoria /&/ ##### La risposta corretta \'e8: Una porzione di memoria allocata alla invocazione di una funzione che ha la dimensione dei dati necessari alla funzione per il suo ciclo di vita %$% inversione delle priorit\'e0 nell'accesso alle risorse, soluzione valida?\
+a Quando un processo a priorit\'e0 alta richiede una risorsa i processi a priorit\'e0 intermedia vengono messi in attesa\
+b Nell'esempio visto nel materiale del corso, in caso di inversione di priorit\'e0, il processo a priorit\'e0 intermedia acquisisce priorit\'e0 superiore rispetto al processo a priorit\'e0 alta\
+c Quando un processo ottiene l'acceso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 alta possibile \
+d Nell'esempio visto nel materiale del corso, in caso di inversione di priorit\'e0, il processo a priorit\'e0 bassa va in esecuzione al posto del processo a priorit\'e0 alta \
+e Quando un processo ottiene l'acceso a una risorsa viene messo in prima posizione nella coda di waiting\
+\
+g Quando un processo ottiene l'acceso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 bassa possibile /&/ ##### Risposta corretta.\
+##### Le risposte corrette sono: Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 alta possibile, Nell'esempio visto nel materiale del corso, in caso di inversione di priorit\'e0, il processo a priorit\'e0 bassa va in esecuzione al posto del processo a priorit\'e0 alta %$% Relativamente alla possibile architettura di un bus di comunicazione a supporto del memory mapping [immagine]\
+Scegli una o pi\'f9 alternative:\
+a Il dato in scrittura sulle periferiche viene inviato in parallelo a tutte le porte dati in in scrittura delle periferiche presenti nel sistema \
+b la scrittura da parte del processore del dato su una periferica sollecita i decoder interni a ciascuna delle periferiche, al contrario delle letture che usano solo il decoder centralizzato del bus\
+c Il Mux del bus ha lo scopo di selezionare quale periferica \'e8 abilitata a collegarsi alla porta dati di ingresso della cpu durante le operazioni di scrittura tipo lw \
+d Il decoder del bus \'e8 indispensabile per le operazioni di scrittura tipo sw\
+e E' possibile che gli spazi di indirizzamento delle periferiche siano parzialmente sovrapposti nel caso di memoria condivisa fra i processi /&/ ##### Risposta corretta.\
+##### Le risposte corrette sono: Il dato in scrittura sulle periferiche viene inviato in parallelo a tutte le porte dati in in scrittura delle periferiche presenti nel sistema, Il Mux del bus ha lo scopo di selezionare quale periferica \'e8 abilitata a collegarsi alla porta dati di ingresso della cpu durante le operazioni di scrittura tipo lw %$% Quale dei seguenti corrisponde a un formato di istruzioni dell'ISA MIPS:\
+Scegli una o pi\'f9 alternative:\
+* a. Opcode, rs, rt, Immediate \
+* b. Opcode, flags\
+* c. Opcode, rs, tx, sx, ir\
+* d. Opcode, rs, rt, rd, shamt, function \
+* e. Opcode, rt, Immediate, PC /&/ ##### Le risposte corrette sono: Opcode, rs, rt, Immediate, Opcode, rs, rt, rd, shamt, function %$% Relativamente allo schema di seguito relativo alla comunicazione fra processi, \'e8 vero che:\
+Scegli una o pi\'f9 alternative:\
+* a. La memoria condivisa pu\'f2 essere utilizzata per scambiare le informazioni anche bypassando l'intervento del kernel \
+* b. Le pipe utilizzano lo schema b\
+* c. Lo schema a \'e8 riferibile ai socket \
+* d. Entrambi gli schemi utilizzano memoria condivisa\
+* e. Lo scambio di messaggi utilizza lo schema b Falso, utilizza lo schema a /&/ Le risposte corrette sono: Lo schema a \'e8 riferibile ai socket, La memoria condivisa pu\'f2 essere utilizzata per scambiare le informazioni anche bypassando l'intervento del kernel %$% Il problema produttore consumatore affrontato con la memoria condivisa richiede l'utilizzo di un buffer:\
+Scegli una o pi\'f9 alternative:\
+* a. Sempre illimitato, in modo che il consumatore non deve mai attendere nuovi oggetti\
+* b. Illimitato, il produttore non potr\'e0 inserire nuovi oggetti finche l'ultimo non \'e8 stato consumato.\
+* c. Limitato, il consumatore dovr\'e0 attendere in caso di buffer vuoto. Vero\
+* d. Limitato: lo scambio avviene sempre tramite utilizzo di contatori\
+* e. Limitato, il produttore dovr\'e0 attendere in caso di buffer vuoto. /&/ ##### Risposta corretta.\
+##### La risposta corretta \'e8: Limitato, il consumatore dovr\'e0 attendere in caso di buffer vuoto. %$% Relativamente alla problematica della inversione delle priorit\'e0 nell'accesso alle risorse, quale potrebbe essere una soluzione sempre valida?\
+Scegli una o pi\'f9 alternative:\
+* a. Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 alta possibile \
+* b. Quando un processo ottiene l'accesso a una risorsa viene messo in prima posizione nella coda di waiting\
+* c. Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 superiore a quella attuale\
+* d. Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 di un altro processo\
+* e. Quando un processo a priorit\'e0 alta richiede una risorsa i processi a priorit\'e0 intermedia vengono messi in attesa\
+* f. Quando un processo a priorit\'e0 alta richiede una risorsa forza la preemption della risorsa /&/ ##### Risposta corretta.\
+##### La risposta corretta \'e8: Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 alta possibile %$% Relativamente ai criteri di scheduling, \'e8 vero che:\
+Scegli una o pi\'f9 alternative:\
+* a. Un criterio \'e8 il tempo di attesa o waiting time = tempo durante il quale il processo non accede alla cpu \
+* b. Un criterio \'e8 il turnaround time = tempo intercorso fra l'avvio e il completamento del singolo processo \
+* c. Un criterio \'e8 la % di utilizzo della cpu \
+* d. Un criterio \'e8 il Throughput = numero di processi per unit\'e0 di tempo \
+* e. Un criterio \'e8 il Response time: tempo necessario perch\'e9 un processo inizi una risposta /&/ ##### Le risposte corrette sono: Un criterio \'e8 il turnaround time = tempo intercorso fra l'avvio e il completamento del singolo processo, Un criterio \'e8 il Response time: tempo necessario perch\'e9 un processo inizi una risposta, Un criterio \'e8 il Throughput = numero di processi per unit\'e0 di tempo, Un criterio \'e8 la % di utilizzo della cpu %$% Relativamente al lancio di un processo (nuova applicazione) da parte di un processo gi\'e0 in esecuzione, su sistema linux, \'e8 vero che:\
+Scegli una o pi\'f9 alternative:\
+* a. Il processo padre invoca la fork, il figlio invoca la exec cui passa come parametro il nome completo del file eseguibile della nuova applicazione \
+* b. Il processo padre invoca la sistem call exec cui passa come parametro il nome completo del file eseguibile della nuova applicazione\
+* c. Il processo padre invoca la fork, il figlio lancia direttamente l'eseguibile con uno script a linea di comando\
+* d. Il processo figlio invoca la fork, il padre invoca la exec cui passa come parametro il nome completo del file eseguibile della nuova applicazione\
+* e. il processo figlio invoca la fork cui passa come parametro il nome completo del file eseguibile della nuova applicazione /&/ ##### Risposta corretta.\
+##### La risposta corretta \'e8: Il processo padre invoca la fork, il figlio invoca la exec cui passa come parametro il nome completo del file eseguibile della nuova applicazione %$% Il tempo di attesa in caso di algoritmo di scheduling round robin \'e8:\
+Scegli una o pi\'f9 alternative:\
+* a. La somma degli istanti trascorsi dal processo nella ready queue \
+* b. Il tempo in cui il processo attende prima di ottenere la cpu per il primo burst\
+* c. Il tempo totale dall'inizio alla fine dell'esecuzione del processo meno il tempo in cui il processo ha utilizzato la cpu, se il processo non va mai in stato waiting \
+* d. Il tempo necessario a concludere l'elaborazione\
+* e. Il tempo necessario affinch\'e9 il processo produca il primo risultato /&/ ##### Le risposte corrette sono: La somma degli istanti trascorsi dal processo nella ready queue, Il tempo totale dall'inizio alla fine dell'esecuzione del processo meno il tempo in cui il processo ha utilizzato la cpu, se il processo non va mai in stato waiting %$% Sono vere le seguenti affermazioni relative ai threads\
+Scegli una o pi\'f9 alternative:\
+* a. Se si implementa una stessa applicazione sotto forma di task concorrenti \'e8 meglio usare i processi \
+* b. In caso di task scorrelati \'e8 indifferente utilizzare processi o threads\
+* c. I thread non sono adatti all'implementazione di una applicazione server che deve servire molti client in parallelo che svolgono operazioni diverse \
+* d. L'utilizzo di passaggio informazioni tramite buffer circolare gestito in memoria condivisa \'e8 meno efficiente dell'utilizzo delle pipes\
+* e. In caso di processi comunicanti tramite pipes non \'e8 obbligatorio usare i processi ma si possono comunque usare i thread /&/ ##### La risposta corretta \'e8: In caso di processi comunicanti tramite pipes non \'e8 obbligatorio usare i processi ma si possono comunque usare i thread %$% Relativamente ai thread, \'e8 vero che:\
+Scegli una o pi\'f9 alternative:\
+* a. A livello utente possono condividere i file, mentre a livello kernel non possono\
+* b. Un thread a livello utente non pu\'f2 mai scrivere sullo stack di un altro thread\
+* c. Un thread a livello kernel di un processo pu\'f2 usare le syscall senza rischiare di bloccare gli altri thread dello stesso processo \
+* d. Utilizzando i kernel thread parte della gestione della sincronizzazione pu\'f2 essere a carico del programmatore \
+* e. Possono ma non necessariamente devono, condividere i file, il codice, lo stack e i dati globali /&/ ##### Le risposte corrette sono: Un thread a livello kernel di un processo pu\'f2 usare le syscall senza rischiare di bloccare gli altri thread dello stesso processo , Utilizzando i kernel thread parte della gestione della sincronizzazione pu\'f2 essere a carico del programmatore %$% Relativamente alla problematica della inversione delle priorit\'e0 nell'accesso alle risorse, quale potrebbe essere una soluzione sempre valida?\
+Scegli una o pi\'f9 alternative:\
+* a. Quando un processo ottiene l'acceso a una risorsa acquisisce temporaneamente la priorit\'e0 di un altro processo\
+\
+* c. Quando un processo a priorit\'e0 alta richiede una risorsa forza la preemption della risorsa\
+* d. Quando un processo ottiene l'acceso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 bassa possibile\
+* e. Quando un processo ottiene l'acceso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 alta possibile \
+* f. Nell'esempio visto nel materiale del corso, in caso di inversione di priorit\'e0, il processo a priorit\'e0 bassa va in esecuzione al posto del processo a priorit\'e0 alta\
+* g. Quando un processo a priorit\'e0 alta richiede una risorsa i processi a priorit\'e0 intermedia vengono messi in attesa /&/ **Risposta Corretta**\
+\
+Le risposte corrette sono: Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 alta possibile, %$% Relativamente ai threads \'e8 vero che:\
+Scegli una o pi\'f9 alternative:\
+* a. Rispetto alla percentuale di utilizzo della cpu non ci sono correlazioni con la tipologia di thread utilizzati\
+* b. I thread utente massimizzano la concorrenza rispetto ai thread kernel\
+* c. I thread utente sono schedati tramite implementazione a livello di libreria utente \
+* d. La cancellazione di un thread utente ha lo stesso costo della cancellazione di un thread kernel\
+* e. I thread utente hanno meno overhead dei thread kernel /&/ **Risposta Corretta**\
+\
+Le risposte corrette sono: I thread utente hanno meno overhead dei thread kernel, I thread utente sono schedati tramite implementazione a livello di libreria utente %$% Il tempo di attesa in caso di algoritmo di scheduling round robin \'e8:\
+Scegli una o pi\'f9 alternative:\
+* a. Il tempo totale dall'inizio alla fine dell'esecuzione del processo meno il tempo in cui il processo ha utilizzato la cpu, se il processo non va mai in stato waiting\
+* b. Il tempo necessario a concludere l'elaborazione\
+* c. Il tempo in cui il processo attende prima di ottenere la cpu per il primo burst\
+* d. La somma degli istanti trascorsi dal processo nella ready queue\
+* e. Il tempo necessario affinch\'e9 il processo produca il primo risultato /&/ **Risposta Corretta**\
+\
+Le risposte corrette sono: La somma degli istanti trascorsi dal processo nella ready queue, Il tempo totale dall'inizio alla fine dell'esecuzione del processo meno il tempo in cui il processo ha utilizzato la cpu, se il processo non va mai in stato waiting %$% Le transizioni di stato possibili per un processo sono le seguenti:\
+Scegli una o pi\'f9 alternative:\
+* a. Da running a ready\
+* b. Da runnning a waiting \
+* c. Da ready a waiting\
+* d. Da waiting a completed\
+* Da waiting a completed\
+* e. Da ready a completed\
+* f. Da waiting a ready \
+* g. Da waiting a waiting per un evento di altro tipo\
+* h. Da ready a running /&/ **Risposta Corretta**\
+\
+Le risposte corrette sono: Da ready a running, Da waiting a ready, Da running a ready, Da runnning a waiting %$% Relativamente allo schema di seguito relativo alla comunicazione fra processi, \'e8 vero che:\
+Scegli una o pi\'f9 alternative:\
+* a. Le pipe utilizzano lo schema b\
+* b. Lo schema a \'e8 riferibile ai socket\
+* c. Lo scambio di messaggi utilizza lo schema b \
+* d. La memoria condivisa pu\'f2 essere utilizzata per scambiare le informazioni anche bypassando l'intervento del kernel \
+* e. Entrambi gli schemi utilizzano memoria condivisa /&/ **Risposta Corretta**\
+\
+Le risposte corrette sono: Lo schema a \'e8 riferibile ai socket, La memoria condivisa pu\'f2 essere utilizzata per scambiare le informazioni anche bypassando l'intervento del kernel %$% Quali sono i modelli fondamentali di comunicazione fra processi (IPC)\
+Scegli una o pi\'f9 alternative:\
+* a. Parallelismo e time sharing\
+* b. Scambio di messaggi e modularit\'e0\
+* c. Memoria condivisa e memoria paginata\
+* d. Condivisione e scambio di memoria\
+* e. Modularit\'e0 e convenienza\
+* f. Memoria condivisa e scambio di messaggi /&/ **Risposta Corretta**\
+\
+Memoria condivisa e scambio di messaggi %$% Secondo quanto visto nel materiale del corso, la funzionalit\'e0 della branch ife qual dell'ISA MIPS, caso della specifica espressa in linguaggio Assembly:\
+beq$2, $3, label1\
+\'e8 la seguente\
+Scegli una o pi\'f9 alternative:\
+* a. if(REGS[$2]==REGS[$3]) PC = PC+1+imm\
+* b. if(REGS[$2]>REGS[$3]) PC = PC+4+imm\
+* c. if(REGS[$2]==REGS[$3]) PC = PC+imm\
+* d. if(REGS[$2]==REGS[$3]) PC = PC+4+imm \
+* e. if(REGS[$2]==REGS[$3]) PC = imm /&/ if(REGS[$2]==REGS[$3]) PC = PC+4+imm %$% Relativamente ai thread, \'e8 vero che:\
+Scegli una o pi\'f9 alternative:\
+* a. Un thread a livello kernel di un processo pu\'f2 usare le syscall senza rischiare di bloccare gli altri thread dello stesso processo \
+* b. Utilizzando i kernel thread parte della gestione della sincronizzazione pu\'f2 essere a carico del programmatore \
+* c. A livello utente possono condividere i file, mentre a livello kernel non possono\
+* d. Possono ma non necessariamente devono, condividere i file, il codice, lo stack e i dati globali\
+* e. Un thread a livello utente non pu\'f2 mai scrivere sullo stack di un altro thread /&/ **Risposta Corretta**\
+\
+Le risposte corrette sono: Un thread a livello kernel di un processo pu\'f2 usare le syscall senza rischiare di bloccare gli altri thread dello stesso processo , Utilizzando i kernel thread parte della gestione della sincronizzazione pu\'f2 essere a carico del programmatore %$% Quali sono le modalit\'e0 di esecuzione di una moderna CPU secondo quanto visto a lezione e nel materiale del corso\
+Scegli una o pi\'f9 alternative:\
+* a. Tre: input, output e kernel\
+* b. Modalit\'e0 kernel e modalit\'e0 controllo accessi\
+* c. Modalit\'e0 esecuzione, modalit\'e0 lettura e modalit\'e0 scrittura\
+* d. Almeno due: kernel e user\
+* e. Modalit\'e0 privilegiata e modalit\'e0 utente \
+* f. Solo la modalit\'e0 kernel\
+* g. Tre: Trasferimento dati, modifica dati, interrupt /&/ Le risposte corrette sono: Almeno due: kernel e user, Modalit\'e0 privilegiata e modalit\'e0 utente %$% Secondo quanto visto nel materiale del corso, relativamente alla architettura SW Round Robin pi\'f9 interrupt per sistemi di elaborazione Bare Metal / Embedded\
+Scegli una o pi\'f9 alternative:\
+* a. Esegue i task uno alla volta e poi si interrompe\
+* b. E' basato su un ciclo principale che si occupa di processamento dei dati, mentre la comunicazione con le periferiche \'e8 implementata tramite routine di interrupt \
+* c. Non richiede la gestione di problematiche relative ad accesso concorrente a dati condivisi fra thread indipendenti\
+* d. Risolve le problematiche relative allo sviluppo di applicazioni indipendenti che debbano condividere la stessa cpu\
+* e. E' basata su un ciclo principale ( loop infinito) che si occupa di gestire sia processamento dati che lettura scrittura dalle periferiche /&/ **Risposta Corretta**\
+\
+E' basato su un ciclo principale che si occupa di processamento dei dati, mentre la comunicazione con le periferiche \'e8 implementata tramite routine di interrupt %$% Relativamente alle modalit\'e0 di utilizzo della CPU da parte dei processi, \'e8 vero che:\
+Scegli una o pi\'f9 alternative:\
+* a. Un processo si dice CPU bound quando occupa la CPU e con molti burst brevi\
+* b. La distribuzione della durata delle sequenze di CPU burst di solito prevede vi siano molte sequenze brevi e poche sequenze lunghe \
+* c. I processi CPU bound sono quelli molto interattivi\
+* d. Si dice CPU burst una sequenza di cicli consecutivi di utilizzo della CPU da parte di un processo \
+* e. Un processo si dice IO bound quando occupa la CPU e con pochi burst lunghi /&/ **Risposta Corretta**\
+\
+Le risposte corrette sono: La distribuzione della durata delle sequenze di CPU burst di solito prevede vi siano molte sequenze brevi e poche sequenze lunghe , Si dice CPU burst una sequenza di cicli consecutivi di utilizzo della CPU da parte di un processo %$% Relativamente ai criteri di scheduling, \'e8 vero che:\
+Scegli una o pi\'f9 alternative:\
+* a. Utilizzo della CPU (CPU utilization) e Tempo di Risposta (response time) sono criteri fra di loro in conflitto \
+* b. Utilizzo della CPU e occupazione della memoria di secondo livello sono criteri fra di loro in conflitto\
+* c. Tempo di completamento medio (turnaround time) e tempo di attesa massimo (maximum waiting time) sono criteri fra di loro in conflitto) \
+* d. Utilizzo della CPU (CPU Utilization) e Utilizzo dei dispositivi di I/O sono criteri fra di loro in conflitto /&/ **Risposta Corretta**\
+\
+ Le risposte corrette sono: Utilizzo della CPU (CPU utilization) e Tempo di Risposta (response time) sono criteri fra di loro in conflitto, Tempo di completamento medio (turnaround time) e tempo di attesa massimo (maximum waiting time) sono criteri fra di loro in conflitto), Utilizzo della CPU (CPU Utilization) e Utilizzo dei dispositivi di I/O sono criteri fra di loro in conflitto %$% *Relativamente ai modelli di multi threading:*\
+\
+* a. Il modello uno a uno prevede che non vengano usate le librerie di supporto agli user thread\
+* b. Il modello molti a uno prevede che il numero dei thread utente sia sempre molto maggiore del numero dei thread kernel\
+* c. Il modello uno a uno \'e8 gestito tramite librerie a livello utente\
+* d. Il modello molti a molti \'e8 l'unico che richiede il supporto del kernel\
+* e. Il modello molti a uno \'e8 possibile solo in caso di supporto del sistema operativo /&/ a. Il modello uno a uno prevede che non vengano usate le librerie di supporto agli user thread %$% *Per quanto spiegato nel materiale del corso, \'e8 vero che il compilatore:*\
+* a. Si occupa di produrre il codice per il salvataggio e ripristino dei registri della CPU\
+* b. Si occupa di calcolare quante istruzioni vanno saltate per ogni jump o branch\
+* c. Trasforma un algoritmo espresso in linguaggio ad alto livello in una sequenza di istruzioni Assembly \
+* d. Si occupa di definire quali registri vengono utilizzati per implementare una funzione\
+* e. Si occupa di produrre il codice per la gestione della memoria automatica /&/ * Trasforma un algoritmo espresso in linguaggio ad alto livello in una sequenza di istruzioni Assembly\
+* Si occupa di produrre il codice per la gestione della memoria automatica\
+* Si occupa di produrre il codice per il salvataggio e ripristino dei registri della CPU\
+* Si occupa di definire quali registri vengono utilizzati per implementare una funzione %$% *Quali sono i modelli fondamentali di comunicazione fra processi (IPC)?*\
+\
+* a. Scambio di messaggi e modularit\'e0\
+* b. Modularit\'e0 e convenienza\
+* c. Condivisione e scambio di memoria\
+* d. Parallelismo e time sharing\
+* e. Memoria condivisa e memoria paginata\
+* f. Memoria condivisa e scambio di messaggi /&/ **RISPOSTA CORRETTA 3**\
+\
+f. Memoria condivisa e scambio di messaggi %$% *Si consideri il seguente scenario:*\
+*Un sistema multiprocessore sul quale opera un'applicazione multithread basato sul many- to-many threading model e che \'e8 l'unico processo in esecuzione.*\
+*Il numero di thread user-level threads \'e8 pi\'f9 grande del numero di processori, e il numero di kernel thread \'e8 uguale al numero di processori.*\
+*Scegli una o pi\'f9 alternative:*\
+* a. Tutti i kernel level thread sono sempre in esecuzione\
+* b. Non sempre tutti gli user level thread sono in esecuzione\
+* c. Nessun processore rimarr\'e0 mai idle\
+* d. E' possibile che tutti i processori siano utilizzati simultaneamente \
+* e. Non \'e8 possibile che tutti i processori siano idle /&/ * E' possibile che tutti i processori siano utilizzati simultaneamente\
+* Non sempre tutti gli user level thread sono in esecuzione %$% *Relativamente al parametro q dello scheduling Round Robin*\
+* a. Se decresce migliora il turnaround medio\
+* b. Se decresce l'algoritmo tende a comportarsi come SJF\
+* c. Se cresce l'algoritmo non tende a comportarsi come FCFS\
+* d. Se cresce diminuisce il context switch overhead \
+* e. Se cresce, cresce anche la cpu utilization /&/ * Se cresce diminuisce il context switch overhead\
+* Se cresce, cresce anche la cpu utilization %$% *Il tempo di attesa in caso di algoritmo di scheduling round robin \'e8:*\
+* a. Il tempo in cui il processo attende prima di ottenere la cpu per il primo burst\
+* b. Il tempo necessario a concludere l'elaborazione\
+* c. Il tempo totale dall'inizio alla fine dell'esecuzione del processo meno il tempo in cui il processo ha utilizzato la cpu, se il processo non va mai in stato waiting\
+* d. La somma degli istanti trascorsi dal processo nella ready queue \
+* e. Il tempo necessario affinch\'e9 il processo produca il primo risultato /&/ * Il tempo totale dall'inizio alla fine dell'esecuzione del processo meno il tempo in cui il processo ha utilizzato la cpu, se il processo non va mai in stato waiting\
+* La somma degli istanti trascorsi dal processo nella ready queue %$% *Relativamente ai criteri di scheduling, \'e8 vero che:*\
+\
+* a. Un criterio \'e8 il turnaround time = tempo intercorso fra l'avvio e il completamento del singolo processo \
+* b. Un criterio \'e8 il Throughput = numero di processi per unit\'e0 di tempo \
+* c. Un criterio \'e8 la % di utilizzo della cpu \
+* d. Un criterio \'e8 il Response time: tempo necessario perch\'e9 un processo inizi una risposta \
+* e. Un criterio \'e8 il tempo di attesa o waiting time = tempo durante il quale il processo non accede alla cpu /&/ * Un criterio \'e8 il turnaround time = tempo intercorso fra l'avvio e il completamento del singolo processo\
+* Un criterio \'e8 il Throughput = numero di processi per unit\'e0 di tempo\
+* Un criterio \'e8 la % di utilizzo della cpu\
+* Un criterio \'e8 il Response time: tempo necessario perch\'e9 un processo inizi una risposta %$% *Per rendere funzionante questo codice, secondo quanto visto a lezione:*\
+\
+[immagine codice assembly]\
+\
+* a. E' sufficiente venga salvato e ripristinato lo stato della funzione sub1\
+* b. Non sono necessarie modifiche\
+* c. E' sufficiente che vengano inserite 4 opportune istruzioni Assembly\
+* d. E' sufficiente che vengano inserite 2 opportune istruzioni Assembly\
+* e. E' indispensabile salvare e ripristinare lo stato da parte delle subroutine sub1 e sub2 /&/ * E' sufficiente che vengano inserite 4 opportune istruzioni Assembly\
+* E' sufficiente venga salvato e ripristinato lo stato della funzione sub1 %$% [immagine schemi a e b]\
+\
+* a. Le pipe utilizzano lo schema b\
+* b. Lo schema a \'e8 riferibile ai socket \
+* c. Lo scambio di messaggi utilizza lo schema b\
+* d. Entrambi gli schemi utilizzano memoria condivisa\
+* e. La memoria condivisa pu\'f2 essere utilizzata per scambiare le informazioni anche bypassando l'intervento del kernel /&/ * Lo schema a \'e8 riferibile ai socket\
+* La memoria condivisa pu\'f2 essere utilizzata per scambiare le informazioni anche bypassando l'intervento del kernel %$% *Relativamente al lancio di un processo (nuova applicazione) da parte di un processo gi\'e0 in esecuzione, su sistema linux, \'e8 vero che:*\
+\
+* a. Il processo padre invoca la system call exec cui passa come parametro il nome completo del file eseguibile della nuova applicazione\
+* b. Il processo figlio invoca la fork cui passa come parametro il nome completo del file eseguibile della nuova applicazione\
+* c. Il processo padre invoca la fork, il figlio lancia direttamente l'eseguibile con uno script a linea di comando\
+* d. Il processo padre invoca la fork, il figlio invoca la exec cui passa come parametro il nome completo del file eseguibile della nuova applicazione \
+* e. Il processo figlio invoca la fork, il padre invoca la exec cui passa come parametro il nome completo del file eseguibile della nuova applicazione /&/ d. Il processo padre invoca la fork, il figlio invoca la exec cui passa come parametro il nome completo del file eseguibile della nuova applicazione %$% *Relativamente alle modalit\'e0 di utilizzo della CPU da parte dei processi, \'e8 vero che:*\
+\
+* a. Un processo si dice CPU bound quando occupa la CPU e con molti burst brevi\
+* b. I processi CPU bound sono quelli molto interattivi\
+* c. La distribuzione della durata delle sequenze di CPU burst di solito prevede vi siano molte sequenze brevi e poche sequenze lunghe \
+* d. Si dice CPU burst una sequenza di cicli consecutivi di utilizzo della CPU da parte di un processo \
+* e. Un processo si dice IO bound quando occupa la CPU e con pochi burst lunghi /&/ * La distribuzione della durata delle sequenze di CPU burst di solito prevede vi siano molte sequenze brevi e poche sequenze lunghe\
+* Si dice CPU burst una sequenza di cicli consecutivi di utilizzo della CPU da parte di un processo %$% *Relativamente al flusso di esecuzione in caso di interrupt, descritto dallo schema seguente, \'e8 vero che:*\
+\
+[immagine schema flusso di esecuzione]\
+\
+* a. L'interrupt si avvia sovrascrivendo il contenuto del PC con indirizzo della prima istruzione della routine di interrupt e salva in HW l'indirizzo della istruzione successiva da eseguire\
+* b. Quando l'interrupt si verifica durante l'esecuzione di una istruzione assembly del ciclo principale l'istruzione stessa viene portata a termine prima di saltare alla prima istruzione della routine di interrupt \
+* c. L'interrupt si verifica sempre a causa della sollecitazione dell'apposito ingresso HW della CPU\
+* d. L'interrupt si attiva correttamente al flusso normale di esecuzione, in maniera sincrona \
+* e. La routine di interrupt si fa carico in SW di salvare e ripristinare il contenuto dei registri sporcati durante la sua esecuzione /&/ * Quando l'interrupt si verifica durante l'esecuzione di una istruzione assembly del ciclo principale l'istruzione stessa viene portata a termine prima di saltare alla prima istruzione della routine di interrupt\
+* La routine di interrupt si fa carico in SW di salvare e ripristinare il contenuto dei registri sporcati durante la sua esecuzione\
+* L'interrupt si verifica sempre a causa della sollecitazione dell'apposito ingresso HW della CPU\
+* L'interrupt si avvia sovrascrivendo il contenuto del PC con indirizzo della prima istruzione della routine di interrupt e salva in HW l'indirizzo della istruzione successiva da eseguire %$% * Per quanto spiegato nel materiale del corso, \'e8 vero che l'assembler:\
+ * a. Si occupa di produrre il codice per il salvataggio e ripristino dei registri della CPU\
+ * b. Si occupa di risolvere le label presenti nel codice assembly\
+ * c. Trasforma un algoritmo espresso in linguaggio ad alto livello in una sequenza di istruzioni Assembly\
+ * d. Si occupa di tradurre le istruzioni Assembly espresse in formato testuale in stringhe di bit\
+ * e. Si occupa di calcolare quante istruzioni vanno saltate per ogni jump o branch\
+ * f. Si occupa di produrre il codice per la gestione della memoria automatica\
+ * g. Si occupa di definire quali registri vengono utilizzati per implementare una funzione /&/ Le risposte corrette sono: Si occupa di calcolare quante istruzioni vanno saltate per ogni jump o branch, Si occupa di tradurre le istruzioni Assembly espresse in formato testuale in stringhe di bit, Si occupa di risolvere le label presenti nel codice assembly %$% * Relativamente ai threads \'e8 vero che:\
+ * a. I thread utente sono schedati tramite implementazione a livello di libreria utente \
+ * b. La cancellazione di un thread utente ha lo stesso costo della cancellazione di un thread kernel\
+ * c. I thread utente massimizzano la concorrenza rispetto ai thread kernel\
+ * d. Rispetto alla percentuale di utilizzo della cpu non ci sono correlazioni con la tipologia di thread utilizzati\
+ * e. I thread utente hanno meno overhead dei thread kernel /&/ Le risposte corrette sono: I thread utente hanno meno overhead dei thread kernel, I thread utente sono schedati tramite implementazione a livello di libreria utente %$% * Si consideri il seguente scenario:\
+Un sistema multiprocessore sul quale opera un applicativo multithread basato sul many- to-many threading model e che \'e8 l'unico processo in esecuzione.\
+Il numero di thread user- level threads \'e8 pi\'f9 grande del numero di processori, e il numero di kernel thread \'e8 uguale al numero di processori.\
+ * a. Nessun processore rimarr\'e0 mai idle \
+ * b. Non sempre tutti gli user level thread sono in esecuzione\
+ * c. Tutti i kernel level thread sono sempre in esecuzione\
+ * d. Non \'e8 possibile che tutti i processori siano idle\
+ * e. \'c8 possibile che tutti i processori siano utilizzati simultaneamente /&/ Le risposte corrette sono: \'c8 possibile che tutti i processori siano utilizzati simultaneamente , Non sempre tutti gli user level thread sono in esecuzione %$% * Relativamente ai criteri di scheduling, \'e8 vero che:\
+ * a. Un criterio \'e8 il Response time: tempo necessario perch\'e9 un processo inizi una risposta\
+ * b. Un criterio \'e8 il turnaround time = tempo intercorso fra l'avvio e il completamento del singolo processo \
+ * c. Un criterio \'e8 la % di utilizzo della cpu \
+ * d. Un criterio \'e8 il Throughput = numero di processi per unit\'e0 di tempo \
+ * e. Un criterio \'e8 il tempo di attesa o waiting time = tempo durante il quale il processo non accede alla cpu /&/ Le risposte corrette sono: Un criterio \'e8 il turnaround time = tempo intercorso fra l'avvio e il completamento del singolo processo, Un criterio \'e8 il Response time: tempo necessario perch\'e9 un processo inizi una risposta, Un criterio \'e8 il Throughput = numero di processi per unit\'e0 di tempo, Un criterio \'e8 la % di utilizzo della cpu %$% * Il problema produttore consumatore affrontato con la memoria condivisa richiede l'utilizzo di un buffer:\
+ * a. Sempre illimitato, in modo che il consumatore non deve mai attendere nuovi oggetti\
+ * b. Limitato, il produttore dovr\'e0 attendere in caso di buffer vuoto.\
+ * c. Limitato, il consumatore dovr\'e0 attendere in caso di buffer vuoto. \
+ * d. Limitato, il produttore non potr\'e0 inserire nuovi oggetti finch\'e9 l'ultimo non \'e8 stato consumato.\
+ * e. Limitato: lo scambio avviene sempre tramite utilizzo di contatori /&/ La risposta corretta \'e8: Limitato, il consumatore dovr\'e0 attendere in caso di buffer vuoto. %$% * Il tempo di attesa in caso di algoritmo di scheduling round robin \'e8:\
+ * a. Il tempo in cui il processo attende prima di ottenere la cpu per il primo burst\
+ * b. Il tempo necessario a concludere l'elaborazione\
+ * c. Il tempo totale dall'inizio alla fine dell'esecuzione del processo meno il tempo in cui il processo ha utilizzato la cpu, se il processo non va mai in stato waiting\
+ * d. Il tempo necessario affinch\'e9 il processo produca il primo risultato\
+ * e. La somma degli istanti trascorsi dal processo nella ready queue /&/ * Risposta parzialmente esatta.\
+Hai selezionato correttamente 1. \
+Le risposte corrette sono: La somma degli istanti trascorsi dal processo nella ready queue, Il tempo totale dall'inizio alla fine dell'esecuzione del processo meno il tempo in cui il processo ha utilizzato la cpu, se il processo non va mai in stato waiting %$% * Nel caso di Multilevel queue scheduling con feedback \'e8 vero che:\
+ * a. Utilizza l'algoritmo FCFS in caso di processi con lo stesso tempo di burst\
+ * b. Prevede code di processi gestite con algoritmo Round Robin, ciascuna con un durata del quanto di tempo diversa \
+ * c. Prevede che il feedback possa modificare le priorit\'e0 in modo da evitare l'effetto aging\
+ * d. I processi sono assegnati permanentemente ad una coda\
+ * e. La ready queue \'e8 suddivisa in code separate /&/ * Risposta errata.\
+Le risposte corrette sono: La ready queue \'e8 suddivisa in code separate, Prevede code di processi gestite con algoritmo Round Robin, ciascuna con un durata del quanto di tempo diversa %$% * Relativamente ai criteri di scheduling, \'e8 vero che:\
+ * a. Tempo di completamento medio (turnaround time) e tempo di attesa massimo (maximum waiting time) sono criteri fra di loro in conflitto) \
+ * b. Utilizzo della CPU e occupazione della memoria di secondo livello sono criteri fra di loro in conflitto\
+ * c. Utilizzo della CPU (CPU Utilization) e Utilizzo dei dispositivi di I/O sono criteri fra di loro in conflitto \
+ * d. Utilizzo della CPU (CPU utilization) e Tempo di Risposta (response time) sono criteri fra di loro in conflitto /&/ Le risposte corrette sono: Utilizzo della CPU (CPU utilization) e Tempo di Risposta (response time) sono criteri fra di loro in conflitto, Tempo di completamento medio (turnaround time) e tempo di attesa massimo (maximum waiting time) sono criteri fra di loro in conflitto), Utilizzo della CPU (CPU Utilization) e Utilizzo dei dispositivi di I/O sono criteri fra di loro in conflitto %$% * Un sistema monoprogrammato\
+ * a. Si basa sempre su architettura monolitica del Sistema Operativo\
+ * b. Non utilizza sempre i registri base e limite per la protezione della memoria \
+ * c. \'c8 basato su sistema HW monoprocessore\
+ * d. Non supporta pi\'f9 processi \
+ * e. Implementa il paradigma della multiprogrammazione in maniera monolitica /&/ Un sistema monoprogrammato \'e8 in grado di svolgere una applicazione alla volta. Il programmatore si fa carico di sincronizzare attivit\'e0 diverse\
+Le risposte corrette sono: Non utilizza sempre i registri base e limite per la protezione della memoria, Non supporta pi\'f9 processi %$% * Relativamente allo schema di seguito relativo alla comunicazione fra processi, \'e8 vero che:\
+ * a. Entrambi gli schemi utilizzano memoria condivisa\
+ * b. Le pipe utilizzano lo schema b\
+ * c. Lo schema a \'e8 riferibile ai socket \
+ * d. Lo scambio di messaggi utilizza lo schema b \
+ * e. La memoria condivisa pu\'f2 essere utilizzata per scambiare le informazioni anche bypassando l'intervento del kernel /&/ * Risposta corretta.\
+Le risposte corrette sono: Lo schema a \'e8 riferibile ai socket, La memoria condivisa pu\'f2 essere utilizzata per scambiare le informazioni anche bypassando l'intervento del kernel %$% * Cos'\'e8 il frame di attivazione della funzione?\
+ * a. Una zona di memoria che serve, fra le altre cose, a salvare tutti i parametri passati alla funzione invocata\
+ * b. Uno speciale zona di memoria da attivare in caso di frame non disponibile in memoria\
+ * c. Una porzione di memoria allocata alla invocazione di una funzione che ha la dimensione dei dati necessari alla funzione per il suo ciclo di vita \
+ * d. Una parte della memoria direttamente visibile al programmatore\
+ * e. Una porzione di memoria di grandezza fissata ma modificabile con una system call /&/ * La risposta corretta \'e8: Una porzione di memoria allocata alla invocazione di una funzione che ha la dimensione dei dati necessari alla funzione per il suo ciclo di vita %$% * Il PCB di un processo:\
+ * a. Non contiene dati sullo scheduling della CPU\
+ * b. Viene utilizzato esclusivamente nei sistemi Linux\
+ * c. Contiene fra le altre cose lo stato del processo e il valore dei registri della CPU\
+ * d. Serve al compilatore per dimensionare lo stack\
+ * e. Contiene solo informazioni sullo stato del processo /&/ * La risposta corretta \'e8: Contiene fra le altre cose lo stato del processo e il valore dei registri della CPU %$% * **Domanda:** Il PCB di un processo:\
+ * a. Non contiene dati sullo scheduling della CPU\
+ * b. Serve al compilatore per dimensionare lo stack\
+ * c. Contiene fra le altre cose lo stato del processo e il valore dei registri della CPU\
+ * d. Viene utilizzato esclusivamente nei sistemi Linux\
+ * e. Contiene solo informazioni sullo stato del processo /&/ * **Risposta:** Contiene fra le altre cose lo stato del processo e il valore dei registri della CPU %$% * **Domanda:** Se la invocazione della fork() non va a buon fine \'e8 vero che:\
+ * a. Sia il processo figlio che il processo padre vengono terminati\
+ * b. Al processo figlio viene restituito il valore -1\
+ * c. Al processo padre viene restituito il valore -1\
+ * d. Al processo figlio viene assegnato il pid 1\
+ * e. Il processo figlio viene terminato /&/ * **Risposta:** Al processo padre viene restituito il valore -1 %$% * **Domanda:** Relativamente ai criteri di scheduling, \'e8 vero che:\
+ * a. Un criterio \'e8 il turnaround time = tempo intercorso fra l'avvio e il completamento del singolo processo\
+ * b. Un criterio \'e8 la % di utilizzo della cpu\
+ * c. Un criterio \'e8 il Throughput = numero di processi per unit\'e0 di tempo\
+ * d. Un criterio \'e8 il Response time: tempo necessario perch\'e9 un processo inizi una risposta\
+ * e. Un criterio \'e8 il tempo di attesa o waiting time = tempo durante il quale il processo non accede alla cpu /&/ * **Risposta:** \
+ * Un criterio \'e8 il turnaround time = tempo intercorso fra l'avvio e il completamento del singolo processo\
+ * Un criterio \'e8 il Response time: tempo necessario perch\'e9 un processo inizi una risposta\
+ * Un criterio \'e8 il Throughput = numero di processi per unit\'e0 di tempo\
+ * Un criterio \'e8 la % di utilizzo della cpu %$% * **Domanda:** Nel caso di Multilevel queue scheduling con feedback \'e8 vero che:\
+ * a. Prevede code di processi gestite con algoritmo Round Robin, ciascuna con un durata del quanto di tempo diversa\
+ * b. La ready queue \'e8 suddivisa in code separate\
+ * c. Utilizza l'algoritmo FCFS in caso di processo con lo stesso tempo di burst\
+ * d. I processi sono assegnati permanentemente ad una coda\
+ * e. Prevede che il feedback possa modificare le priorit\'e0 in modo da evitare l'effetto aging /&/ * La ready queue \'e8 suddivisa in code separate\
+ * Prevede code di processi gestite con algoritmo Round Robin, ciascuna con un durata del quanto di tempo diversa %$% * **Domanda:** Relativamente ai thread, \'e8 vero che:\
+ * a. Un thread a livello utente non pu\'f2 mai scrivere sullo stack di un altro thread\
+ * b. Un thread a livello kernel di un processo pu\'f2 usare le syscall senza rischiare di bloccare gli altri thread dello stesso processo\
+ * c. Utilizzando i kernel thread parte della gestione della sincronizzazione pu\'f2 essere a carico del programmatore\
+ * d. Possono ma non necessariamente devono, condividere i file, il codice, lo stack e i dati globali\
+ * e. A livello utente possono condividere i file, mentre a livello kernel non possono /&/ * **Risposta:** \
+ * Un thread a livello kernel di un processo pu\'f2 usare le syscall senza rischiare di bloccare gli altri thread dello stesso processo\
+ * Utilizzando i kernel thread parte della gestione della sincronizzazione pu\'f2 essere a carico del programmatore %$% * **Domanda:** Relativamente alla problematica della inversione delle priorit\'e0 nell'accesso alle risorse, quale potrebbe essere una soluzione sempre valida?\
+ * a. Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 superiore a quella attuale\
+ * b. Quando un processo a priorit\'e0 alta richiede una risorsa forza la preemption della risorsa\
+ * c. Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 di un altro processo\
+ * d. Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 alta possibile\
+ * e. Quando un processo a priorit\'e0 alta richiede una risorsa i processi a priorit\'e0 intermedia vengono messi in attesa\
+ * f. Quando un processo ottiene l'accesso a una risorsa viene messo in prima posizione nella coda di waiting /&/ * **Risposta:** Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 alta possibile %$% * **Domanda:** Quali di queste descrizioni del concetto di processo sono corrette\
+ * a. Una infrastruttura software di supporto alla comunicazione fra le applicazioni\
+ * b. Una infrastruttura software che ha anche lo scopo di far si che il programma in esecuzione percepisca di essere l'unico a usufruire di tutte le risorse del sistema di elaborazione, anche se le condivide con altri programmi in esecuzione\
+ * c. Una infrastruttura software di supporto all'accesso allo scheduling\
+ * d. Una infrastruttura software di supporto alla monoprogrammazione\
+ * e. Una infrastruttura software di supporto all'accesso alle periferiche\
+ * f. Una infrastruttura software che consente al kernel di accedere alle risorse condivise /&/ * **Risposta:** Una infrastruttura software che ha anche lo scopo di far si che il programma in esecuzione percepisca di essere l'unico a usufruire di tutte le risorse del sistema di elaborazione, anche se le condivide con altri programmi in esecuzione %$% * **Domanda:** Secondo quanto visto nel materiale del corso, la funzionalit\'e0 della load word dell'ISA MIPS, caso della specifica espressa in linguaggio Assembly: lw $3, 0x0100($2) \'e8 la seguente\
+ * a. REG[$3] = REG[$2]+Mem[0x0100]\
+ * b. REG[$3] = Mem[REG[$2]+0x0100]\
+ * c. Mem[REG[$2]+0x0100]=REG[$3]\
+ * d. Mem[$3] = REG[$2]+0x0100\
+ * e. REG[$2] = Mem[REG[$3]+0x0100] /&/ * **Risposta:** REG[$3] = Mem[REG[$2]+0x0100] %$% Relativamente alla problematica della inversione delle priorit\'e0 nell'accesso alle risorse, quale potrebbe essere una soluzione sempre valida?\
+\
+b. Nell'esempio visto nel materiale del corso, in caso di inversione di priorit\'e0, il processo a priorit\'e0 intermedia acquisisce priorit\'e0 superiore rispetto al processo a priorit\'e0 alta\
+d. Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 di un altro processo\
+e. Quando un processo a priorit\'e0 alta richiede una risorsa forza la preemption della risorsa\
+f. Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 alta possibile\
+g. Quando un processo ottiene l'accesso a una risorsa viene messo in prima posizione nella coda di waiting\
+h. Nell'esempio visto nel materiale del corso, in caso di inversione di priorit\'e0, il processo a priorit\'e0 bassa va in esecuzione al posto del processo a priorit\'e0 alta /&/ * **Risposta:** \
+ * Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 alta possibile\
+ * Nell'esempio visto nel materiale del corso, in caso di inversione di priorit\'e0, il processo a priorit\'e0 bassa va in esecuzione al posto del processo a priorit\'e0 alta %$% * **Domanda:** Per quanto spiegato nel materiale del corso, \'e8 vero che il formato di una istruzione:\
+ * a. Non dipende dall'Instruction Set Architecture\
+ * b. Specifica come i simboli di una istruzione Assembly vengono trasformati in opportuni campi di bit\
+ * c. Non dipende dal compilatore\
+ * d. Produce i bit necessari per indirizzare registri sorgenti\
+ * e. Viene utilizzato dal compilatore per decidere la logica di salvataggio e ripristino del contesto\
+ * f. Specifica di quanti bit \'e8 composto l'opcode di una istruzione\
+ * g. E' sempre uguale per ogni istruzione dell'Instruction Set /&/ * **Risposta:** \
+ * Specifica come i simboli di una istruzione Assembly vengono trasformati in opportuni campi di bit\
+ * Specifica di quanti bit \'e8 composto l'opcode di una istruzione\
+ * Produce i bit necessari per indirizzare registri sorgenti\
+ * Non dipende dal compilatore %$% * **Domanda:** Il problema produttore consumatore affrontato con la memoria condivisa richiede l'utilizzo di un buffer:\
+ * a. Limitato: lo scambio avviene sempre tramite utilizzo di contatori\
+ * b. Limitato: il produttore dovr\'e0 attendere in caso di buffer vuoto.\
+ * c. Illimitato, il produttore non potr\'e0 inserire nuovi oggetti finch\'e9 l'ultimo non \'e8 stato consumato.\
+ * d. Sempre illimitato, in modo che il consumatore non deve mai attendere nuovi oggetti\
+ * e. Limitato: il consumatore dovr\'e0 attendere in caso di buffer vuoto. /&/ * **Risposta:** Limitato: il consumatore dovr\'e0 attendere in caso di buffer vuoto %$% * **Domanda:** Relativamente ai threads \'e8 vero che:\
+ * a. La cancellazione di un thread utente ha lo stesso costo della cancellazione di un thread kernel\
+ * b. I thread utente hanno meno overhead dei thread kernel\
+ * c. I thread utente massimizzano la concorrenza rispetto ai thread kernel\
+ * d. Rispetto alla percentuale di utilizzo della cpu non ci sono correlazioni con la tipologia di thread utilizzati\
+ * e. I thread utente sono schedati tramite implementazione a livello di libreria utente /&/ * **Risposta:** \
+ * I thread utente hanno meno overhead dei thread kernel\
+ * I thread utente sono schedati tramite implementazione a livello di libreria utente %$% A cosa si riferisce il termine "scheduling" in un sistema operativo?\
+a) All'allocazione della memoria centrale ai processi.\
+b) Alla gestione delle periferiche di I/O.\
+c) Alla decisione di quale processo eseguire in un dato istante.\
+d) Alla sincronizzazione tra processi concorrenti. /&/ Riquadro giallo:\
+c) Alla decisione di quale processo eseguire in un dato istante. %$% Quale delle seguenti affermazioni sullo scheduler a breve termine \'e8 FALSA?\
+a) Si attiva ogni volta che un processo termina o si blocca.\
+b) Seleziona il processo da eseguire tra quelli pronti.\
+c) Si attiva solo in presenza di pi\'f9 processori.\
+d) Assegna la CPU al processo selezionato. /&/ Riquadro giallo:\
+c) Si attiva solo in presenza di pi\'f9 processori. %$% Cosa si intende per starvation in un sistema operativo?\
+a) Un processo che non riesce ad ottenere le risorse di cui ha bisogno.\
+b) Un processo che viene interrotto continuamente da altri processi.\
+c) Un processo che rimane bloccato in uno stato di attesa indefinito.\
+d) Un processo che termina in modo anomalo. /&/ Riquadro giallo:\
+a) Un processo che non riesce ad ottenere le risorse di cui ha bisogno. %$% Quale dei seguenti algoritmi di scheduling NON \'e8 preemptive?\
+a) Round Robin.\
+b) First-Come, First-Served (FCFS).\
+c) Shortest Job First (SJF).\
+d) Priority Scheduling. /&/ Riquadro giallo:\
+b) First-Come, First-Served (FCFS). %$% In cosa consiste l'algoritmo di scheduling Round Robin?\
+a) I processi vengono eseguiti nell'ordine di arrivo.\
+b) I processi vengono eseguiti in base alla loro priorit\'e0.\
+c) I processi vengono eseguiti a turno per un tempo massimo definito.\
+d) I processi vengono eseguiti in base al tempo stimato di completamento. /&/ Riquadro giallo:\
+c) I processi vengono eseguiti a turno per un tempo massimo definito. %$% Quale dei seguenti algoritmi di scheduling pu\'f2 causare starvation?\
+a) Round Robin.\
+b) First-Come, First-Served (FCFS).\
+c) Shortest Job First (SJF).\
+d) Priority Scheduling. /&/ Riquadro giallo:\
+d) Priority Scheduling. %$% Quale dei seguenti NON \'e8 un obiettivo tipico degli algoritmi di scheduling?\
+a) Massimizzare l'utilizzo della CPU.\
+b) Minimizzare il tempo di risposta dei processi.\
+c) Garantire la fairness tra i processi.\
+d) Massimizzare il numero di processi in esecuzione contemporanea. /&/ Riquadro giallo:\
+d) Massimizzare il numero di processi in esecuzione contemporanea. %$% Quale dei seguenti termini NON \'e8 legato al concetto di scheduling?\
+a) Quantum.\
+b) Context switch.\
+c) Thread.\
+d) Page fault. /&/ Riquadro giallo:\
+d) Page fault. %$% In cosa consiste la tecnica di scheduling multilivello?\
+a) Utilizzo di diversi algoritmi di scheduling per diverse code di processi.\
+b) Assegnazione di priorit\'e0 diverse ai processi in base al loro tipo.\
+c) Suddivisione del tempo di CPU tra i processi in modo dinamico.\
+d) Esecuzione di pi\'f9 processi contemporaneamente su diversi processori. /&/ Riquadro giallo:\
+a) Utilizzo di diversi algoritmi di scheduling per diverse code di processi. %$% Cosa si intende per scheduling real-time?\
+a) Scheduling di processi con vincoli temporali rigidi.\
+b) Scheduling di processi interattivi.\
+c) Scheduling di processi batch.\
+d) Scheduling di processi in background. /&/ Riquadro giallo:\
+a) Scheduling di processi con vincoli temporali rigidi. %$% Quale delle seguenti affermazioni relative al time sharing \'e8 VERA?\
+a) \'c8 una tecnica di scheduling adatta ai sistemi batch.\
+b) Permette a pi\'f9 utenti di utilizzare il sistema contemporaneamente.\
+c) Assegna la CPU ad un processo fino al suo completamento.\
+d) \'c8 basato sull'utilizzo di quantum di tempo molto lunghi. /&/ Riquadro giallo:\
+b) Permette a pi\'f9 utenti di utilizzare il sistema contemporaneamente. %$% Quale dei seguenti algoritmi di scheduling \'e8 tipicamente utilizzato nei sistemi real-time?\
+a) First-Come, First-Served (FCFS).\
+b) Shortest Job First (SJF).\
+c) Round Robin.\
+d) Earliest Deadline First (EDF). /&/ Riquadro giallo:\
+d) Earliest Deadline First (EDF). %$% Nel caso di Multilevel queue scheduling con feedback \'e8 vero che:\
+Scegli una o pi\'f9 alternative:\
+a. Prevede che il feedback possa modificare le priorit\'e0 in\
+modo da evitare l'effetto aging\
+b. La ready queue \'e8 suddivisa in code separate\
+c. Utilizza l'algoritmo FCFS in caso di processo\
+con lo stesso tempo di burst\
+d. I processi sono assegnati permanentemente ad una coda\
+e. Prevede code di processi gestite con algoritmo Round Robin, ciascuna con un durata del quanto di tempo diversa /&/ Le risposte corrette sono: La ready queue \'e8 suddivisa in code separate, Prevede code di processi gestite con algoritmo Round\
+Robin, ciascuna con un durata del quanto di tempo diversa %$% Relativamente ai modelli di multi threading:\
+Scegli una o pi\'f9 alternative:\
+a. Il modello molti a molti \'e8 l'unico che richiede il supporto del kernel\
+b. Il modello molti a uno \'e8 possibile solo in caso di supporto del sistema operativo\
+c. Il modello uno a uno prevede che non vengano usate le librerie di supporto agli\
+user thread\
+d. Il modello uno a uno \'e8 gestito tramite librerie a livello utente\
+e. Il modello molti a uno prevede che il numero dei thread utente sia sempre molto\
+maggiore del numero dei thread kernel /&/ La risposta corretta \'e8: Il modello uno a uno prevede che non vengano usate le librerie di supporto agli user thread %$% Quali sono i modelli fondamentali di comunicazione fra processi (IPC)\
+Scegli una o pi\'f9 alternative:\
+a. Modularit\'e0 e convenienza\
+b. Parallelismo e time sharing \
+c. Memoria condivisa e memoria paginata\
+d. Memoria condivisa e scambio di\
+messaggi\
+e. Scambio di messaggi e modularit\'e0\
+f. Condivisione e scambio di memoria Falso. I modelli possibili sono Memoria condivisa e scambio di messaggi /&/ La risposta corretta \'e8: Memoria condivisa e scambio di messaggi %$% Se la invocazione della fork() non va a buon fine \'e8 vero che:\
+Scegli una o pi\'f9 alternative:\
+a. Al processo figlio viene assegnato il pid 1\
+b. Al processo figlio viene restituito il valore -1\
+c. Sia il processo figlio che il processo padre vengono terminati\
+d. Il processo figlio viene terminato\
+e. Al processo padre viene restituito il valore -1 /&/ Risposta corretta.\
+La risposta corretta \'e8: Al processo padre viene restituito il valore -1 %$% Si definisce sistema Bare Metal\
+Scegli una o pi\'f9 alternative:\
+a. Un sistema di elaborazione con HW che supporta direttamente un sistema di elaborazione, senza macchine virtuali\
+coinvolte\
+b. Un sistema HW in grado di implementare istruzioni Assembly di un programma eseguibile senza che sia stato\
+introdotto un sistema operativo\
+c. Qualunque sistema di elaborazione HW SW\
+d. Un sistema di elaborazione HW privo di sistema operativo \
+e. Un sistema operativo che gira su un sistema hardware senza visualizzazione /&/ Le risposte corrette sono: Un sistema di elaborazione HW privo di sistema operativo, Un sistema HW in grado di implementare\
+istruzioni Assembly di un programma eseguibile senza che sia stato introdotto un sistema operativo %$% Relativamente alla problematica della inversione delle priorit\'e0 nell'accesso alle risorse, quale potrebbe essere una soluzione sempre\
+valida?\
+Scegli una o pi\'f9 alternative:\
+a. Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 superiore a quella attuale\
+b. Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 alta possibile \
+c. Quando un processo ottiene l'accesso a una risorsa viene messo\
+in prima posizione nella coda di waiting\
+d. Quando un processo a priorit\'e0 alta richiede una risorsa i processi a priorit\'e0 intermedia vengono messi in attesa\
+e. Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 di un altro processo\
+f. Quando un processo a priorit\'e0 alta richiede una risorsa forza la preemption della risorsa /&/ La risposta corretta \'e8: Quando un processo ottiene l'accesso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 alta\
+possibile %$% Il tempo di attesa in caso di algoritmo di scheduling round robin \'e8:\
+Scegli una o pi\'f9 alternative:\
+a. Il tempo necessario affinch\'e9 il processo produca il primo risultato\
+b. La somma degli istanti trascorsi dal processo nella ready queue\
+c. Il tempo in cui il processo attende prima di ottenere la cpu per\
+il primo burst\
+d. Il tempo necessario a concludere l'elaborazione\
+e. Il tempo totale dall'inizio alla fine dell'esecuzione del processo meno il\
+tempo in cui il processo ha utilizzato la cpu, se il processo non va mai in\
+stato waiting /&/ Le risposte corrette sono: La somma degli istanti trascorsi dal processo nella ready queue, Il tempo totale dall'inizio alla fine\
+dell'esecuzione del processo meno il tempo in cui il processo ha utilizzato la cpu, se il processo non va mai in stato waiting %$% Relativamente al seguente schema che codifica gli stati di esecuzione di un processo \'e8 vero che:\
+Scegli una o pi\'f9 alternative: (\'e8 lo schema new\uc0\u8594 ready\u8594 waitin\u8594 running\u8594 terminated con il loop ready\u8594 running\u8594 ready)\
+a. Il passaggio da running a waiting pu\'f2 dipendere da una decisione dello scheduler\
+b. Il passaggio da ready a running avviene sulla base di una decisione dell'algoritmo di scheduling \
+c. Esiste una sola coda di processi waiting e una sola coda di processi ready\
+d. Il passaggio da waiting a ready avviene anche sulla base di una decisione dello scheduler\
+e. Il passaggio da running a ready dipende dal timer /&/ Risposta corretta.\
+Le risposte corrette sono: Il passaggio da ready a running avviene sulla base di una decisione dell'algoritmo di scheduling, Il\
+passaggio da running a ready dipende dal timer %$% Circa la funzionalit\'e0 di interrupt\
+Scegli una o pi\'f9 alternative:\
+a. Alla conclusione della routine ripristina sempre il valore del registro 31 in caso di ISA MIPS\
+b. E' una funzionalit\'e0 esclusivamente software\
+c. Via software si occupa prima di salvare e quindi di ripristinare lo stato di tutti i registri interni del processore\
+d. Consente l'esecuzione di sottoprogrammi in maniera asincrona rispetto al flusso di esecuzione principale \
+e. Esegue codice in modalit\'e0 utente /&/ La risposta corretta \'e8: Consente l'esecuzione di sottoprogrammi in maniera asincrona rispetto al flusso di esecuzione principale %$% Relativamente ai threads \'e8 vero che:\
+Scegli una o pi\'f9 alternative:\
+a. La cancellazione di un thread utente ha lo stesso costo della cancellazione di un thread kernel\
+b. I thread utente sono schedati tramite implementazione a livello di libreria utente \
+c. I thread utente hanno meno overhead dei thread kernel\
+d. Rispetto alla percentuale di utilizzo della cpu non ci sono correlazioni con la tipologia di thread utilizzati\
+e. I thread utente massimizzano la concorrenza rispetto ai thread kernel /&/ Le risposte corrette sono: I thread utente hanno meno overhead dei thread kernel, I thread utente sono schedati tramite implementazione a livello di libreria utente %$% Per quanto spiegato nel materiale del corso, \'e8 vero che il compilatore:\
+Scegli una o pi\'f9 alternative:\
+a. Si occupa di produrre il codice per il salvataggio e ripristino dei registri della CPU\
+b. Trasforma un algoritmo espresso in linguaggio ad alto livello in una sequenza di istruzioni Assembly \
+c. Si occupa di calcolare quante istruzioni vanno saltate per ogni jump o branch \
+d. Si occupa di definire quali registri vengono utilizzati per implementare una funzione \
+e. Si occupa di produrre il codice per la gestione della memoria automatica /&/ Le risposte corrette sono: Trasforma un algoritmo espresso in linguaggio ad alto livello in una sequenza di istruzioni Assembly, Si\
+occupa di produrre il codice per la gestione della memoria automatica, Si occupa di produrre il codice per il salvataggio e ripristino\
+dei registri della CPU, Si occupa di definire quali registri vengono utilizzati per implementare una funzione %$% inversione delle priorit\'e0 nell'accesso alle risorse, soluzione sempre valida?\
+\
+a. Quando un processo ottiene l'acceso a una risorsa acquisisce temporaneamente la priorit\'e0 di un altro processo\
+b. Nell'esempio visto nel materiale del corso, in caso di inversione di priorit\'e0, il processo a priorit\'e0 bassa va in\
+esecuzione al posto del processo a priorit\'e0 alta\
+\
+d. Quando un processo ottiene l'acceso a una risorsa viene messo in prima posizione nella coda di waiting\
+e. Quando un processo ottiene l'acceso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 alta possibile \
+f. Quando un processo ottiene l'acceso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 bassa possibile\
+g. Quando un processo a priorit\'e0 alta richiede una risorsa forza la preemption della risorsa\
+h. Quando un processo a priorit\'e0 alta richiede una risorsa i processi a priorit\'e0 intermedia vengono messi in attesa /&/ Le risposte corrette sono: Quando un processo ottiene l'acceso a una risorsa acquisisce temporaneamente la priorit\'e0 pi\'f9 alta\
+possibile, Nell'esempio visto nel materiale del corso, in caso di inversione di priorit\'e0, il processo a priorit\'e0 bassa va in esecuzione\
+al posto del processo a priorit\'e0 alta %$% Relativamente alla istruzione BEQ: \
+branch if equal \
+beq $2,$3,label 1\
+if(regs[$2] == regs$3]) PC = PC+4+imm\
+Scegli una o pi\'f9 alternative:\
+a.\
+Il PC viene indirizzato in maniera assoluta\
+\
+b.\
+Il PC viene incrementato di 4 e non di uno perch\'e9 le istruzioni sono a 32 bit\
+\
+c.\
+Il campo Imm quantifica quante istruzioni verranno eventualmente saltate\
+\
+d.\
+Il valore Imm dipende dalla label. Il calcolo di Imm viene svolto dal compilatore\
+\
+e.\
+Il PC viene incrementato di 4 perch\'e9 l'ISA MIPS supporta anche dai a 16 bit /&/ Le risposte corrette sono: Il PC viene incrementato di 4 e non di uno perch\'e9 le istruzioni sono a 32 bit, Il campo Imm quantifica quante istruzioni verranno eventualmente saltate %$% Secondo quanto visto nel materiale del corso, la funzionalit\'e0 della load word dell'ISA MIPS, caso della specifica espressa in linguaggio Assembly:\
+\
+lw$3, 0x0100($2) \
+\
+\'e8 la seguente\
+\
+Domanda 7Scegli una o pi\'f9 alternative:\
+a.\
+Mem[$3] = REGS[$2]+0x0100\
+\
+b.\
+REGS[$3] = Mem(REGS[$2]+0x0100)\
+c.\
+Mem(REGS[$2]+0x0100)=REGS[$3]\
+d.\
+REGS[$2] = Mem(REGS[$3]+0x0100)\
+e.\
+REGS[$3] = REGS[$2]+Mem[0x0100] /&/ Risposta corretta.\
+la funzionalit\'e0 corretta \'e8:\
+\
+REGS[$3] = Mem(REGS[$2]+0x0100)\
+\
+\
+La risposta corretta \'e8: REGS[$3] = Mem(REGS[$2]+0x0100) %$%\
+}

@@ -1,0 +1,1086 @@
+Per la gestione dei blocchi liberi del filesystem
+Scegli una o più alternative:
+a. Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit
+b. Si usa sempre una bitmap
+c. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto vuoto pieno rispetto all'uso di una bitmap
+d. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap
+e. Si può usare l'allocazione indicizzata insieme a una bitmapRISPOSTALe risposte corrette sono: Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit, Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap*NUOVA DOMANDA*Relativamente alla primitiva Test and Set Lock (TSL), secondo quanto visto nel materiale del corso, è vero che:
+a. Non si può scrivere sullo stesso registro della TSL con una istruzione normale di write
+b. E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo
+c. Non si può utilizzare per implementare un mutex
+d. E' una primitiva hardware/ software di supporto alla gestione della sincronizzazione
+e. Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomicaRISPOSTARisposta corretta.
+La TSL è utilizzata per testare e modificare (settare) il contenuto di una parola in modo atomico, usando una implementazione
+hardware per implementare la atomicità. Affinché sia utile serve che il valore del registro sia resettato con una write. Usando un
+parallelo con la primitiva semaforo binario, che è definita come primitiva sofware, che può essere direttamene implementata a
+basso livello usando anche la TSL, la TSL sta alla wait e la write sta alla signal
+Le risposte corrette sono:
+Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica
+, E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo*NUOVA DOMANDA*Seleziona, tra le seguenti, le primitive socket di Berkley corrette:
+a. close() 
+b. set()
+c. bind() 
+d. create()RISPOSTARisposta corretta.
+Le risposte corrette sono: bind(),
+close()*NUOVA DOMANDA*I semafori con busy waiting (spinlock), quando attivati per un processo
+Scegli una o più alternative:
+a. Sono meno problematici sui sistemi multiprocessore
+b. Non tengono occupata la cpu ciclando a vuoto
+c. Non mandano il processo fra i processi waiting 
+d. A livello di implementazione prevedono l'utilizzo di un loop in ciascuna delle primitive 
+e. Se implementati con una libreria utente, devono necessariamente richiamare una system callRISPOSTALe risposte corrette sono: Non mandano il processo fra i processi waiting, Sono meno problematici sui sistemi multiprocessore*NUOVA DOMANDA*Il page fault si può verificare quando:
+Scegli una o più alternative:
+a. Viene indirizzata una pagina non presente in TLB
+b. Viene settato il bit di modifica che certifica un accesso in scrittura a una pagina
+c. Viene indirizzata una pagina non presente nel segmento principale del processo
+d. Viene indirizzata una pagina non presente in memoria principale 
+e. Non vi sono più pagine disponibili da allocare per il processo in esecuzioneRISPOSTALa risposta corretta è: Viene indirizzata una pagina non presente in memoria principale*NUOVA DOMANDA*Relativamente alla Tabella delle Pagine Invertita
+Scegli una o più alternative:
+a. Consente di ridurre la memoria dedicata alla associazione fra numero di pagina e numero di frame che la contiene rispetto alla tabella delle pagine standard
+b. È indicizzata implicitamente per numero di pagina
+c. Contiene in ogni sua riga il numero del frame
+d. Contiene una riga per ogni frame del sistema 
+e. Non richiede che venga letto il contenuto di più righe per ottenere il numero di frame che serve
+f. E' indicizzata utilizzando il numero di frame e si cerca il numero di pagina in ogni sua riga in modo da ottenere l'offsetRISPOSTALe risposte corrette sono: Consente di ridurre la memoria dedicata alla associazione fra numero di pagina e numero di frame che la contiene rispetto alla tabella delle pagine standard,
+Contiene una riga per ogni frame del sistema*NUOVA DOMANDA*Nel caso di paginazione con utilizzo della TLB, con α = 0,5, Tmem = 500 ns e ε = 10 ns: 
+(fare il calcolo)RISPOSTAIl risultato si ottiene applicando la formula
+EAT = (ε + Tmem) * α + (ε +2* Tmem) * (1- α )
+La risposta corretta è : 760,00*NUOVA DOMANDA*Relativamente all'algoritmo di Peterson, è vero che:
+Scegli una o più alternative:
+a. All'uscita dalla sezione critica lo scalare viene settato a false
+b. Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti
+c. Per ingresso nella sezione critica viene verificato che il processo abbia una priorità superiore all'altro processo
+d. Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti
+e. Rappresenta una delle soluzioni al problema della sezione critica in caso di due o più processiRISPOSTALe risposte corrette sono: Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti, Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti*NUOVA DOMANDA*Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 89 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina Si ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che ' indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione. La memoria è organizzata a pagine, con pagine di 8 Kbyte.
+Quante sono le righe valide della tabella delle pagine del processo?
+(fare il calcolo)RISPOSTAIl numero di pagine per ciascuno dei segmenti è pari a dim segmento / dim pagina, arrotondato per eccesso
+Il numero di pagine valide per il processo e quindi il numero delle righe valide della sua tabella delle pagine è la somma delle pagine di ciascun segmento
+La risposta corretta è : 75*NUOVA DOMANDA*Relativamente al fenomeno del trashing
+Scegli una o più alternative:
+a. Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza
+b. Il numero di processi attivi nel sistema non è correlato
+c. La percentuale di pagine che viene utilizzata solo in lettura non è correlata
+d. L'efficienza complessiva del sistema di memoria di secondo livello è correlata
+e. Si può gestire anche ignorando il parametro delta = numero di riferimentiRISPOSTALe risposte corrette sono: Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza, L'efficienza complessiva del sistema di memoria di secondo livello è correlata, Si può gestire anche ignorando il parametro delta = numero di riferimenti*NUOVA DOMANDA*Un sistema di elaborazione ha 512 Megabyte di memoria fisica di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 14 bit. 
+Quale è il numero di bit del displacement (o offset) che rappresenta una parte dell'indirizzo logico.(calcolare)RISPOSTAL'offset o displacement corrisponde al numero di bit necessari a indirizzare all'interno di una pagina, ed è pari al log della dimensione di pagina
+La dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 512 MB = 512 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (512 * 2 * 2 ) / ( 2 *2 ) = (512 * 2 ) / ( 2 ) 
+Numero di bit del displacement = log (512 * 2 ) / ( 2 ) 
+La risposta corretta è : 15,00*NUOVA DOMANDA*Un sistema di elaborazione ha 128 Megabyte di memoria fisica di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 14 bit. 
+Quale è il numero di bit del displacement (o offset) che rappresenta una parte dell'indirizzo logico.
+(calcolare)RISPOSTAL'offset o displacement corrisponde al numero di bit necessari a indirizzare all'interno di una pagina, ed è pari al log della dimensione di pagina
+La dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 128 MB = 128 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (128 * 2 * 2 ) / ( 2 *2 ) = (128 * 2 ) / ( 2 ) 
+Numero di bit del displacement = log (128 * 2 ) / ( 2 ) 
+La risposta corretta è : 13,00*NUOVA DOMANDA*Relativamente al fenomeno del trashing
+Scegli una o più alternative:
+a. Si può gestire anche ignorando il parametro delta = numero di riferimenti
+b. La percentuale di pagine che viene utilizzata solo in lettura non è correlata
+c. Il numero di processi attivi nel sistema non è correlato
+d. L'efficienza complessiva del sistema di memoria di secondo livello è correlata
+e. Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenzaRISPOSTALe risposte corrette sono: Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza, L'efficienza complessiva del sistema di memoria di secondo livello è correlata, Si può gestire anche ignorando il parametro delta = numero di riferimenti*NUOVA DOMANDA*Relativamente alla primitiva Test and Set Lock (TSL), secondo quanto visto nel materiale del corso, è vero che:
+Scegli una o più alternative:
+a. E' una primitiva hardware/ software di supporto alla gestione della sincronizzazione
+b. Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica 
+c. Non si può scrivere sullo stesso registro della TSL con una istruzione normale di write
+d. E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo
+e. Non si può utilizzare per implementare un mutexRISPOSTALa TSL è utilizzata per testare e modificare (settare) il contenuto di una parola in modo atomico, usando una implementazione hardware per implementare la atomicità. Affinché sia utile serve che il valore del registro sia resettato con una write. Usando un parallelo con la primitiva semaforo binario, che è definita come primitiva sofware, che può essere direttamene implementata a basso livello usando anche la TSL, la TSL sta alla wait e la write sta alla signal
+Le risposte corrette sono: Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica , E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo*NUOVA DOMANDA*Seleziona unicamente i livelli del modello OSI che hanno una corrispondenza diretta con livelli dello stack TCP/IP:
+a. Livello di presentazione
+b. Livello di sessione
+c. Livello di trasporto 
+d. Livello di reteRISPOSTAle risposte corrette sono : c. livello di trasporto, d. Livello di rete*NUOVA DOMANDA*La FAT
+Scegli una o più alternative:
+a. E' una variante della allocazione indicizzata 
+b. E acronimo di File Allocation Table 
+c. Ha un elemento per ogni blocco del disco ed è indicizzata dal numero del blocco 
+d. Ha un elemento per ogni blocco del disco e ciascun elemento contiene la dimensione e la posizione del blocco
+e. Disperde nel disco i puntatori ai vari blocchi del fileRISPOSTALe risposte corrette sono: Ha un elemento per ogni blocco del disco ed è indicizzata dal numero del blocco, E acronimo di File Allocation Table*NUOVA DOMANDA*L'architettura di un calcolatore ha 1024 Megabyte di memoria massima di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 15 bit. 
+Quale è la dimensione in byte di una pagina
+(calcolare)RISPOSTALa dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 1024 MB = 1024 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (1024 * 2 * 2 ) / ( 2 *2 ) = (1024 * 2 ) / ( 2 ) 
+La risposta corretta è : 32768,00*NUOVA DOMANDA*Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 89 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina Si ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che ' indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione. La memoria è organizzata a pagine, con pagine di 8 Kbyte.
+Quante sono le righe valide della tabella delle pagine del processo?
+(calcolare)RISPOSTAIl numero di pagine per ciascuno dei segmenti è pari a dim segmento / dim pagina, arrotondato per eccesso
+Il numero di pagine valide per il processo e quindi il numero delle righe valide della sua tabella delle pagine è la somma delle pagine di ciascun segmento
+La risposta corretta è : 75*NUOVA DOMANDA*Relativamente al seguente codice che permette la comunicazione fra thread a livello utente:
+(codice C di produttore consumatore diviso in due quello che podda vuole che usiamo per il gioco)
+Scegli una o più alternative:
+a. Il consumatore cicla indefinitamente in caso di buffer completamente vuoto
+b. Il produttore cicla indefinitamente in caso di buffer completamente pieno
+c. Il codice non è soggetto a corse critiche
+d. La variabile condivisa preleva indica l'elemento del buffer su cui scrivere
+e. La variabile condivisa inserisci indica l'elemento del buffer su cui leggereRISPOSTALe risposte corrette sono: Il consumatore cicla indefinitamente in caso di buffer completamente vuoto, Il codice non è soggetto a corse critiche*NUOVA DOMANDA*Nel caso della gestione della memoria con segmentazione, con s e d si indicano, rispettivamente:
+Scegli una o più alternative:
+a. Size del segmento e displacement dell'indirizzo
+b. Numero del segmento e dimensione del segmento
+c. Size del segmento e displacement del segmento
+d. Size del segmento e numero del segmento
+e. Numero del segmento e indirizzo del dato all'interno del segmentoRISPOSTARisposta corretta.
+La risposta corretta è: Numero del segmento e indirizzo del dato all'interno del segmento*NUOVA DOMANDA*Relativamente all'algoritmo di Peterson, è vero che:
+Scegli una o più alternative:
+a. Per ingresso nella sezione critica viene verificato che il processo abbia una priorità superiore all'altro processo
+b. Rappresenta una delle soluzioni al problema della sezione critica in caso di due o più processi
+c. Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti
+d. All'uscita dalla sezione critica lo scalare viene settato a false
+e. Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvoltiRISPOSTALe risposte corrette sono: Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti, Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti*NUOVA DOMANDA*Il problema produttore consumatore affrontato con la memoria condivisa richiede l'utilizzo di un buffer:
+Scegli una o più alternative:
+a. Limitato, il consumatore dovrà attendere in caso di buffer vuoto 
+b. Sempre illimitato, in modo che il consumatore non deve mai attendere nuovi oggetti
+c. Illimitato, il produttore non potrà inserire nuovi oggetti finche l'ultimo non è stato consumato
+d. Limitato, il produttore dovrà attendere in caso di buffer pieno 
+e. Limitato, lo scambio avviene sempre tramite utilizzo di semafori spinlock
+f. Limitato, il produttore dovrà attendere in caso di buffer vuotoRISPOSTALe risposte corrette sono: Limitato, il consumatore dovrà attendere in caso di buffer vuoto, Limitato, il produttore dovrà attendere in caso di buffer pieno*NUOVA DOMANDA*Quali soluzioni per la protezione degli spazi di memoria da parte del kernel sono efficaci per almeno una delle tecniche di allocazione viste durante il corso (contigua, segmentata, paginata)
+Scegli una o più alternative:
+a. Utilizzo del registro di scorrimento per contare gli accessi
+b. Utilizzo della tabella dei segmenti e del test HW 
+c. Utilizzo di un timer da inizializzare prima di avviare il task utente di cui controllare l'accesso
+d. Utilizzo della TLB invertita
+e. Utilizzo del PTLR 
+f. Utilizzo della tabella delle pagine e del dei bit di validità 
+g. Utilizzo di 2 registri che definiscano i confini dello spazio di memoria allocato al processo da usare per un test HWRISPOSTALe risposte corrette sono: Utilizzo della tabella dei segmenti e del test HW , Utilizzo del PTLR , Utilizzo della tabella delle pagine e del dei bit di validità , Utilizzo di 2 registri che definiscano i confini dello spazio di memoria allocato al processo da usare per un test HW*NUOVA DOMANDA*Un sistema di elaborazione ha 128 Megabyte di memoria fisica di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 14 bit. 
+Quale è il numero di bit del displacement (o offset) che rappresenta una parte dell'indirizzo logico.
+(calcolare)RISPOSTAL'offset o displacement corrisponde al numero di bit necessari a indirizzare all'interno di una pagina, ed è pari al log della dimensione di pagina
+La dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 128 MB = 128 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (128 * 2 * 2 ) / ( 2 *2 ) = (128 * 2 ) / ( 2 ) 
+Numero di bit del displacement = log (128 * 2 ) / ( 2 ) 
+La risposta corretta è : 13,00*NUOVA DOMANDA*L'architettura di un calcolatore ha 8 Megabyte di memoria massima di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 15 bit. 
+Quale è la dimensione in byte di una pagina
+(calcolare)RISPOSTALa dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 8 MB = 8 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (8 * 2 * 2 ) / ( 2 *2 ) = (8 * 2 ) / ( 2 ) 
+La risposta corretta è : 256,00*NUOVA DOMANDA*Seleziona, tra le seguenti, le primitive socket di Berkley corrette:
+a. close()
+b. create()
+c. bind() 
+d. set()RISPOSTALe risposte corrette sono: bind(),
+close()*NUOVA DOMANDA*Relativamente all'algoritmo di Peterson, è vero che:
+Scegli una o più alternative:
+a. Per ingresso nella sezione critica viene verificato che il processo abbia una priorità superiore all'altro processo
+b. Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti
+c. Rappresenta una delle soluzioni al problema della sezione critica in caso di due o più processi
+d. All'uscita dalla sezione critica lo scalare viene settato a false
+e. Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvoltiRISPOSTALe risposte corrette sono: Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti, Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti*NUOVA DOMANDA*Per la gestione dei blocchi liberi del filesystem
+Scegli una o più alternative:
+a. Si può usare l'allocazione indicizzata insieme a una bitmap
+b. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto vuoto pieno rispetto all'uso di una bitmap
+c. Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit
+d. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap
+e. Si usa sempre una bitmapRISPOSTALe risposte corrette sono: Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit, Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap*NUOVA DOMANDA*Nel caso della gestione della memoria con segmentazione, con s e d si indicano, rispettivamente:
+Scegli una o più alternative:
+a. Size del segmento e numero del segmento
+b. Numero del segmento e indirizzo del dato all'interno del segmento
+c. Numero del segmento e dimensione del segmento
+d. Size del segmento e displacement del segmento
+e. Size del segmento e displacement dell'indirizzoRISPOSTALa risposta corretta è: Numero del segmento e indirizzo del dato all'interno del segmento*NUOVA DOMANDA*Relativamente alla implementazione del semaforo NON Busy waiting, è vero che:
+Scegli una o più alternative:
+a. Entrambe le primitive devono essere non interrompibili
+b. La signal è implementata dal codice seguente: S= S+1;
+c. La chiamata della wait prevede che un processo vada tutte le volte nello stato waiting, mentre la chiamata della signal prevede che il processo vada nello stato ready
+d. E' previsto l'utilizzo di una lista solo nella implementazione della primitiva wait 
+e. La wait è implementata utilizzando la primitiva hardware TSLRISPOSTALa risposta corretta è: Entrambe le primitive devono essere non interrompibili*NUOVA DOMANDA*Considerando il working set model e il suo utilizzo per la allocazione delle pagine ai processi, quale è l'effetto dell'incremento del valore di delta
+Scegli una o più alternative:
+a. Il numero di pagine allocate per un processo tende a decrescere
+b. Il page fault rate rimane invariato
+c. Il context switch overhead tende a crescere
+d. Il page fault rate tende a crescere
+e. Il numero di pagine allocate per un processo tende a crescere
+f. Il page fault rate tende a decrescereRISPOSTALe risposte corrette sono: Il page fault rate tende a decrescere, Il numero di pagine allocate per un processo tende a crescere*NUOVA DOMANDA*Nel caso di paginazione con utilizzo della TLB, con α = 0,5, Tmem = 200 ns e ε = 20 ns: 
+(calcolare)RISPOSTAIl risultato si ottiene applicando la formula
+EAT = (ε + Tmem) * α + (ε +2* Tmem) * (1- α )
+La risposta corretta è : 320,00*NUOVA DOMANDA*Si consideri un sistema che usa la memoria virtuale (paginazione on demand) che presenti le seguenti misurazioni di utilizzo:
+Percentuale di utilizzo della CPU: 25%
+Percentuale di utilizzo delle periferiche di I/O: 7%
+Percentuale di utilizzo del sottosistema HW di supporto alla paginazione: 92%
+Sotto queste ipotesi si può dire che sono vere le seguenti affermazioni:
+Scegli una o più alternative:
+a. Incrementare la dimensione delle pagine non incrementa in nessun caso la % di occupazione della CPU
+b. Decrementare la dimensione delle pagine non incrementa in nessun caso la % di occupazione della CPU
+c. Installare una memoria di primo livello di maggiori dimensioni può incrementare la % di occupazione della CPU
+d. Installare una CPU più lenta può incrementare la % di occupazione della CPU
+e. Incrementare il livello di multiprogrammazione può incrementare la % di occupazione della CPURISPOSTALe risposte corrette sono: Installare una CPU più lenta può incrementare la % di occupazione della CPU, Installare una memoria di primo livello di maggiori dimensioni può incrementare la % di occupazione della CPU*NUOVA DOMANDA*Per la gestione dei blocchi liberi del filesystem
+Scegli una o più alternative:
+a. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap
+b. Si usa sempre una bitmap
+c. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto vuoto pieno rispetto all'uso di una bitmap
+d. Si può usare l'allocazione indicizzata insieme a una bitmap 
+e. Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bitRISPOSTALe risposte corrette sono: Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit, Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap*NUOVA DOMANDA*Relativamente alla Tabella delle Pagine Invertita
+Scegli una o più alternative:
+a. Consente di ridurre la memoria dedicata alla associazione fra numero di pagina e numero di frame che la contiene rispetto alla tabella delle pagine standard
+b. È indicizzata implicitamente per numero di pagina
+c. Contiene in ogni sua riga il numero del frame
+d. Contiene una riga per ogni frame del sistema 
+e. Non richiede che venga letto il contenuto di più righe per ottenere il numero di frame che serve
+f. E' indicizzata utilizzando il numero di frame e si cerca il numero di pagina in ogni sua riga in modo da ottenere l'offsetRISPOSTALe risposte corrette sono: Consente di ridurre la memoria dedicata alla associazione fra numero di pagina e numero di frame che la contiene rispetto alla tabella delle pagine standard,
+Contiene una riga per ogni frame del sistema*NUOVA DOMANDA*I semafori con busy waiting (spinlock), quando attivati per un processo
+Scegli una o più alternative:
+a. Non mandano il processo fra i processi waiting
+b. Non tengono occupata la cpu ciclando a vuoto
+c. A livello di implementazione prevedono l'utilizzo di un loop in ciascuna delle primitive 
+d. Sono meno problematici sui sistemi multiprocessore
+e. Se implementati con una libreria utente, devono necessariamente richiamare una system callRISPOSTAVerificare implementazione nelle slides e nel libro di testo
+Le risposte corrette sono: Non mandano il processo fra i processi waiting, Sono meno problematici sui sistemi multiprocessore*NUOVA DOMANDA*L'architettura di un calcolatore ha 1024 Megabyte di memoria massima di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 15 bit. 
+Quale è la dimensione in byte di una pagina
+(calcolare)RISPOSTALa dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 1024 MB = 1024 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (1024 * 2 * 2 ) / ( 2 *2 ) = (1024 * 2 ) / ( 2 ) 
+La risposta corretta è : 32768,00*NUOVA DOMANDA*Relativamente alla primitiva Test and Set Lock (TSL), secondo quanto visto nel materiale del corso, è vero che:
+Scegli una o più alternative:
+a. E' una primitiva hardware/ software di supporto alla gestione della sincronizzazione
+b. Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica 
+c. Non si può utilizzare per implementare un mutex
+d. Non si può scrivere sullo stesso registro della TSL con una istruzione normale di write
+e. E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nulloRISPOSTALa TSL è utilizzata per testare e modificare (settare) il contenuto di una parola in modo atomico, usando una implementazione hardware per implementare la atomicità. Affinché sia utile serve che il valore del registro sia resettato con una write. Usando un parallelo con la primitiva semaforo binario, che è definita come primitiva sofware, che può essere direttamene implementata a basso livello usando anche la TSL, la TSL sta alla wait e la write sta alla signal
+Le risposte corrette sono: Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica , E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo*NUOVA DOMANDA*Relativamente all'algoritmo di Peterson, è vero che:
+Scegli una o più alternative:
+a. Rappresenta una delle soluzioni al problema della sezione critica in caso di due o più processi
+b. Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti
+c. Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti
+d. All'uscita dalla sezione critica lo scalare viene settato a false
+e. Per ingresso nella sezione critica viene verificato che il processo abbia una priorità superiore all'altro processoRISPOSTALe risposte corrette sono: Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti, Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti*NUOVA DOMANDA*Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 33 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina Si ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che 'indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione. La memoria è organizzata a pagine, con pagine di 8 Kbyte.
+Quante sono le righe valide della tabella delle pagine del processo?
+(calcolare)RISPOSTAIl numero di pagine per ciascuno dei segmenti è pari a dim segmento / dim pagina, arrotondato per eccesso
+Il numero di pagine valide per il processo e quindi il numero delle righe valide della sua tabella delle pagine è la somma delle pagine di ciascun segmento
+La risposta corretta è : 68*NUOVA DOMANDA*Seleziona unicamente i livelli del modello OSI che hanno una corrispondenza diretta con livelli dello stack TCP/IP:
+a. Livello di sessione
+b. Livello di trasporto 
+c. Livello di rete 
+d. Livello di presentazioneRISPOSTARisposta corretta.
+Le risposte corrette sono: Livello di trasporto,
+Livello di rete*NUOVA DOMANDA*Un sistema di elaborazione ha 256 Megabyte di memoria fisica di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 14 bit. 
+Quale è il numero di bit del displacement (o offset) che rappresenta una parte dell'indirizzo logico.
+(calcolare)RISPOSTAL'offset o displacement corrisponde al numero di bit necessari a indirizzare all'interno di una pagina, ed è pari al log della dimensione di pagina
+La dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 256 MB = 256 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (256 * 2 * 2 ) / ( 2 *2 ) = (256 * 2 ) / ( 2 ) 
+Numero di bit del displacement = log (256 * 2 ) / ( 2 ) 
+La risposta corretta è : 14,00*NUOVA DOMANDA*Relativamente al fenomeno del trashing
+Scegli una o più alternative:
+a. Si può gestire anche ignorando il parametro delta = numero di riferimenti
+b. L'efficienza complessiva del sistema di memoria di secondo livello è correlata
+c. Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza
+d. Il numero di processi attivi nel sistema non è correlato
+e. La percentuale di pagine che viene utilizzata solo in lettura non è correlataRISPOSTArisposte corrette sono: Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza, L'efficienza complessiva del sistema di memoria di secondo livello è correlata, Si può gestire anche ignorando il parametro delta = numero di riferimenti*NUOVA DOMANDA*Nel caso di paginazione con utilizzo della TLB, con α = 0,5, Tmem = 500 ns e ε = 10 ns: 
+(calcolare)RISPOSTAIl risultato si ottiene applicando la formula
+EAT = (ε + Tmem) * α + (ε +2* Tmem) * (1- α )
+La risposta corretta è : 760,00*NUOVA DOMANDA*Il problema produttore consumatore affrontato con la memoria condivisa richiede l'utilizzo di un buffer:
+Scegli una o più alternative:
+a. Limitato, il produttore dovrà attendere in caso di buffer pieno 
+b. Illimitato, il produttore non potrà inserire nuovi oggetti finche l'ultimo non è stato consumato
+c. Limitato, lo scambio avviene sempre tramite utilizzo di semafori spinlock
+d. Limitato, il consumatore dovrà attendere in caso di buffer vuoto 
+e. Sempre illimitato, in modo che il consumatore non deve mai attendere nuovi oggetti
+f. Limitato, il produttore dovrà attendere in caso di buffer vuotoRISPOSTALe risposte corrette sono: Limitato, il consumatore dovrà attendere in caso di buffer vuoto, Limitato, il produttore dovrà attendere in caso di buffer pieno*NUOVA DOMANDA*Un sistema di elaborazione ha 512 Megabyte di memoria fisica di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 14 bit. 
+Quale è il numero di bit del displacement (o offset) che rappresenta una parte dell'indirizzo logico.
+(calcolare)RISPOSTAL'offset o displacement corrisponde al numero di bit necessari a indirizzare all'interno di una pagina, ed è pari al log della dimensione di pagina
+La dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 512 MB = 512 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (512 * 2 * 2 ) / ( 2 *2 ) = (512 * 2 ) / ( 2 ) 
+Numero di bit del displacement = log (512 * 2 ) / ( 2 ) 
+La risposta corretta è : 15,00*NUOVA DOMANDA*Considerando il working set model e il suo utilizzo per la allocazione delle pagine ai processi, quale è l'effetto dell'incremento del valore di delta
+Scegli una o più alternative:
+a. Il page fault rate rimane invariato
+b. Il numero di pagine allocate per un processo tende a decrescere
+c. Il page fault rate tende a crescere
+d. Il numero di pagine allocate per un processo tende a crescere 
+e. Il page fault rate tende a decrescere 
+f. Il context switch overhead tende a crescereRISPOSTARisposta corretta.
+Le risposte corrette sono: Il page fault rate tende a decrescere, Il numero di pagine allocate per un processo tende a crescere*NUOVA DOMANDA*Relativamente all'algoritmo di Peterson, è vero che:
+Scegli una o più alternative:
+a. All'uscita dalla sezione critica lo scalare viene settato a false
+b. Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti
+c. Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti 
+d. Per ingresso nella sezione critica viene verificato che il processo abbia una priorità superiore all'altro processo
+e. Rappresenta una delle soluzioni al problema della sezione critica in caso di due o più processiRISPOSTALe risposte corrette sono: Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti, Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti*NUOVA DOMANDA*Il page fault si può verificare quando:
+Scegli una o più alternative:
+a. Non vi sono più pagine disponibili da allocare per il processo in esecuzione
+b. Viene indirizzata una pagina non presente in memoria principale 
+c. Viene settato il bit di modifica che certifica un accesso in scrittura a una pagina
+d. Viene indirizzata una pagina non presente nel segmento principale del processo
+e. Viene indirizzata una pagina non presente in TLBRISPOSTARisposta corretta.
+La risposta corretta è: Viene indirizzata una pagina non presente in memoria principale*NUOVA DOMANDA*Relativamente alla primitiva Test and Set Lock (TSL), secondo quanto visto nel materiale del corso, è vero che:
+Scegli una o più alternative:
+a. E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo
+b. Non si può scrivere sullo stesso registro della TSL con una istruzione normale di write
+c. Non si può utilizzare per implementare un mutex
+d. Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica 
+e. E' una primitiva hardware/ software di supporto alla gestione della sincronizzazioneRISPOSTALa TSL è utilizzata per testare e modificare (settare) il contenuto di una parola in modo atomico, usando una implementazione hardware per implementare la atomicità. Affinché sia utile serve che il valore del registro sia resettato con una write. Usando un parallelo con la primitiva semaforo binario, che è definita come primitiva sofware, che può essere direttamene implementata a basso livello usando anche la TSL, la TSL sta alla wait e la write sta alla signal
+Le risposte corrette sono: Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica , E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo*NUOVA DOMANDA*Seleziona unicamente i livelli del modello OSI che hanno una corrispondenza diretta con livelli dello stack TCP/IP:
+a. Livello di rete 
+b. Livello di sessione
+c. Livello di trasporto 
+d. Livello di presentazioneRISPOSTARisposta corretta.
+Le risposte corrette sono: Livello di trasporto,
+Livello di rete*NUOVA DOMANDA*La FAT
+Scegli una o più alternative:
+a. Ha un elemento per ogni blocco del disco ed è indicizzata dal numero del blocco 
+b. E acronimo di File Allocation Table 
+c. E' una variante della allocazione indicizzata
+d. Ha un elemento per ogni blocco del disco e ciascun elemento contiene la dimensione e la posizione del blocco
+e. Disperde nel disco i puntatori ai vari blocchi del fileRISPOSTALe risposte corrette sono: Ha un elemento per ogni blocco del disco ed è indicizzata dal numero del blocco, E acronimo di File Allocation Table*NUOVA DOMANDA*Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 42 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina Si ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che ' indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione. La memoria è organizzata a pagine, con pagine di 8 Kbyte.
+Quante sono le righe valide della tabella delle pagine del processo?
+(calcolare)RISPOSTAIl numero di pagine per ciascuno dei segmenti è pari a dim segmento / dim pagina, arrotondato per eccesso
+Il numero di pagine valide per il processo e quindi il numero delle righe valide della sua tabella delle pagine è la somma delle pagine di ciascun segmento
+La risposta corretta è : 69*NUOVA DOMANDA*Relativamente al fenomeno del trashing
+Scegli una o più alternative:
+a. Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza
+b. Il numero di processi attivi nel sistema non è correlato
+c. Si può gestire anche ignorando il parametro delta = numero di riferimenti
+d. L'efficienza complessiva del sistema di memoria di secondo livello è correlata
+e. La percentuale di pagine che viene utilizzata solo in lettura non è correlataRISPOSTALe risposte corrette sono: Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza, L'efficienza complessiva del sistema di memoria di secondo livello è correlata, Si può gestire anche ignorando il parametro delta = numero di riferimenti*NUOVA DOMANDA*Relativamente alla Tabella delle Pagine Invertita
+Scegli una o più alternative:
+a. Consente di ridurre la memoria dedicata alla associazione fra numero di pagina e numero di frame che la contiene rispetto alla tabella delle pagine standard
+b. È indicizzata implicitamente per numero di pagina
+c. Contiene in ogni sua riga il numero del frame
+d. Contiene una riga per ogni frame del sistema 
+e. Non richiede che venga letto il contenuto di più righe per ottenere il numero di frame che serve
+f. E' indicizzata utilizzando il numero di frame e si cerca il numero di pagina in ogni sua riga in modo da ottenere l'offsetRISPOSTARisposta corretta.
+Le risposte corrette sono: Consente di ridurre la memoria dedicata alla associazione fra numero di pagina e numero di frame che la contiene rispetto alla tabella delle pagine standard,
+Contiene una riga per ogni frame del sistema*NUOVA DOMANDA*Relativamente alla Tabella delle Pagine Invertita
+Scegli una o più alternative:
+a. Consente di ridurre la memoria dedicata alla associazione fra numero di pagina e numero di frame che la contiene rispetto alla tabella delle pagine standard
+b. È indicizzata implicitamente per numero di pagina
+c. Contiene in ogni sua riga il numero del frame
+d. Contiene una riga per ogni frame del sistema
+e. Non richiede che venga letto il contenuto di più righe per ottenere il numero di frame che serve
+f. E' indicizzata utilizzando il numero di frame e si cerca il numero di pagina in ogni sua riga in modo da ottenere l'offsetRISPOSTALe risposte corrette sono:
+Consente di ridurre la memoria dedicata alla associazione fra numero di pagina e numero di frame che la contiene rispetto alla tabella delle pagine standard,
+Contiene una riga per ogni frame del sistema*NUOVA DOMANDA*Relativamente alla formulazione generale del problema e alla soluzione al problema della sezione critica, è vero che:
+Scegli una o più alternative:
+a. Uno dei requisiti è che nessun processo in esecuzione al di fuori della sua sezione critica puo' bloccare altri processi
+b. Un requisito è che nessun processo dovrebbe attendere un tempo arbitrariamente lungo prima di uscire dalla sezione critica
+c. Prevede che la sezione critica sia preceduta da una sezione di ingresso e seguita da una sezione di uscita
+d. Uno dei requisiti è che due processi non possono essere mai contemporaneamente nelle loro sezioni critiche
+e. Prevede che la sezione non critica sia seguita da una sezione di uscitaRISPOSTARisposta corretta.
+Le risposte corrette sono: Uno dei requisiti è che due processi non possono essere mai contemporaneamente nelle loro sezioni critiche, Uno dei requisiti è che nessun processo in esecuzione al di fuori della sua sezione critica puo' bloccare altri processi, Prevede che la sezione critica sia preceduta da una sezione di ingresso e seguita da una sezione di uscita*NUOVA DOMANDA*La FAT
+Scegli una o più alternative:
+a. E acronimo di File Allocation Table
+b. Ha un elemento per ogni blocco del disco e ciascun elemento contiene la dimensione e la posizione del blocco
+c. E' una variante della allocazione indicizzata
+d. Ha un elemento per ogni blocco del disco ed è indicizzata dal numero del blocco 
+e. Disperde nel disco i puntatori ai vari blocchi del fileRISPOSTALe risposte corrette sono: Ha un elemento per ogni blocco del disco ed è indicizzata dal numero del blocco, E acronimo di File Allocation Table*NUOVA DOMANDA*Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 66 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina Si ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che ' indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione. La memoria è organizzata a pagine, con pagine di 8 Kbyte.
+Quante sono le righe valide della tabella delle pagine del processo?
+(calcolare)RISPOSTAIl numero di pagine per ciascuno dei segmenti è pari a dim segmento / dim pagina, arrotondato per eccesso
+Il numero di pagine valide per il processo e quindi il numero delle righe valide della sua tabella delle pagine è la somma delle pagine di ciascun segmento
+La risposta corretta è : 72*NUOVA DOMANDA*Un sistema di elaborazione ha 512 Megabyte di memoria fisica di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 14 bit. 
+Quale è il numero di bit del displacement (o offset) che rappresenta una parte dell'indirizzo logico.
+(calcolare)RISPOSTAL'offset o displacement corrisponde al numero di bit necessari a indirizzare all'interno di una pagina, ed è pari al log della dimensione di pagina
+La dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 512 MB = 512 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (512 * 2 * 2 ) / ( 2 *2 ) = (512 * 2 ) / ( 2 ) 
+Numero di bit del displacement = log (512 * 2 ) / ( 2 ) 
+La risposta corretta è : 15,00*NUOVA DOMANDA*Il problema produttore consumatore affrontato con la memoria condivisa richiede l'utilizzo di un buffer:
+Scegli una o più alternative:
+a. Limitato, lo scambio avviene sempre tramite utilizzo di semafori spinlock
+b. Limitato, il produttore dovrà attendere in caso di buffer vuoto
+c. Limitato, il consumatore dovrà attendere in caso di buffer vuoto 
+d. Sempre illimitato, in modo che il consumatore non deve mai attendere nuovi oggetti
+e. Limitato, il produttore dovrà attendere in caso di buffer pieno 
+f. Illimitato, il produttore non potrà inserire nuovi oggetti finche l'ultimo non è stato consumatoRISPOSTALe risposte corrette sono: Limitato, il consumatore dovrà attendere in caso di buffer vuoto, Limitato, il produttore dovrà attendere in caso di buffer pieno*NUOVA DOMANDA*Nel caso della gestione della memoria con segmentazione, con s e d si indicano, rispettivamente:
+Scegli una o più alternative:
+a. Numero del segmento e indirizzo del dato all'interno del segmento
+b. Size del segmento e displacement dell'indirizzo
+c. Size del segmento e numero del segmento
+d. Numero del segmento e dimensione del segmento
+e. Size del segmento e displacement del segmentoRISPOSTALa risposta corretta è: Numero del segmento e indirizzo del dato all'interno del segmento*NUOVA DOMANDA*Seleziona unicamente i livelli del modello OSI che hanno una corrispondenza diretta con livelli dello stack TCP/IP:
+a. Livello di presentazione
+b. Livello di trasporto 
+c. Livello di sessione
+d. Livello di reteRISPOSTARisposta corretta.
+Le risposte corrette sono: Livello di trasporto,
+Livello di rete*NUOVA DOMANDA*Il page fault si può verificare quando:
+Scegli una o più alternative:
+a. Non vi sono più pagine disponibili da allocare per il processo in esecuzione
+b. Viene settato il bit di modifica che certifica un accesso in scrittura a una pagina
+c. Viene indirizzata una pagina non presente in TLB
+d. Viene indirizzata una pagina non presente nel segmento principale del processo
+e. Viene indirizzata una pagina non presente in memoria principaleRISPOSTALa risposta corretta è: Viene indirizzata una pagina non presente in memoria principale*NUOVA DOMANDA*L'architettura di un calcolatore ha 8 Megabyte di memoria massima di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 15 bit. 
+Quale è la dimensione in byte di una pagina
+(calcolare)RISPOSTALa dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 8 MB = 8 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (8 * 2 * 2 ) / ( 2 *2 ) = (8 * 2 ) / ( 2 ) 
+La risposta corretta è : 256,00*NUOVA DOMANDA*Relativamente all'algoritmo di Peterson, è vero che:
+Scegli una o più alternative:
+a. Per ingresso nella sezione critica viene verificato che il processo abbia una priorità superiore all'altro processo
+b. All'uscita dalla sezione critica lo scalare viene settato a false
+c. Rappresenta una delle soluzioni al problema della sezione critica in caso di due o più processi
+d. Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti
+e. Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvoltiRISPOSTALe risposte corrette sono: Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti, Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti*NUOVA DOMANDA*Il page fault si può verificare quando:
+Scegli una o più alternative:
+a. Non vi sono più pagine disponibili da allocare per il processo in esecuzione
+b. Viene indirizzata una pagina non presente in TLB
+c. Viene settato il bit di modifica che certifica un accesso in scrittura a una pagina
+d. Viene indirizzata una pagina non presente nel segmento principale del processo
+e. Viene indirizzata una pagina non presente in memoria principaleRISPOSTALa risposta corretta è: Viene indirizzata una pagina non presente in memoria principale*NUOVA DOMANDA*Seleziona unicamente i livelli del modello OSI che hanno una corrispondenza diretta con livelli dello stack TCP/IP:
+a. Livello di trasporto 
+b. Livello di rete 
+c. Livello di presentazione
+d. Livello di sessioneRISPOSTARisposta corretta.
+Le risposte corrette sono: Livello di trasporto,
+Livello di rete*NUOVA DOMANDA*L'architettura di un calcolatore ha 8 Megabyte di memoria massima di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 15 bit. 
+Quale è la dimensione in byte di una pagina
+(calcolare)RISPOSTALa dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 8 MB = 8 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (8 * 2 * 2 ) / ( 2 *2 ) = (8 * 2 ) / ( 2 ) 
+La risposta corretta è : 256,00*NUOVA DOMANDA*Relativamente alla primitiva Test and Set Lock (TSL), secondo quanto visto nel materiale del corso, è vero che:
+Scegli una o più alternative:
+a. E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo
+b. E' una primitiva hardware/ software di supporto alla gestione della sincronizzazione
+c. Non si può scrivere sullo stesso registro della TSL con una istruzione normale di write
+d. Non si può utilizzare per implementare un mutex
+e. Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica VeroRISPOSTALa TSL è utilizzata per testare e modificare (settare) il contenuto di una parola in modo atomico, usando una implementazione hardware per implementare la atomicità. Affinché sia utile serve che il valore del registro sia resettato con una write. Usando un parallelo con la primitiva semaforo binario, che è definita come primitiva sofware, che può essere direttamene implementata a basso livello usando anche la TSL, la TSL sta alla wait e la write sta alla signal
+Le risposte corrette sono: Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica , E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo*NUOVA DOMANDA*I semafori con busy waiting (spinlock), quando attivati per un processo
+Scegli una o più alternative:
+a. A livello di implementazione prevedono l'utilizzo di un loop in ciascuna delle primitive 
+b. Non tengono occupata la cpu ciclando a vuoto
+c. Se implementati con una libreria utente, devono necessariamente richiamare una system call
+d. Sono meno problematici sui sistemi multiprocessore
+e. Non mandano il processo fra i processi waiting Vero: Questo lo fanno i semafori senza busy waitingRISPOSTAVerificare implementazione nelle slides e nel libro di testo
+Le risposte corrette sono: Non mandano il processo fra i processi waiting, Sono meno problematici sui sistemi multiprocessore*NUOVA DOMANDA*Si consideri un sistema che usa la memoria virtuale (paginazione on demand) che presenti le seguenti misurazioni di utilizzo:
+Percentuale di utilizzo della CPU: 25%
+Percentuale di utilizzo delle periferiche di I/O: 7%
+Percentuale di utilizzo del sottosistema HW di supporto alla paginazione: 92%
+Sotto queste ipotesi si può dire che sono vere le seguenti affermazioni:
+Scegli una o più alternative:
+a. Incrementare la dimensione delle pagine non incrementa in nessun caso la % di occupazione della CPU
+b. Incrementare il livello di multiprogrammazione può incrementare la % di occupazione della CPU
+c. Installare una memoria di primo livello di maggiori dimensioni può incrementare la % di occupazione della CPU
+d. Decrementare la dimensione delle pagine non incrementa in nessun caso la % di occupazione della CPU
+e. Installare una CPU più lenta può incrementare la % di occupazione della CPURISPOSTALe risposte corrette sono: Installare una CPU più lenta può incrementare la % di occupazione della CPU, Installare una memoria di primo livello di maggiori dimensioni può incrementare la % di occupazione della CPU*NUOVA DOMANDA*Nel caso di paginazione con utilizzo della TLB, con α = 0,5, Tmem = 100 ns e ε = 30 ns: 
+(calcolare)RISPOSTAIl risultato si ottiene applicando la formula
+EAT = (ε + Tmem) * α + (ε +2* Tmem) * (1- α )
+La risposta corretta è : 180,00*NUOVA DOMANDA*Il problema produttore consumatore affrontato con la memoria condivisa richiede l'utilizzo di un buffer:
+Scegli una o più alternative:
+a. Limitato, il consumatore dovrà attendere in caso di buffer vuoto 
+b. Limitato, il produttore dovrà attendere in caso di buffer pieno 
+c. Illimitato, il produttore non potrà inserire nuovi oggetti finche l'ultimo non è stato consumato
+d. Limitato, lo scambio avviene sempre tramite utilizzo di semafori spinlock
+e. Sempre illimitato, in modo che il consumatore non deve mai attendere nuovi oggetti
+f. Limitato, il produttore dovrà attendere in caso di buffer vuoto Falso: il produttore attende in caso di buffer pienoRISPOSTALe risposte corrette sono: Limitato, il consumatore dovrà attendere in caso di buffer vuoto, Limitato, il produttore dovrà attendere in caso di buffer pieno*NUOVA DOMANDA*Considerando il working set model e il suo utilizzo per la allocazione delle pagine ai processi, quale è l'effetto dell'incremento del valore di delta
+Scegli una o più alternative:
+a. Il numero di pagine allocate per un processo tende a decrescere
+b. Il page fault rate rimane invariato
+c. Il page fault rate tende a decrescere 
+d. Il context switch overhead tende a crescere
+e. Il page fault rate tende a crescere
+f. Il numero di pagine allocate per un processo tende a crescereRISPOSTALe risposte corrette sono: Il page fault rate tende a decrescere, Il numero di pagine allocate per un processo tende a crescere*NUOVA DOMANDA*Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 18 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina Si ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che ' indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione. La memoria è organizzata a pagine, con pagine di 8 Kbyte.
+Quante sono le righe valide della tabella delle pagine del processo?
+(calcolare)RISPOSTAIl numero di pagine per ciascuno dei segmenti è pari a dim segmento / dim pagina, arrotondato per eccesso
+Il numero di pagine valide per il processo e quindi il numero delle righe valide della sua tabella delle pagine è la somma delle pagine di ciascun segmento
+La risposta corretta è : 66*NUOVA DOMANDA*Per la gestione dei blocchi liberi del filesystem
+Scegli una o più alternative:
+a. Si può usare l'allocazione indicizzata insieme a una bitmap 
+b. Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit 
+c. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap
+d. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto vuoto pieno rispetto all'uso di una bitmap
+e. Si usa sempre una bitmapRISPOSTALe risposte corrette sono: Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit, Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap*NUOVA DOMANDA*Relativamente all'algoritmo di Peterson, è vero che:
+Scegli una o più alternative:
+a. Rappresenta una delle soluzioni al problema della sezione critica in caso di due o più processi
+b. Per ingresso nella sezione critica viene verificato che il processo abbia una priorità superiore all'altro processo
+c. Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti
+d. All'uscita dalla sezione critica lo scalare viene settato a false
+e. Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti Vero: è la variabile turnRISPOSTALe risposte corrette sono: Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti, Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti*NUOVA DOMANDA*Un sistema di elaborazione ha 64 Megabyte di memoria fisica di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 14 bit. 
+Quale è il numero di bit del displacement (o offset) che rappresenta una parte dell'indirizzo logico.
+(calcolare)RISPOSTAL'offset o displacement corrisponde al numero di bit necessari a indirizzare all'interno di una pagina, ed è pari al log della dimensione di pagina
+La dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 64 MB = 64 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (64 * 2 * 2 ) / ( 2 *2 ) = (64 * 2 ) / ( 2 ) 
+Numero di bit del displacement = log (64 * 2 ) / ( 2 ) 
+La risposta corretta è : 12,00*NUOVA DOMANDA*Quali soluzioni per la protezione degli spazi di memoria da parte del kernel sono efficaci per almeno una delle tecniche di allocazione viste durante il corso (contigua, segmentata, paginata)
+Scegli una o più alternative:
+a. Utilizzo del PTLR 
+b. Utilizzo del registro di scorrimento per contare gli accessi
+c. Utilizzo della tabella delle pagine e del dei bit di validità 
+d. Utilizzo della TLB invertita
+e. Utilizzo della tabella dei segmenti e del test HW 
+f. Utilizzo di 2 registri che definiscano i confini dello spazio di memoria allocato al processo da usare per un test HW 
+g. Utilizzo di un timer da inizializzare prima di avviare il task utente di cui controllare l'accessoRISPOSTALe risposte corrette sono: Utilizzo della tabella dei segmenti e del test HW , Utilizzo del PTLR , Utilizzo della tabella delle pagine e del dei bit di validità , Utilizzo di 2 registri che definiscano i confini dello spazio di memoria allocato al processo da usare per un test HW*NUOVA DOMANDA*Relativamente alla implementazione del semaforo NON Busy waiting, è vero che:
+Scegli una o più alternative:
+a. La signal è implementata dal codice seguente: S= S+1;
+b. E' previsto l'utilizzo di una lista solo nella implementazione della primitiva wait 
+c. Entrambe le primitive devono essere non interrompibili
+d. La wait è implementata utilizzando la primitiva hardware TSL
+e. La chiamata della wait prevede che un processo vada tutte le volte nello stato waiting, mentre la chiamata della signal prevede che il processo vada nello stato readyRISPOSTALa risposta corretta è: Entrambe le primitive devono essere non interrompibili*NUOVA DOMANDA*L'architettura di un calcolatore ha 1024 Megabyte di memoria massima di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 15 bit. 
+Quale è la dimensione in byte di una pagina
+(calcolare)RISPOSTALa dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 1024 MB = 1024 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (1024 * 2 * 2 ) / ( 2 *2 ) = (1024 * 2 ) / ( 2 ) 
+La risposta corretta è : 32768,00*NUOVA DOMANDA*Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 33 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina Si ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che ' indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione. La memoria è organizzata a pagine, con pagine di 8 Kbyte.
+Quante sono le righe valide della tabella delle pagine del processo?
+(calcolare)RISPOSTAIl numero di pagine per ciascuno dei segmenti è pari a dim segmento / dim pagina, arrotondato per eccesso
+Il numero di pagine valide per il processo e quindi il numero delle righe valide della sua tabella delle pagine è la somma delle pagine di ciascun segmento
+La risposta corretta è : 68*NUOVA DOMANDA*Per la gestione dei blocchi liberi del filesystem
+Scegli una o più alternative:
+a. Si usa sempre una bitmap
+b. Si può usare l'allocazione indicizzata insieme a una bitmap 
+c. Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit
+d. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto vuoto pieno rispetto all'uso di una bitmap
+e. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmapRISPOSTALe risposte corrette sono: Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit, Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap*NUOVA DOMANDA*Si consideri un sistema che usa la memoria virtuale (paginazione on demand) che presenti le seguenti misurazioni di utilizzo:
+Percentuale di utilizzo della CPU: 25%
+Percentuale di utilizzo delle periferiche di I/O: 7%
+Percentuale di utilizzo del sottosistema HW di supporto alla paginazione: 92%
+Sotto queste ipotesi si può dire che sono vere le seguenti affermazioni:
+Scegli una o più alternative:
+a. Installare una memoria di primo livello di maggiori dimensioni può incrementare la % di occupazione della CPU
+b. Decrementare la dimensione delle pagine non incrementa in nessun caso la % di occupazione della CPU
+c. Incrementare la dimensione delle pagine non incrementa in nessun caso la % di occupazione della CPU
+d. Incrementare il livello di multiprogrammazione può incrementare la % di occupazione della CPU
+e. Installare una CPU più lenta può incrementare la % di occupazione della CPURISPOSTALe risposte corrette sono: Installare una CPU più lenta può incrementare la % di occupazione della CPU, Installare una memoria di primo livello di maggiori dimensioni può incrementare la % di occupazione della CPU*NUOVA DOMANDA*Il page fault si può verificare quando:
+Scegli una o più alternative:
+a. Viene indirizzata una pagina non presente in memoria principale
+b. Viene indirizzata una pagina non presente nel segmento principale del processo
+c. Viene settato il bit di modifica che certifica un accesso in scrittura a una pagina
+d. Viene indirizzata una pagina non presente in TLB
+e. Non vi sono più pagine disponibili da allocare per il processo in esecuzioneRISPOSTALa risposta corretta è: Viene indirizzata una pagina non presente in memoria principale*NUOVA DOMANDA*I socket di tipo stream (o connection):
+a. costituiscono primitive di livello 2 del modello OSI
+b. non garantiscono l'ordine di consegna dei messaggi (segmenti)
+c. sono implementati dal protocollo UDP
+d. permettono di instaurare un canale logico di comunicazione tra mittente e destinarioRISPOSTARisposta corretta.
+La risposta corretta è: permettono di instaurare un canale logico di comunicazione tra mittente e destinario*NUOVA DOMANDA*Relativamente alla formulazione generale del problema e alla soluzione al problema della sezione critica, è vero che:
+Scegli una o più alternative:
+a. Uno dei requisiti è che due processi non possono essere mai contemporaneamente nelle loro sezioni critiche
+b. Prevede che la sezione critica sia preceduta da una sezione di ingresso e seguita da una sezione di uscita Vero
+c. Prevede che la sezione non critica sia seguita da una sezione di uscita
+d. Un requisito è che nessun processo dovrebbe attendere un tempo arbitrariamente lungo prima di uscire dalla sezione critica
+e. Uno dei requisiti è che nessun processo in esecuzione al di fuori della sua sezione critica puo' bloccare altri processiRISPOSTALe risposte corrette sono: Uno dei requisiti è che due processi non possono essere mai contemporaneamente nelle loro sezioni critiche, Uno dei requisiti è che nessun processo in esecuzione al di fuori della sua sezione critica puo' bloccare altri processi, Prevede che la sezione critica sia preceduta da una sezione di ingresso e seguita da una sezione di uscita*NUOVA DOMANDA*Il page fault si può verificare quando:
+a. Viene indirizzata una pagina non presente in memoria principale 
+b. Viene indirizzata una pagina non presente in TLB
+c. Non vi sono più pagine disponibili da allocare per il processo in esecuzione
+d. Viene settato il bit di modifica che certifica un accesso in scrittura a una pagina
+e. Viene indirizzata una pagina non presente nel segmento principale del processoRISPOSTALa risposta corretta è: Viene indirizzata una pagina non presente in memoria principale*NUOVA DOMANDA*Il problema produttore consumatore affrontato con la memoria condivisa richiede l'utilizzo di un buffer:
+a. Sempre illimitato, in modo che il consumatore non deve mai attendere nuovi oggetti
+b. Limitato, il consumatore dovrà attendere in caso di buffer vuoto 
+c. Limitato, il produttore dovrà attendere in caso di buffer pieno 
+d. Limitato, il produttore dovrà attendere in caso di buffer vuoto
+e. Limitato, lo scambio avviene sempre tramite utilizzo di semafori spinlock
+f. Illimitato, il produttore non potrà inserire nuovi oggetti finche l'ultimo non è stato consumatoRISPOSTALe risposte corrette sono: Limitato, il consumatore dovrà attendere in caso di buffer vuoto, Limitato, il produttore dovrà attendere in caso di buffer pieno*NUOVA DOMANDA*Un sistema di elaborazione ha 512 Megabyte di memoria fisica di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 14 bit. 
+Quale è il numero di bit del displacement (o offset) che rappresenta una parte dell'indirizzo logico.
+(calcolare)RISPOSTAL'offset o displacement corrisponde al numero di bit necessari a indirizzare all'interno di una pagina, ed è pari al log della dimensione di pagina
+La dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 512 MB = 512 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (512 * 2 * 2 ) / ( 2 *2 ) = (512 * 2 ) / ( 2 ) 
+Numero di bit del displacement = log (512 * 2 ) / ( 2 ) 
+La risposta corretta è : 15,00*NUOVA DOMANDA*Relativamente alla formulazione generale del problema e alla soluzione al problema della sezione critica, è vero che:
+a. Un requisito è che nessun processo dovrebbe attendere un tempo arbitrariamente lungo prima di uscire dalla sezione critica
+b. Uno dei requisiti è che nessun processo in esecuzione al di fuori della sua sezione critica puo' bloccare altri processi
+Pregresso
+c. Prevede che la sezione non critica sia seguita da una sezione di uscita
+d. Uno dei requisiti è che due processi non possono essere mai contemporaneamente nelle loro sezioni critiche
+Esclusione
+e. Prevede che la sezione critica sia preceduta da una sezione di ingresso e seguita da una sezione di uscitaRISPOSTARisposta corretta.
+Le risposte corrette sono: Uno dei requisiti è che due processi non possono essere mai contemporaneamente nelle loro sezioni critiche, Uno dei requisiti è che nessun processo in esecuzione al di fuori della sua sezione critica puo' bloccare altri processi, Prevede che la sezione critica sia preceduta da una sezione di ingresso e seguita da una sezione di uscita*NUOVA DOMANDA*I socket di tipo stream (o connection):
+a. non garantiscono l'ordine di consegna dei messaggi (segmenti)
+b. permettono di instaurare un canale logico di comunicazione tra mittente e destinario 
+c. sono implementati dal protocollo UDP
+d. costituiscono primitive di livello 2 del modello OSIRISPOSTARisposta corretta.
+La risposta corretta è: permettono di instaurare un canale logico di comunicazione tra mittente e destinario*NUOVA DOMANDA*Nel caso della gestione della memoria con segmentazione, con s e d si indicano, rispettivamente:
+a. Numero del segmento e dimensione del segmento
+b. Size del segmento e displacement del segmento
+c. Size del segmento e numero del segmento
+d. Size del segmento e displacement dell'indirizzo
+e. Numero del segmento e indirizzo del dato all'interno del segmentoRISPOSTALa risposta corretta è: Numero del segmento e indirizzo del dato all'interno del segmento*NUOVA DOMANDA*Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 42 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina Si ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che 'indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione. La memoria è organizzata a pagine, con pagine di 8 Kbyte.
+Quante sono le righe valide della tabella delle pagine del processo?
+(calcolare)RISPOSTAIl numero di pagine per ciascuno dei segmenti è pari a dim segmento / dim pagina, arrotondato per eccesso
+Il numero di pagine valide per il processo e quindi il numero delle righe valide della sua tabella delle pagine è la somma delle pagine di ciascun segmento
+La risposta corretta è : 69*NUOVA DOMANDA*Nel caso di paginazione con utilizzo della TLB, con α = 0,5, Tmem = 400 ns e ε = 20 ns: 
+(calcolare)RISPOSTAIl risultato si ottiene applicando la formula
+EAT = (ε + Tmem) * α + (ε +2* Tmem) * (1- α )
+La risposta corretta è : 620,00*NUOVA DOMANDA*Quali soluzioni per la protezione degli spazi di memoria da parte del kernel sono efficaci per almeno una delle tecniche di allocazione viste durante il corso (contigua, segmentata, paginata)
+a. Utilizzo della tabella delle pagine e del dei bit di validità 
+b. Utilizzo di un timer da inizializzare prima di avviare il task utente di cui controllare l'accesso
+c. Utilizzo del registro di scorrimento per contare gli accessi
+d. Utilizzo della TLB invertita
+e. Utilizzo del PTLR 
+f. Utilizzo della tabella dei segmenti e del test HW 
+g. Utilizzo di 2 registri che definiscano i confini dello spazio di memoria allocato al processo da usare per un test HWRISPOSTALe risposte corrette sono: Utilizzo della tabella dei segmenti e del test HW , Utilizzo del PTLR , Utilizzo della tabella delle pagine e del dei bit di validità , Utilizzo di 2 registri che definiscano i confini dello spazio di memoria allocato al processo da usare per un test HW*NUOVA DOMANDA*I semafori con busy waiting (spinlock), quando attivati per un processo
+a. Non tengono occupata la cpu ciclando a vuoto
+b. Non mandano il processo fra i processi waiting Vero: Questo lo fanno i semafori senza busy waiting
+c. Se implementati con una libreria utente, devono necessariamente richiamare una system call
+d. Sono meno problematici sui sistemi multiprocessore
+e. A livello di implementazione prevedono l'utilizzo di un loop in ciascuna delle primitiveRISPOSTAVerificare implementazione nelle slides e nel libro di testo
+Le risposte corrette sono: Non mandano il processo fra i processi waiting, Sono meno problematici sui sistemi multiprocessore*NUOVA DOMANDA*Per la gestione dei blocchi liberi del filesystem
+a. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto vuoto pieno rispetto all'uso di una bitmap
+b. Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit 
+c. Si usa sempre una bitmap
+d. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap
+e. Si può usare l'allocazione indicizzata insieme a una bitmapRISPOSTALe risposte corrette sono: Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit, Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap*NUOVA DOMANDA*L'architettura di un calcolatore ha 8 Megabyte di memoria massima di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 15 bit. 
+Quale è la dimensione in byte di una pagina
+(calcolare)RISPOSTALa dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 8 MB = 8 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (8 * 2 * 2 ) / ( 2 *2 ) = (8 * 2 ) / ( 2 ) 
+La risposta corretta è : 256,00*NUOVA DOMANDA*Nel caso di paginazione con utilizzo della TLB, con α = 0,5, Tmem = 400 ns e ε = 20 ns: 
+(calcolare)RISPOSTAIl risultato si ottiene applicando la formula
+EAT = (ε + Tmem) * α + (ε +2* Tmem) * (1- α )
+La risposta corretta è : 620,00*NUOVA DOMANDA*Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 33 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina Si ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che ' indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione. La memoria è organizzata a pagine, con pagine di 8 Kbyte.
+Quante sono le righe valide della tabella delle pagine del processo?
+(calcolare)RISPOSTAIl numero di pagine per ciascuno dei segmenti è pari a dim segmento / dim pagina, arrotondato per eccesso
+Il numero di pagine valide per il processo e quindi il numero delle righe valide della sua tabella delle pagine è la somma delle pagine di ciascun segmento
+La risposta corretta è : 68*NUOVA DOMANDA*I semafori con busy waiting (spinlock), quando attivati per un processo
+Scegli una o più alternative:
+a. Non mandano il processo fra i processi waiting 
+b. Non tengono occupata la cpu ciclando a vuoto
+c. Se implementati con una libreria utente, devono necessariamente richiamare una system call
+d. A livello di implementazione prevedono l'utilizzo di un loop in ciascuna delle primitive 
+e. Sono meno problematici sui sistemi multiprocessore
+semaforo liberi la cpu prima di aver consumato il quanto di tempoRISPOSTAVerificare implementazione nelle slides e nel libro di testo
+Le risposte corrette sono: Non mandano il processo fra i processi waiting, Sono meno problematici sui sistemi multiprocessore*NUOVA DOMANDA*Relativamente al seguente codice che permette la comunicazione fra thread a livello utente:
+Scegli una o più alternative:
+a. La variabile condivisa preleva indica l'elemento del buffer su cui scrivere
+b. La variabile condivisa inserisci indica l'elemento del buffer su cui leggere
+c. Il produttore cicla indefinitamente in caso di buffer completamente pieno
+d. Il consumatore cicla indefinitamente in caso di buffer completamente vuoto 
+e. Il codice non è soggetto a corse criticheRISPOSTARisposta corretta.
+Le risposte corrette sono: Il consumatore cicla indefinitamente in caso di buffer completamente vuoto, Il codice non è soggetto a corse critiche*NUOVA DOMANDA*Seleziona, tra le seguenti, le primitive socket di Berkley corrette:
+a. create()
+b. set()
+c. bind()
+d. close()RISPOSTARisposta corretta.
+Le risposte corrette sono: bind(),
+close()*NUOVA DOMANDA*La FAT
+Scegli una o più alternative:
+a. E acronimo di File Allocation Table 
+b. Disperde nel disco i puntatori ai vari blocchi del file
+c. Ha un elemento per ogni blocco del disco ed è indicizzata dal numero del blocco 
+d. Ha un elemento per ogni blocco del disco e ciascun elemento contiene la dimensione e la posizione del blocco
+e. E' una variante della allocazione indicizzataRISPOSTALe risposte corrette sono: Ha un elemento per ogni blocco del disco ed è indicizzata dal numero del blocco, E acronimo di File Allocation Table*NUOVA DOMANDA*Relativamente al fenomeno del trashing
+Scegli una o più alternative:
+a. Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza
+b. Si può gestire anche ignorando il parametro delta = numero di riferimenti
+c. La percentuale di pagine che viene utilizzata solo in lettura non è correlata
+d. L'efficienza complessiva del sistema di memoria di secondo livello è correlata
+e. Il numero di processi attivi nel sistema non è correlatoRISPOSTARisposta corretta.
+Le risposte corrette sono: Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza, L'efficienza complessiva del sistema di memoria di secondo livello è correlata, Si può gestire anche ignorando il parametro delta = numero di riferimenti*NUOVA DOMANDA*Quali soluzioni per la protezione degli spazi di memoria da parte del kernel sono efficaci per almeno una delle tecniche di allocazione viste durante il corso (contigua, segmentata, paginata)
+Scegli una o più alternative:
+a. Utilizzo del registro di scorrimento per contare gli accessi
+b. Utilizzo della tabella dei segmenti e del test HW 
+c. Utilizzo della tabella delle pagine e del dei bit di validità 
+d. Utilizzo di 2 registri che definiscano i confini dello spazio di memoria allocato al processo da usare per un test HW 
+e. Utilizzo della TLB invertita
+f. Utilizzo di un timer da inizializzare prima di avviare il task utente di cui controllare l'accesso
+g. Utilizzo del PTLRRISPOSTARisposta corretta.
+Le risposte corrette sono: Utilizzo della tabella dei segmenti e del test HW , Utilizzo del PTLR , Utilizzo della tabella delle pagine e del dei bit di validità , Utilizzo di 2 registri che definiscano i confini dello spazio di memoria allocato al processo da usare per un test HW*NUOVA DOMANDA*Relativamente alla primitiva Test and Set Lock (TSL), secondo quanto visto nel materiale del corso, è vero che:
+Scegli una o più alternative:
+a. E' una primitiva hardware/ software di supporto alla gestione della sincronizzazione
+b. Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica Vero
+c. Non si può utilizzare per implementare un mutex
+d. Non si può scrivere sullo stesso registro della TSL con una istruzione normale di write
+e. E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo VeroRISPOSTARisposta corretta.
+La TSL è utilizzata per testare e modificare (settare) il contenuto di una parola in modo atomico, usando una implementazione hardware per implementare la atomicità. Affinché sia utile serve che il valore del registro sia resettato con una write. Usando un parallelo con la primitiva semaforo binario, che è definita come primitiva sofware, che può essere direttamene implementata a basso livello usando anche la TSL, la TSL sta alla wait e la write sta alla signal
+Le risposte corrette sono: Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica , E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo*NUOVA DOMANDA*Si consideri un sistema che usa la memoria virtuale (paginazione on demand) che presenti le seguenti misurazioni di utilizzo:
+Percentuale di utilizzo della CPU: 25%
+Percentuale di utilizzo delle periferiche di I/O: 7%
+Percentuale di utilizzo del sottosistema HW di supporto alla paginazione: 92%
+Sotto queste ipotesi si può dire che sono vere le seguenti affermazioni:
+Scegli una o più alternative:
+a. Installare una memoria di primo livello di maggiori dimensioni può incrementare la % di occupazione della CPU
+b. Decrementare la dimensione delle pagine non incrementa in nessun caso la % di occupazione della CPU
+c. Incrementare la dimensione delle pagine non incrementa in nessun caso la % di occupazione della CPU
+d. Incrementare il livello di multiprogrammazione può incrementare la % di occupazione della CPU
+e. Installare una CPU più lenta può incrementare la % di occupazione della CPURISPOSTARisposta corretta.
+Le risposte corrette sono: Installare una CPU più lenta può incrementare la % di occupazione della CPU, Installare una memoria di primo livello di maggiori dimensioni può incrementare la % di occupazione della CPU*NUOVA DOMANDA*Relativamente alla formulazione generale del problema e alla soluzione al problema della sezione critica, è vero che:
+Scegli una o più alternative:
+a. Un requisito è che nessun processo dovrebbe attendere un tempo arbitrariamente lungo prima di uscire dalla sezione critica
+b. Uno dei requisiti è che due processi non possono essere mai contemporaneamente nelle
+loro sezioni critiche
+c. Prevede che la sezione non critica sia seguita da una sezione di uscita
+d. Prevede che la sezione critica sia preceduta da una sezione di ingresso e seguita da una sezione di uscita
+e. Uno dei requisiti è che nessun processo in esecuzione al di fuori della sua sezione critica puo'
+bloccare altri processiRISPOSTALe risposte corrette sono: Uno dei requisiti è che due processi non possono essere mai contemporaneamente nelle loro sezioni critiche, Uno dei requisiti è che nessun processo in esecuzione al di fuori della sua sezione critica puo' bloccare altri processi, Prevede che la sezione critica sia preceduta da una sezione di ingresso e seguita da una sezione di uscita*NUOVA DOMANDA*Relativamente al fenomeno del trashing
+Scegli una o più alternative:
+a. L'efficienza complessiva del sistema di memoria di secondo livello è correlata
+b. Si può gestire anche ignorando il parametro delta = numero di riferimenti
+c. Il numero di processi attivi nel sistema non è correlato
+d. Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza
+e. La percentuale di pagine che viene utilizzata solo in lettura non è correlataRISPOSTALe risposte corrette sono: Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza, L'efficienza complessiva del sistema di memoria di secondo livello è correlata, Si può gestire anche ignorando il parametro delta = numero di riferimenti*NUOVA DOMANDA*La FAT
+Scegli una o più alternative:
+a. E' una variante della allocazione indicizzata
+b. Ha un elemento per ogni blocco del disco e ciascun elemento contiene la dimensione e la posizione del blocco
+c. Ha un elemento per ogni blocco del disco ed è indicizzata dal numero del blocco 
+d. E acronimo di File Allocation Table 
+e. Disperde nel disco i puntatori ai vari blocchi del fileRISPOSTALe risposte corrette sono: Ha un elemento per ogni blocco del disco ed è indicizzata dal numero del blocco, E acronimo di File Allocation Table*NUOVA DOMANDA*Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 89 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina Si ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che ' indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione. La memoria è organizzata a pagine, con pagine di 8 Kbyte.
+Quante sono le righe valide della tabella delle pagine del processo?
+(calcolare)RISPOSTAIl numero di pagine per ciascuno dei segmenti è pari a dim segmento / dim pagina, arrotondato per eccesso
+Il numero di pagine valide per il processo e quindi il numero delle righe valide della sua tabella delle pagine è la somma delle pagine di ciascun segmento
+La risposta corretta è : 75*NUOVA DOMANDA*Nel caso della gestione della memoria con segmentazione, con s e d si indicano, rispettivamente:
+Scegli una o più alternative:
+a. Size del segmento e displacement dell'indirizzo
+b. Size del segmento e displacement del segmento
+c. Numero del segmento e dimensione del segmento
+d. Size del segmento e numero del segmento
+e. Numero del segmento e indirizzo del dato all'interno del segmentoRISPOSTARisposta corretta.
+La risposta corretta è: Numero del segmento e indirizzo del dato all'interno del segmento*NUOVA DOMANDA*I semafori con busy waiting (spinlock), quando attivati per un processo
+Scegli una o più alternative:
+a. Se implementati con una libreria utente, devono necessariamente richiamare una system call
+b. A livello di implementazione prevedono l'utilizzo di un loop in ciascuna delle primitive 
+c. Sono meno problematici sui sistemi multiprocessore
+d. Non mandano il processo fra i processi waiting
+e. Non tengono occupata la cpu ciclando a vuotoRISPOSTAVerificare implementazione nelle slides e nel libro di testo
+Le risposte corrette sono: Non mandano il processo fra i processi waiting, Sono meno problematici sui sistemi multiprocessore*NUOVA DOMANDA*L'architettura di un calcolatore ha 8 Megabyte di memoria massima di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 15 bit. 
+Quale è la dimensione in byte di una pagina
+(calcoalre)RISPOSTALa dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 8 MB = 8 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (8 * 2 * 2 ) / ( 2 *2 ) = (8 * 2 ) / ( 2 ) 
+La risposta corretta è : 256,00*NUOVA DOMANDA*Nel caso di paginazione con utilizzo della TLB, con α = 0,5, Tmem = 300 ns e ε = 30 ns: 
+(calcolare)RISPOSTAIl risultato si ottiene applicando la formula
+EAT = (ε + Tmem) * α + (ε +2* Tmem) * (1- α )
+La risposta corretta è : 480,00*NUOVA DOMANDA*Seleziona unicamente i livelli del modello OSI che hanno una corrispondenza diretta con livelli dello stack TCP/IP:
+a. Livello di sessione
+b. Livello di rete 
+c. Livello di presentazione
+d. Livello di trasportoRISPOSTARisposta corretta.
+Le risposte corrette sono:
+Livello di trasporto,
+Livello di rete*NUOVA DOMANDA*Il problema produttore consumatore affrontato con la memoria condivisa richiede l'utilizzo di un buffer:
+Scegli una o più alternative:
+a. Limitato, il consumatore dovrà attendere in caso di buffer vuoto 
+b. Limitato, il produttore dovrà attendere in caso di buffer vuoto
+c. Limitato, lo scambio avviene sempre tramite utilizzo di semafori spinlock
+d. Sempre illimitato, in modo che il consumatore non deve mai attendere nuovi oggetti
+e. Illimitato, il produttore non potrà inserire nuovi oggetti finche l'ultimo non è stato consumato
+f. Limitato, il produttore dovrà attendere in caso di buffer pienoRISPOSTALe risposte corrette sono: Limitato, il consumatore dovrà attendere in caso di buffer vuoto, Limitato, il produttore dovrà attendere in caso di buffer pieno*NUOVA DOMANDA*Quali soluzioni per la protezione degli spazi di memoria da parte del kernel sono efficaci per almeno una delle tecniche di allocazione viste durante il corso (contigua, segmentata, paginata)
+Scegli una o più alternative:
+a. Utilizzo del registro di scorrimento per contare gli accessi
+b. Utilizzo della tabella dei segmenti e del test HW 
+c. Utilizzo del PTLR 
+d. Utilizzo della tabella delle pagine e del dei bit di validità 
+e. Utilizzo della TLB invertita
+f. Utilizzo di 2 registri che definiscano i confini dello spazio di memoria allocato al processo da usare per un test HW 
+g. Utilizzo di un timer da inizializzare prima di avviare il task utente di cui controllare l'accessoRISPOSTALe risposte corrette sono: Utilizzo della tabella dei segmenti e del test HW , Utilizzo del PTLR , Utilizzo della tabella delle pagine e del dei bit di validità , Utilizzo di 2 registri che definiscano i confini dello spazio di memoria allocato al processo da usare per un test HW*NUOVA DOMANDA*Il page fault si può verificare quando:
+Scegli una o più alternative:
+a. Viene indirizzata una pagina non presente nel segmento principale del processo
+b. Viene indirizzata una pagina non presente in memoria principale 
+c. Viene settato il bit di modifica che certifica un accesso in scrittura a una pagina
+d. Non vi sono più pagine disponibili da allocare per il processo in esecuzione
+e. Viene indirizzata una pagina non presente in TLBRISPOSTALa risposta corretta è: Viene indirizzata una pagina non presente in memoria principale*NUOVA DOMANDA*Nel caso della gestione della memoria con segmentazione, con s e d si indicano, rispettivamente:
+Scegli una o più alternative:
+a. Numero del segmento e dimensione del segmento
+b. Size del segmento e displacement del segmento
+c. Size del segmento e numero del segmento
+d. Numero del segmento e indirizzo del dato all'interno del segmento 
+e. Size del segmento e displacement dell'indirizzoRISPOSTARisposta corretta.
+La risposta corretta è: Numero del segmento e indirizzo del dato all'interno del segmento*NUOVA DOMANDA*Relativamente alla primitiva Test and Set Lock (TSL), secondo quanto visto nel materiale del corso, è vero che:
+Scegli una o più alternative:
+a. E' una primitiva hardware/ software di supporto alla gestione della sincronizzazione
+b. Non si può utilizzare per implementare un mutex
+c. Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica 
+d. E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo
+e. Non si può scrivere sullo stesso registro della TSL con una istruzione normale di writeRISPOSTALa TSL è utilizzata per testare e modificare (settare) il contenuto di una parola in modo atomico, usando una implementazione hardware per implementare la atomicità. Affinché sia utile serve che il valore del registro sia resettato con una write. Usando un parallelo con la primitiva semaforo binario, che è definita come primitiva sofware, che può essere direttamene implementata a basso livello usando anche la TSL, la TSL sta alla wait e la write sta alla signal
+Le risposte corrette sono: Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica , E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo*NUOVA DOMANDA*L'architettura di un calcolatore ha 8 Megabyte di memoria massima di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 15 bit. 
+Quale è la dimensione in byte di una pagina
+(calcolare)RISPOSTALa dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 8 MB = 8 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (8 * 2 * 2 ) / ( 2 *2 ) = (8 * 2 ) / ( 2 ) 
+La risposta corretta è : 256,00*NUOVA DOMANDA*Il problema produttore consumatore affrontato con la memoria condivisa richiede l'utilizzo di un buffer:
+Scegli una o più alternative:
+a. Illimitato, il produttore non potrà inserire nuovi oggetti finche l'ultimo non è stato consumato
+b. Limitato, lo scambio avviene sempre tramite utilizzo di semafori spinlock
+c. Limitato, il consumatore dovrà attendere in caso di buffer vuoto 
+d. Limitato, il produttore dovrà attendere in caso di buffer pieno 
+e. Limitato, il produttore dovrà attendere in caso di buffer vuoto
+f. Sempre illimitato, in modo che il consumatore non deve mai attendere nuovi oggettiRISPOSTALe risposte corrette sono: Limitato, il consumatore dovrà attendere in caso di buffer vuoto, Limitato, il produttore dovrà attendere in caso di buffer pieno*NUOVA DOMANDA*Nel caso di paginazione con utilizzo della TLB, con α = 0,5, Tmem = 300 ns e ε = 30 ns: 
+(calcolare)RISPOSTAIl risultato si ottiene applicando la formula
+EAT = (ε + Tmem) * α + (ε +2* Tmem) * (1- α )
+La risposta corretta è : 480,00*NUOVA DOMANDA*Quali soluzioni per la protezione degli spazi di memoria da parte del kernel sono efficaci per almeno una delle tecniche di allocazione viste durante il corso (contigua, segmentata, paginata)
+Scegli una o più alternative:
+a. Utilizzo della tabella dei segmenti e del test HW 
+b. Utilizzo di 2 registri che definiscano i confini dello spazio di memoria allocato al processo da usare per un test HW 
+c. Utilizzo del registro di scorrimento per contare gli accessi
+d. Utilizzo di un timer da inizializzare prima di avviare il task utente di cui controllare l'accesso
+e. Utilizzo del PTLR
+f. Utilizzo della TLB invertita
+g. Utilizzo della tabella delle pagine e del dei bit di validitàRISPOSTALe risposte corrette sono: Utilizzo della tabella dei segmenti e del test HW , Utilizzo del PTLR , Utilizzo della tabella delle pagine e del dei bit di validità , Utilizzo di 2 registri che definiscano i confini dello spazio di memoria allocato al processo da usare per un test HW*NUOVA DOMANDA*Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 66 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina Si ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che ' indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione. La memoria è organizzata a pagine, con pagine di 8 Kbyte.
+Quante sono le righe valide della tabella delle pagine del processo?
+(calcolare)RISPOSTAIl numero di pagine per ciascuno dei segmenti è pari a dim segmento / dim pagina, arrotondato per eccesso
+Il numero di pagine valide per il processo e quindi il numero delle righe valide della sua tabella delle pagine è la somma delle pagine di ciascun segmento
+La risposta corretta è : 72*NUOVA DOMANDA*Relativamente alla implementazione del semaforo NON Busy waiting, è vero che:
+Scegli una o più alternative:
+a. La signal è implementata dal codice seguente: S= S+1;
+b. Entrambe le primitive devono essere non interrompibili 
+c. La chiamata della wait prevede che un processo vada tutte le volte nello stato waiting, mentre la chiamata della signal prevede che il processo vada nello stato ready
+d. E' previsto l'utilizzo di una lista solo nella implementazione della primitiva wait 
+e. La wait è implementata utilizzando la primitiva hardware TSLRISPOSTALa risposta corretta è: Entrambe le primitive devono essere non interrompibili*NUOVA DOMANDA*La FAT
+Scegli una o più alternative:
+a. Disperde nel disco i puntatori ai vari blocchi del file
+b. Ha un elemento per ogni blocco del disco ed è indicizzata dal numero del blocco 
+c. E' una variante della allocazione indicizzata
+d. Ha un elemento per ogni blocco del disco e ciascun elemento contiene la dimensione e la posizione del blocco
+e. E acronimo di File Allocation TableRISPOSTALe risposte corrette sono: Ha un elemento per ogni blocco del disco ed è indicizzata dal numero del blocco, E acronimo di File Allocation Table*NUOVA DOMANDA*Seleziona unicamente i livelli del modello OSI che hanno una corrispondenza diretta con livelli dello stack TCP/IP:
+a. Livello di trasporto 
+b. Livello di rete 
+c. Livello di presentazione
+d. Livello di sessioneRISPOSTARisposta corretta.
+Le risposte corrette sono: Livello di trasporto,
+Livello di rete*NUOVA DOMANDA*Relativamente al fenomeno del trashing
+Scegli una o più alternative:
+a. Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza
+b. La percentuale di pagine che viene utilizzata solo in lettura non è correlata
+c. Il numero di processi attivi nel sistema non è correlato
+d. Si può gestire anche ignorando il parametro delta = numero di riferimenti
+e. L'efficienza complessiva del sistema di memoria di secondo livello è correlataRISPOSTALe risposte corrette sono: Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza, L'efficienza complessiva del sistema di memoria di secondo livello è correlata, Si può gestire anche ignorando il parametro delta = numero di riferimenti*NUOVA DOMANDA*Seleziona unicamente i livelli del modello OSI che hanno una corrispondenza diretta con livelli dello stack TCP/IP:
+a. Livello di presentazione
+b. Livello di rete 
+c. Livello di sessione
+d. Livello di trasportoRISPOSTARisposta corretta.
+Le risposte corrette sono: 
+Livello di trasporto,
+Livello di rete*NUOVA DOMANDA*Si consideri un sistema che usa la memoria virtuale (paginazione on demand) che presenti le seguenti misurazioni di utilizzo:
+Percentuale di utilizzo della CPU: 25%
+Percentuale di utilizzo delle periferiche di I/O: 7%
+Percentuale di utilizzo del sottosistema HW di supporto alla paginazione: 92%
+Sotto queste ipotesi si può dire che sono vere le seguenti affermazioni:
+a. Installare una memoria di primo livello di maggiori dimensioni può incrementare la % di occupazione della CPU
+b. Incrementare la dimensione delle pagine non incrementa in nessun caso la % di occupazione della CPU
+c. Incrementare il livello di multiprogrammazione può incrementare la % di occupazione della CPU
+d. Decrementare la dimensione delle pagine non incrementa in nessun caso la % di occupazione della CPU
+e. Installare una CPU più lenta può incrementare la % di occupazione della CPU
+Risposta corretta.RISPOSTALe risposte corrette sono: Installare una CPU più lenta può incrementare la % di occupazione della CPU, Installare una memoria di primo livello di maggiori dimensioni può incrementare la % di occupazione della CPU*NUOVA DOMANDA*Un sistema di elaborazione ha 64 Megabyte di memoria fisica di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 14 bit. 
+Quale è il numero di bit del displacement (o offset) che rappresenta una parte dell'indirizzo logico.
+(calcolare)RISPOSTAL'offset o displacement corrisponde al numero di bit necessari a indirizzare all'interno di una pagina, ed è pari al log della dimensione di pagina
+La dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 64 MB = 64 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (64 * 2 * 2 ) / ( 2 *2 ) = (64 * 2 ) / ( 2 ) 
+Numero di bit del displacement = log (64 * 2 ) / ( 2 ) 
+La risposta corretta è : 12,00*NUOVA DOMANDA*Considerando il working set model e il suo utilizzo per la allocazione delle pagine ai processi, quale è l'effetto dell'incremento del valore di delta
+a. Il numero di pagine allocate per un processo tende a decrescere
+b. Il page fault rate tende a crescere
+c. Il page fault rate tende a decrescere 
+d. Il context switch overhead tende a crescere
+e. Il page fault rate rimane invariato
+f. Il numero di pagine allocate per un processo tende a crescereRISPOSTARisposta corretta.
+Le risposte corrette sono: Il page fault rate tende a decrescere, Il numero di pagine allocate per un processo tende a crescere*NUOVA DOMANDA*Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 33 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina Si ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che 'indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione. La memoria è organizzata a pagine, con pagine di 8 Kbyte.
+Quante sono le righe valide della tabella delle pagine del processo?
+(calcolare)RISPOSTAIl numero di pagine per ciascuno dei segmenti è pari a dim segmento / dim pagina, arrotondato per eccesso
+Il numero di pagine valide per il processo e quindi il numero delle righe valide della sua tabella delle pagine è la somma delle pagine di ciascun segmento
+La risposta corretta è : 68*NUOVA DOMANDA*Scegli una o più alternative:
+Relativamente all'algoritmo di Peterson, è vero che:
+a. Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti
+b. Rappresenta una delle soluzioni al problema della sezione critica in caso di due o più processi
+c. Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti
+d. Per ingresso nella sezione critica viene verificato che il processo abbia una priorità superiore all'altro processo
+e. All'uscita dalla sezione critica lo scalare viene settato a falseRISPOSTALe risposte corrette sono: Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti, Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti*NUOVA DOMANDA*Relativamente alla formulazione generale del problema e alla soluzione al problema della sezione critica, è vero che:
+a. Un requisito è che nessun processo dovrebbe attendere un tempo arbitrariamente lungo prima di uscire dalla sezione critica
+b. Prevede che la sezione non critica sia seguita da una sezione di uscita
+c. Prevede che la sezione critica sia preceduta da una sezione di ingresso e seguita da una sezione di uscita
+d. Uno dei requisiti è che nessun processo in esecuzione al di fuori della sua sezione critica puo' bloccare altri processi
+e. Uno dei requisiti è che due processi non possono essere mai contemporaneamente nelle loro sezioni criticheRISPOSTARisposta corretta.
+Le risposte corrette sono: Uno dei requisiti è che due processi non possono essere mai contemporaneamente nelle loro sezioni critiche, Uno dei requisiti è che nessun processo in esecuzione al di fuori della sua sezione critica puo' bloccare altri processi, Prevede che la sezione critica sia preceduta da una sezione di ingresso e seguita da una sezione di uscita*NUOVA DOMANDA*Relativamente alla Tabella delle Pagine Invertita
+a. Consente di ridurre la memoria dedicata alla associazione fra numero di pagina e numero di frame che la contiene rispetto alla tabella delle pagine standard
+b. È indicizzata implicitamente per numero di pagina
+c. Contiene in ogni sua riga il numero del frame
+d. Contiene una riga per ogni frame del sistema 
+e. Non richiede che venga letto il contenuto di più righe per ottenere il numero di frame che serve
+f. E' indicizzata utilizzando il numero di frame e si cerca il numero di pagina in ogni sua riga in modo da ottenere l'offsetRISPOSTARisposta corretta.
+Le risposte corrette sono: Consente di ridurre la memoria dedicata alla associazione fra numero di pagina e numero di frame che la contiene rispetto alla tabella delle pagine standard,
+Contiene una riga per ogni frame del sistema*NUOVA DOMANDA*Nel caso della gestione della memoria con segmentazione, con s e d si indicano, rispettivamente:
+a. Size del segmento e numero del segmento
+b. Numero del segmento e dimensione del segmento
+c. Size del segmento e displacement dell'indirizzo
+d. Size del segmento e displacement del segmento
+e. Numero del segmento e indirizzo del dato all'interno del segmentoRISPOSTARisposta corretta.
+La risposta corretta è: Numero del segmento e indirizzo del dato all'interno del segmento*NUOVA DOMANDA*I semafori con busy waiting (spinlock), quando attivati per un processo
+a. Sono meno problematici sui sistemi multiprocessore
+b. Non tengono occupata la cpu ciclando a vuoto
+c. A livello di implementazione prevedono l'utilizzo di un loop in ciascuna delle primitive 
+d. Non mandano il processo fra i processi waiting
+e. Se implementati con una libreria utente, devono necessariamente richiamare una system callRISPOSTARisposta corretta.
+Verificare implementazione nelle slides e nel libro di testo
+Le risposte corrette sono: Non mandano il processo fra i processi waiting, Sono meno problematici sui sistemi multiprocessore*NUOVA DOMANDA*Nel caso di paginazione con utilizzo della TLB, con α = 0,5, Tmem = 400 ns e ε = 20 ns: 
+(calcolare)RISPOSTAIl risultato si ottiene applicando la formula
+EAT = (ε + Tmem) * α + (ε +2* Tmem) * (1- α )
+La risposta corretta è : 620,00*NUOVA DOMANDA*Per la gestione dei blocchi liberi del filesystem
+a. Si può usare l'allocazione indicizzata insieme a una bitmap
+b. Si usa sempre una bitmap
+c. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto vuoto pieno rispetto all'uso di una bitmap
+d. Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit
+
+e. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap
+indicizzare e serve poco spazio disco per indicizzarli, la bitmap uso uno spazio a dimensione fissaRISPOSTALe risposte corrette sono: Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit, Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap*NUOVA DOMANDA*Relativamente alla implementazione del semaforo NON Busy waiting, è vero che:
+Scegli una o più alternative:
+a. E' previsto l'utilizzo di una lista solo nella implementazione della primitiva wait 
+b. La signal è implementata dal codice seguente: S= S+1;
+c. La chiamata della wait prevede che un processo vada tutte le volte nello stato waiting, mentre la chiamata della signal prevede che il processo vada nello stato ready
+d. La wait è implementata utilizzando la primitiva hardware TSL
+e. Entrambe le primitive devono essere non interrompibiliRISPOSTALa risposta corretta è: Entrambe le primitive devono essere non interrompibili*NUOVA DOMANDA*Relativamente all'algoritmo di Peterson, è vero che:
+Scegli una o più alternative:
+a. Per ingresso nella sezione critica viene verificato che il processo abbia una priorità superiore all'altro processo
+b. Rappresenta una delle soluzioni al problema della sezione critica in caso di due o più processi
+c. Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti
+d. Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti
+e. All'uscita dalla sezione critica lo scalare viene settato a falseRISPOSTARisposta corretta.
+Le risposte corrette sono: Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti, Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti*NUOVA DOMANDA*Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 66 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina Si ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che ' indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione. La memoria è organizzata a pagine, con pagine di 8 Kbyte.
+Quante sono le righe valide della tabella delle pagine del processo?
+(calcolare)RISPOSTAIl numero di pagine per ciascuno dei segmenti è pari a dim segmento / dim pagina, arrotondato per eccesso
+Il numero di pagine valide per il processo e quindi il numero delle righe valide della sua tabella delle pagine è la somma delle pagine di ciascun segmento
+La risposta corretta è : 72*NUOVA DOMANDA*Considerando il working set model e il suo utilizzo per la allocazione delle pagine ai processi, quale è l'effetto dell'incremento del valore di delta
+Scegli una o più alternative:
+a. Il page fault rate tende a crescere
+b. Il page fault rate tende a decrescere 
+c. Il numero di pagine allocate per un processo tende a decrescere
+d. Il page fault rate rimane invariato
+e. Il numero di pagine allocate per un processo tende a crescere 
+f. Il context switch overhead tende a crescereRISPOSTARisposta corretta.
+Le risposte corrette sono: Il page fault rate tende a decrescere, Il numero di pagine allocate per un processo tende a crescere*NUOVA DOMANDA*L'architettura di un calcolatore ha 1024 Megabyte di memoria massima di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 15 bit. 
+Quale è la dimensione in byte di una pagina
+(calcolare)RISPOSTALa dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 1024 MB = 1024 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (1024 * 2 * 2 ) / ( 2 *2 ) = (1024 * 2 ) / ( 2 ) 
+La risposta corretta è : 32768,00*NUOVA DOMANDA*Relativamente alla primitiva Test and Set Lock (TSL), secondo quanto visto nel materiale del corso, è vero che:
+Scegli una o più alternative:
+a. E' una primitiva hardware/ software di supporto alla gestione della sincronizzazione
+b. Non si può utilizzare per implementare un mutex
+c. E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo 
+d. Non si può scrivere sullo stesso registro della TSL con una istruzione normale di write
+e. Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomicaRISPOSTARisposta corretta.
+La TSL è utilizzata per testare e modificare (settare) il contenuto di una parola in modo atomico, usando una implementazione hardware per implementare la atomicità. Affinché sia utile serve che il valore del registro sia resettato con una write. Usando un parallelo con la primitiva semaforo binario, che è definita come primitiva sofware, che può essere direttamene implementata a basso livello usando anche la TSL, la TSL sta alla wait e la write sta alla signal
+Le risposte corrette sono: Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica , E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo*NUOVA DOMANDA*Nel caso di paginazione con utilizzo della TLB, con α = 0,5, Tmem = 100 ns e ε = 30 ns: 
+(calcolare)RISPOSTAIl risultato si ottiene applicando la formula
+EAT = (ε + Tmem) * α + (ε +2* Tmem) * (1- α )
+La risposta corretta è : 180,00*NUOVA DOMANDA*I socket di tipo stream (o connection):
+a. permettono di instaurare un canale logico di comunicazione tra mittente e destinario 
+b. costituiscono primitive di livello 2 del modello OSI
+c. sono implementati dal protocollo UDP
+d. non garantiscono l'ordine di consegna dei messaggi (segmenti)RISPOSTARisposta corretta.
+La risposta corretta è: permettono di instaurare un canale logico di comunicazione tra mittente e destinario*NUOVA DOMANDA*Relativamente alla Tabella delle Pagine Invertita
+Scegli una o più alternative:
+a. Consente di ridurre la memoria dedicata alla associazione fra numero di pagina e numero di frame che la contiene rispetto alla tabella delle pagine standard
+b. È indicizzata implicitamente per numero di pagina
+c. Contiene in ogni sua riga il numero del frame
+d. Contiene una riga per ogni frame del sistema
+e. Non richiede che venga letto il contenuto di più righe per ottenere il numero di frame che serve
+f. E' indicizzata utilizzando il numero di frame e si cerca il numero di pagina in ogni sua riga in modo da ottenere l'offsetRISPOSTALe risposte corrette sono: Consente di ridurre la memoria dedicata alla associazione fra numero di pagina e numero di frame che la contiene rispetto alla tabella delle pagine standard,
+Contiene una riga per ogni frame del sistema*NUOVA DOMANDA*Si consideri un sistema che usa la memoria virtuale (paginazione on demand) che presenti le seguenti misurazioni di utilizzo:
+Percentuale di utilizzo della CPU: 25%
+Percentuale di utilizzo delle periferiche di I/O: 7%
+Percentuale di utilizzo del sottosistema HW di supporto alla paginazione: 92%
+Sotto queste ipotesi si può dire che sono vere le seguenti affermazioni:
+Scegli una o più alternative:
+a. Installare una CPU più lenta può incrementare la % di occupazione della CPU
+b. Decrementare la dimensione delle pagine non incrementa in nessun caso la % di occupazione della CPU
+c. Installare una memoria di primo livello di maggiori dimensioni può incrementare la % di occupazione della CPU
+d. Incrementare la dimensione delle pagine non incrementa in nessun caso la % di occupazione della CPU
+e. Incrementare il livello di multiprogrammazione può incrementare la % di occupazione della CPURISPOSTALe risposte corrette sono: Installare una CPU più lenta può incrementare la % di occupazione della CPU, Installare una memoria di primo livello di maggiori dimensioni può incrementare la % di occupazione della CPU*NUOVA DOMANDA*Per la gestione dei blocchi liberi del filesystem
+Scegli una o più alternative:
+a. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap
+b. Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit 
+c. Si può usare l'allocazione indicizzata insieme a una bitmap
+d. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto vuoto pieno rispetto all'uso di una bitmap
+e. Si usa sempre una bitmapRISPOSTARisposta corretta.
+Le risposte corrette sono: Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit, Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap*NUOVA DOMANDA*Seleziona, tra le seguenti, le primitive socket di Berkley corrette:
+a. set()
+b. close() 
+c. bind() 
+d. create()RISPOSTARisposta corretta.
+Le risposte corrette sono: bind(),
+close()*NUOVA DOMANDA*Nel caso di paginazione con utilizzo della TLB, con α = 0,5, Tmem = 500 ns e ε = 10 ns: 
+(calcolare)RISPOSTAIl risultato si ottiene applicando la formula
+EAT = (ε + Tmem) * α + (ε +2* Tmem) * (1- α )
+La risposta corretta è : 760,00*NUOVA DOMANDA*Il page fault si può verificare quando:
+Scegli una o più alternative:
+a. Viene settato il bit di modifica che certifica un accesso in scrittura a una pagina
+b. Non vi sono più pagine disponibili da allocare per il processo in esecuzione
+c. Viene indirizzata una pagina non presente in memoria principale 
+d. Viene indirizzata una pagina non presente in TLB
+e. Viene indirizzata una pagina non presente nel segmento principale del processoRISPOSTALa risposta corretta è: Viene indirizzata una pagina non presente in memoria principale*NUOVA DOMANDA*Il problema produttore consumatore affrontato con la memoria condivisa richiede l'utilizzo di un buffer:
+Scegli una o più alternative:
+a. Limitato, lo scambio avviene sempre tramite utilizzo di semafori spinlock
+b. Limitato, il produttore dovrà attendere in caso di buffer vuoto
+c. Limitato, il produttore dovrà attendere in caso di buffer pieno 
+d. Illimitato, il produttore non potrà inserire nuovi oggetti finche l'ultimo non è stato consumato
+e. Sempre illimitato, in modo che il consumatore non deve mai attendere nuovi oggetti
+f. Limitato, il consumatore dovrà attendere in caso di buffer vuotoRISPOSTALe risposte corrette sono: Limitato, il consumatore dovrà attendere in caso di buffer vuoto, Limitato, il produttore dovrà attendere in caso di buffer pieno*NUOVA DOMANDA*L'architettura di un calcolatore ha 1024 Megabyte di memoria massima di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 15 bit. 
+Quale è la dimensione in byte di una pagina
+(calcolare)RISPOSTALa dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 1024 MB = 1024 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (1024 * 2 * 2 ) / ( 2 *2 ) = (1024 * 2 ) / ( 2 ) 
+La risposta corretta è : 32768,00*NUOVA DOMANDA*Il page fault si può verificare quando:
+Scegli una o più alternative:
+a. Non vi sono più pagine disponibili da allocare per il processo in esecuzione
+b. Viene settato il bit di modifica che certifica un accesso in scrittura a una pagina
+c. Viene indirizzata una pagina non presente in TLB
+d. Viene indirizzata una pagina non presente nel segmento principale del processo
+e. Viene indirizzata una pagina non presente in memoria principaleRISPOSTARisposta corretta.
+La risposta corretta è: Viene indirizzata una pagina non presente in memoria principale*NUOVA DOMANDA*Per la gestione dei blocchi liberi del filesystem
+Scegli una o più alternative:
+a. Si usa sempre una bitmap
+b. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap
+c. Si può usare l'allocazione indicizzata insieme a una bitmap
+d. Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit 
+e. Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto vuoto pieno rispetto all'uso di una bitmapRISPOSTALe risposte corrette sono: Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit, Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap*NUOVA DOMANDA*I semafori con busy waiting (spinlock), quando attivati per un processo
+Scegli una o più alternative:
+a. Sono meno problematici sui sistemi multiprocessore
+semaforo liberi la cpu prima di aver consumato il quanto di tempo
+b. Se implementati con una libreria utente, devono necessariamente richiamare una system call
+c. Non mandano il processo fra i processi waiting Vero: Questo lo fanno i semafori senza busy waiting
+d. A livello di implementazione prevedono l'utilizzo di un loop in ciascuna delle primitive 
+e. Non tengono occupata la cpu ciclando a vuotoRISPOSTAVerificare implementazione nelle slides e nel libro di testo
+Le risposte corrette sono: Non mandano il processo fra i processi waiting, Sono meno problematici sui sistemi multiprocessore*NUOVA DOMANDA*Relativamente alla primitiva Test and Set Lock (TSL), secondo quanto visto nel materiale del corso, è vero che:
+Scegli una o più alternative:
+a. Non si può utilizzare per implementare un mutex
+b. Non si può scrivere sullo stesso registro della TSL con una istruzione normale di write
+c. Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica Vero
+d. E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo Vero
+e. E' una primitiva hardware/ software di supporto alla gestione della sincronizzazioneRISPOSTALa TSL è utilizzata per testare e modificare (settare) il contenuto di una parola in modo atomico, usando una implementazione hardware per implementare la atomicità. Affinché sia utile serve che il valore del registro sia resettato con una write. Usando un parallelo con la primitiva semaforo binario, che è definita come primitiva sofware, che può essere direttamene implementata a basso livello usando anche la TSL, la TSL sta alla wait e la write sta alla signal
+Le risposte corrette sono: Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica , E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo*NUOVA DOMANDA*Un sistema di elaborazione ha 128 Megabyte di memoria fisica di primo livello, l'indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 14 bit. 
+Quale è il numero di bit del displacement (o offset) che rappresenta una parte dell'indirizzo logico.
+(calcolare)RISPOSTAL'offset o displacement corrisponde al numero di bit necessari a indirizzare all'interno di una pagina, ed è pari al log della dimensione di pagina
+La dimensione del frame, e quindi della pagina, si ricava dividendo la dimensione della memoria fisica per il numero di frame che la compongono.
+Dimensione memoria = 128 MB = 128 * 2 * 2 B
+Il numero dei frame si può calcolare considerando che corrisponde a 2 elevato numero di bit che compongono la tabella delle pagine
+Numero frame = 2 = 2 *2
+Dim pagina (in Bytes) = Dim frame = Dimensione Memoria ( bytes ) / Numero dei frame = (128 * 2 * 2 ) / ( 2 *2 ) = (128 * 2 ) / ( 2 ) 
+Numero di bit del displacement = log (128 * 2 ) / ( 2 ) 
+La risposta corretta è : 13,00*NUOVA DOMANDA*Si consideri un sistema che usa la memoria virtuale (paginazione on demand) che presenti le seguenti misurazioni di utilizzo:
+Percentuale di utilizzo della CPU: 25%
+Percentuale di utilizzo delle periferiche di I/O: 7%
+Percentuale di utilizzo del sottosistema HW di supporto alla paginazione: 92%
+Sotto queste ipotesi si può dire che sono vere le seguenti affermazioni:
+Scegli una o più alternative:
+a. Installare una memoria di primo livello di maggiori dimensioni può incrementare la % di occupazione della CPU
+b. Incrementare la dimensione delle pagine non incrementa in nessun caso la % di occupazione della CPU
+c. Incrementare il livello di multiprogrammazione può incrementare la % di occupazione della CPU
+d. Installare una CPU più lenta può incrementare la % di occupazione della CPU
+e. Decrementare la dimensione delle pagine non incrementa in nessun caso la % di occupazione della CPURISPOSTALe risposte corrette sono: Installare una CPU più lenta può incrementare la % di occupazione della CPU, Installare una memoria di primo livello di maggiori dimensioni può incrementare la % di occupazione della CPU*NUOVA DOMANDA*
