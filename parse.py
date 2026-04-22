@@ -1,62 +1,64 @@
 import json
+import os
 import re
 
-def parse_custom_quiz(file_path):
-        with open(file_path, 'r', encoding='utf-8') as f:
-                content = f.read()
+def parse_ultimate(file_path):
+    if not os.path.exists(file_path):
+        print(f"❌ File non trovato: {file_path}")
+        return
 
-            # Separiamo le varie flashcard usando il separatore %$%
-        entries = content.split('%$%')
-        quiz_data = []
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
 
-        for entry in entries:
-                if '/&/' not in entry:
-                        continue
-                    
-                # Dividiamo la parte della domanda/opzioni dalla parte della risposta
-                parts = entry.split('/&/')
-                question_block = parts[0].strip()
-                answer_block = parts[1].strip()
+    blocks = content.split('*NUOVA DOMANDA*')
+    dataset = []
 
-                # Pulizia della domanda: cerchiamo il testo principale
-                # Rimuoviamo "Domanda:", "Flashcard X:", ecc.
-                q_text_match = re.search(r'(?:Domanda: )?(.+?)(?=\n[a-g]\.|\n\* [a-g]\.)', question_block, re.DOTALL | re.IGNORECASE)
-                if q_text_match:
-                        question_text = q_text_match.group(1).replace('**', '').strip()
-                else:
-                        # Fallback se non ci sono opzioni lette correttamente
-                    question_text = question_block.split('\n')[0].strip()
+    for block in blocks:
+        if 'RISPOSTA' not in block:
+            continue
+        
+        parts = block.split('RISPOSTA')
+        q_section = parts[0].strip()
+        a_section = parts[1].strip()
 
-                    # Estrazione opzioni (formato a. o * a.)
-                    options = re.findall(r'[a-g]\.\s*(.+)', question_block)
-                    if not options:
-                            # Prova con il formato dei punti elenco con asterisco
-                        options = re.findall(r'\* [a-g]\.\s*(.+)', question_block)
+        # 1. Cerchiamo le opzioni classiche (a. b. c. o a) b) c))
+        options_raw = re.findall(r'^\s*[\*\-\•\○\s]*([a-gA-G])[\.\)]?\s+(.+)', q_section, re.MULTILINE)
+        options_text = [opt[1].strip() for opt in options_raw]
+        
+        # 2. Se non ci sono opzioni (è un esercizio di calcolo), creiamo una dummy
+        if not options_text:
+            # Estraiamo il valore numerico della risposta se esiste (es. "760,00")
+            risultato = re.search(r'corretta è\s*:\s*(.+)', a_section, re.IGNORECASE)
+            valore = risultato.group(1).strip() if risultato else "Vedi spiegazione"
+            options_text = [f"Risultato: {valore}"]
+            correct_indices = [0]
+        else:
+            # Mappatura normale per risposte multiple
+            correct_indices = []
+            for idx, opt in enumerate(options_text):
+                clean_opt = re.sub(r'[^\w\s]', '', opt.lower()).strip()
+                clean_ans = re.sub(r'[^\w\s]', '', a_section.lower()).strip()
+                if clean_opt in clean_ans:
+                    correct_indices.append(idx)
 
-                        # Identificazione risposte corrette
-                        correct_indices = []
-                        for idx, opt in enumerate(options):
-                                # Se il testo dell'opzione è contenuto nel blocco risposta, è corretta
-                            # Usiamo una pulizia minima per confrontare i testi
-                            clean_opt = opt.strip().lower()
-                            clean_ans = answer_block.strip().lower()
-                            if clean_opt in clean_ans:
-                                 correct_indices.append(idx)
+        # 3. Pulizia della domanda
+        q_lines = q_section.split('\n')
+        q_text = " ".join([l.strip() for l in q_lines if not re.match(r'^[\*\-\•\○\s]*[a-gA-G][\.\)]?\s+', l.strip()) and l.strip() != ""])
+        q_text = re.sub(r'(\*\*File \d+:\*\*|\*\*Domanda:\*\*|Domanda \d+:|Scegli una o più alternative:)', '', q_text, flags=re.IGNORECASE).strip()
 
-                            if question_text and options:
-                                 quiz_data.append({
-                                        "domanda": question_text,
-                                        "opzioni": [o.strip() for o in options],
-                                        "corrette": correct_indices
-                            })
+        if q_text:
+            dataset.append({
+                "domanda": q_text,
+                "opzioni": options_text,
+                "corrette": correct_indices
+            })
 
-                            return quiz_data
+    output_path = 'data/sopr_quiz2.json'
+    os.makedirs('data', exist_ok=True)
+    with open(output_path, 'w', encoding='utf-8') as out:
+        json.dump(dataset, out, indent=4, ensure_ascii=False)
+    
+    print(f"✅ CONVERSIONE TOTALE!")
+    print(f"📊 Domande processate: {len(dataset)} (Incluse domande di calcolo)")
 
-                # Esecuzione
-        try:
-            data = parse_custom_quiz('quizlet esportato.rtf')
-            with open('data/sopr_quiz.json', 'w', encoding='utf-8') as f:
-                json.dump(data, f, indent=4, ensure_ascii=False)
-            print(f"✅ Conversione completata! Generate {len(data)} domande.")
-        except Exception as e:
-            print(f"❌ Errore durante la conversione: {e}")
+parse_ultimate('./data/quizletpt2.txt')
