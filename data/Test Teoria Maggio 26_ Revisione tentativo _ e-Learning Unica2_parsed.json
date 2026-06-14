@@ -1,0 +1,129 @@
+[
+    {
+        "domanda": "Risposta corretta\nPunteggio ottenuto 1,00 su 1,00",
+        "opzioni": [
+            "Risultato: NON TROVATO (Compilare a mano)"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Risposta errata\nPunteggio ottenuto 0,00 su 1,00",
+        "opzioni": [
+            "Risultato: NON TROVATO (Compilare a mano)"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Quale delle seguenti affermazioni fa parte della definizione di stato sicuro secondo quanto visto a lezione e sul libro di testo",
+        "opzioni": [
+            "Per ogni sequenza di processi P1...Pn, le risorse di Pi devono soddisfare le richieste di Pj con j<i. Pi deve eventualmente attendere che i Pj finiscano",
+            "Deve esistere una ed una sola sequenza di processi P1...Pn tale che per ogni Pi, le sue richieste sono soddisfatte con le risorse disponibili più quelle di Pj con j<i. Pi deve eventualmente attendere che i Pj finiscano",
+            "Deve esistere almeno una sequenza di processi P1...Pn tale che per ogni Pi, le sue richieste sono soddisfatte con le risorse disponibili più quelle possedute da Pj con j<i. Pi deve eventualmente attendere che i Pj finiscano",
+            "Deve esistere almeno una sequenza di processi P1...Pn tale per cui le risorse richieste da Pi non devono coincidere con le risorse possedute da Pj con j<i. Pi deve eventualmente attendere che i Pj finiscano",
+            "Per ogni sequenza di processi P1...Pn, le risorse di Pi devono soddisfare le richieste di un Pj con j>i. Pj deve eventualmente attendere che i Pi finiscano"
+        ],
+        "corrette": [
+            2
+        ]
+    },
+    {
+        "domanda": "Risposta corretta\nPunteggio ottenuto 1,00 su 1,00",
+        "opzioni": [
+            "Risultato: NON TROVATO (Compilare a mano)"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Risposta corretta\nPunteggio ottenuto 1,00 su 1,00",
+        "opzioni": [
+            "Risultato: NON TROVATO (Compilare a mano)"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Risposta errata\nPunteggio ottenuto 0,00 su 1,00",
+        "opzioni": [
+            "Risultato: NON TROVATO (Compilare a mano)"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Parzialmente corretta\nPunteggio ottenuto 0,67 su 1,00",
+        "opzioni": [
+            "Risultato: NON TROVATO (Compilare a mano)"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Relativamente ai thread, è vero che:",
+        "opzioni": [
+            "Possono ma non necessariamente devono, condividere i file, il codice, lo stack e i dati globali",
+            "Un thread a livello utente non può mai scrivere sullo stack di un altro thread",
+            "Un thread a livello kernel di un processo può usare le syscall senza rischiare di bloccare gli altri thread dello stesso processo",
+            "A livello utente possono condividere i file, mentre a livello kernel non possono",
+            "Utilizzando i kernel thread parte della gestione della sincronizzazione può essere a carico del programmatore"
+        ],
+        "corrette": [
+            2,
+            4
+        ]
+    },
+    {
+        "domanda": "Risposta corretta\nPunteggio ottenuto 1,00 su 1,00",
+        "opzioni": [
+            "Risultato: NON TROVATO (Compilare a mano)"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Risposta corretta\nPunteggio ottenuto 1,00 su 1,00",
+        "opzioni": [
+            "Risultato: NON TROVATO (Compilare a mano)"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Risposta errata\nPunteggio ottenuto 0,00 su 1,00",
+        "opzioni": [
+            "Risultato: NON TROVATO (Compilare a mano)"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Le transizioni di stato possibili per un processo sono le seguenti:",
+        "opzioni": [
+            "Da ready a waiting",
+            "Da waiting a waiting per un evento di altro tipo",
+            "Da waiting a ready",
+            "Da running a ready",
+            "Da ready a running",
+            "Da runnning a waiting",
+            "Da waiting a completed Da waiting a completed",
+            "Da ready a completed"
+        ],
+        "corrette": [
+            2,
+            3,
+            4,
+            5
+        ]
+    }
+]

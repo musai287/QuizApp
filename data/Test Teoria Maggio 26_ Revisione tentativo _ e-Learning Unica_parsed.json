@@ -1,0 +1,179 @@
+[
+    {
+        "domanda": "Quali di queste condizioni sono necessarie ma non sufficienti per lo stallo",
+        "opzioni": [
+            "Mutua esclusione",
+            "Possesso e attesa",
+            "Ordinamento delle richieste e delle risorse in modo che ogni processo possa richiedere le risorse in ordine crescente di numerazione",
+            "Attesa Circolare",
+            "Presenza di un ciclo nel grafo di allocazione delle risorse con solo istanza singole",
+            "Assenza di cicli nel grafo di allocazione delle risorse",
+            "Presenza di più cicli nel grafo di allocazione delle risorse",
+            "Impossibilità di prelazione"
+        ],
+        "corrette": [
+            0,
+            1,
+            3,
+            6,
+            7
+        ]
+    },
+    {
+        "domanda": "Risposta corretta\nPunteggio ottenuto 1,00 su 1,00",
+        "opzioni": [
+            "Risultato: NON TROVATO (Compilare a mano)"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Relativamente alle architetture di SO, è vero che:",
+        "opzioni": [
+            "Le architetture monolitiche sono relativamente meno manutenibili di quelle layered",
+            "Le architetture di rete sono un caso particolare delle architetture layered",
+            "L'architettura di Linux è monolitica ma modulare",
+            "Le architetture microkernel minimizzano il numero di cambi di modalità della CPU rispetto a monolitico e layered",
+            "Le architetture monolitiche sono relativamente meno performanti di quelle layered"
+        ],
+        "corrette": [
+            0,
+            2
+        ]
+    },
+    {
+        "domanda": "Parzialmente corretta\nPunteggio ottenuto 0,67 su 1,00",
+        "opzioni": [
+            "Risultato: NON TROVATO (Compilare a mano)"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Relativamente al fenomeno del trashing",
+        "opzioni": [
+            "Il numero di processi attivi nel sistema non è correlato",
+            "La percentuale di pagine che viene utilizzata solo in lettura non è correlata",
+            "L’efficienza complessiva del sistema di memoria di secondo livello è correlata",
+            "Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza",
+            "Si può gestire anche ignorando il parametro delta = numero di riferimenti"
+        ],
+        "corrette": [
+            2,
+            3,
+            4
+        ]
+    },
+    {
+        "domanda": "L’architettura di un calcolatore ha 1024 Megabyte di memoria massima di primo livello, l’indirizzamento è su 26 bit, e la dimensione\ndi una riga della tabella delle pagine è di 15 bit. \nQuale è la dimensione in byte di una pagina",
+        "opzioni": [
+            "Risultato: NON TROVATO (Compilare a mano)"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Relativamente allo schema di seguito relativo alla comunicazione fra processi, è vero che:",
+        "opzioni": [
+            "Lo scambio di messaggi utilizza lo schema b",
+            "Le pipe utilizzano lo schema b",
+            "Entrambi gli schemi utilizzano memoria condivisa",
+            "La memoria condivisa può essere utilizzata per scambiare le informazioni anche bypassando l'intervento del kernel",
+            "Lo schema a è riferibile ai socket"
+        ],
+        "corrette": [
+            3,
+            4
+        ]
+    },
+    {
+        "domanda": "E' vero che uno dei casi in cui Il kernel viene eseguito é:",
+        "opzioni": [
+            "Quando un processo del kernel invoca una System call",
+            "In caso di esecuzione di una routine di interrupt da periferica",
+            "Quando è in esecuzione un processo, qualunque esso sia, per tutto il tempo",
+            "In caso di esecuzione di codice assembly",
+            "All'avvio del sistema, dopo il reset",
+            "In seguito alla generazione di una eccezione",
+            "Durante l'esecuzione di una System call"
+        ],
+        "corrette": [
+            1,
+            4,
+            5,
+            6
+        ]
+    },
+    {
+        "domanda": "Relativamente al seguente codice che permette la comunicazione fra thread a livello utente:",
+        "opzioni": [
+            "Il produttore cicla indefinitamente in caso di buffer completamente pieno",
+            "La variabile condivisa preleva indica l'elemento del buffer su cui scrivere",
+            "Il codice non è soggetto a corse critiche",
+            "Il consumatore cicla indefinitamente in caso di buffer completamente vuoto",
+            "La variabile condivisa inserisci indica l'elemento del buffer su cui leggere"
+        ],
+        "corrette": [
+            2,
+            3
+        ]
+    },
+    {
+        "domanda": "Relativamente allo schema a blocchi rappresentativo della segmentazione descritto nel seguito, sono vere le seguenti affermazioni:",
+        "opzioni": [
+            "G = Test fallito",
+            "C = test di uguaglianza fra numero di segmento indirizzato e numero presente nella tabella dei segmenti",
+            "E = Numero del segmento",
+            "H = Memoria di primo livello",
+            "A = numero della pagina",
+            "F = test avvenuto con successo",
+            "D = somma il displacement con il numero di segmento per formare indirizzo completo",
+            "B = Numero del segmento",
+            "N= indica la routine di interrupt che viene lanciata al termine della istruzione che ha provocato l'accesso illegale in memoria",
+            "M = Tabella dei segmenti",
+            "I = base = indirizzo base del segmento",
+            "L =limite"
+        ],
+        "corrette": [
+            0,
+            2,
+            3,
+            5,
+            9
+        ]
+    },
+    {
+        "domanda": "Si consideri il seguente scenario:\nUn sistema multiprocessore sul quale opera un applicativo multithread basato sul many- to-many threading model e che è l'unico\nprocesso in esecuzione. \nIl numero di thread user-level threads è più grande del numero di processori, e il numero di kernel thread è uguale al numero di processori.",
+        "opzioni": [
+            "E' possibile che tutti i processori siano utilizzati simultaneamente",
+            "Nessun processore rimarrà mai idle",
+            "Tutti i kernel level thread sono sempre in esecuzione",
+            "Non è possibile che tutti i processori siano idle",
+            "Non sempre tutti gli user level thread sono in esecuzione"
+        ],
+        "corrette": [
+            0,
+            4
+        ]
+    },
+    {
+        "domanda": "Per quanto spiegato nel materiale del corso, è vero che il formato di una istruzione:",
+        "opzioni": [
+            "Non dipende dall'Instruction Set Architecture",
+            "Non dipende dal compilatore  Dipende solo dall'ISA",
+            "Viene utilizzato dal compilatore per decidere la logica di salvataggio e ripristino del contesto",
+            "Specifica come i simboli di una istruzione Assembly vengono trasformati in opportuni campi di bit",
+            "Specifica di quanti bit è composto l'opcode di una istruzione",
+            "E' sempre uguale per ogni istruzione dell'Instruction Set",
+            "Produce i bit necessari per indirizzare registri sorgente"
+        ],
+        "corrette": [
+            3,
+            4,
+            6
+        ]
+    }
+]
