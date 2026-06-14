@@ -80,7 +80,27 @@ def render_quiz(page: ft.Page, state, on_home):
             ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN)
         )
 
+        # 1. Testo della domanda
         main_content.controls.append(ft.Text(q["domanda"], size=22, weight="bold", selectable=True))
+
+        # ==========================================
+        # 2. RENDERING DELL'IMMAGINE (NUOVO BLOCCO)
+        # ==========================================
+        if "immagine" in q and q["immagine"]:
+            main_content.controls.append(
+                # La scatola (Container) è l'UNICO elemento passato ad append()
+                ft.Container(
+                    content=ft.Image(
+                        src=q["immagine"],
+                        fit="scaleDown", 
+                        border_radius=8
+                    ),
+                    alignment=ft.Alignment(0, 0),
+                    padding=10
+                )
+            )
+        # ==========================================
+
         opzioni_col = ft.Column()
 
         def on_check(e):

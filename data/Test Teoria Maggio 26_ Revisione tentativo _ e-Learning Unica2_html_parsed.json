@@ -20,15 +20,6 @@
         ]
     },
     {
-        "domanda": "Risposta corretta\nPunteggio ottenuto 1,00 su 1,00",
-        "opzioni": [
-            "Risultato: NON TROVATO (Compilare a mano)"
-        ],
-        "corrette": [
-            0
-        ]
-    },
-    {
         "domanda": "Relativamente alle architetture di SO, è vero che:",
         "opzioni": [
             "Le architetture monolitiche sono relativamente meno manutenibili di quelle layered",
@@ -43,9 +34,9 @@
         ]
     },
     {
-        "domanda": "Parzialmente corretta\nPunteggio ottenuto 0,67 su 1,00",
+        "domanda": "Nel caso di paginazione con utilizzo della TLB, con α = 0,5, Tmem = 200 ns e ε = 20 ns:",
         "opzioni": [
-            "Risultato: NON TROVATO (Compilare a mano)"
+            "Risultato: 320,00"
         ],
         "corrette": [
             0
@@ -67,9 +58,23 @@
         ]
     },
     {
-        "domanda": "L’architettura di un calcolatore ha 1024 Megabyte di memoria massima di primo livello, l’indirizzamento è su 26 bit, e la dimensione\ndi una riga della tabella delle pagine è di 15 bit. \nQuale è la dimensione in byte di una pagina",
+        "domanda": "Relativamente ai criteri di scheduling, è vero che:",
         "opzioni": [
-            "Risultato: NON TROVATO (Compilare a mano)"
+            "Tempo di completamento medio (turnaround time) e tempo di attesa massimo (maximum waiting time) sono criteri fra di loro in conflitto)",
+            "Utilizzo della CPU (CPU utilization) e Tempo di Risposta (response time) sono criteri fra di loro in conflitto",
+            "Utilizzo della CPU e occupazione della memoria di secondo livello sono criteri fra di loro in conflitto",
+            "Utilizzo della CPU (CPU Utilization) e Utilizzo dei dispositivi di I/O sono criteri fra di loro in conflitto"
+        ],
+        "corrette": [
+            0,
+            1,
+            3
+        ]
+    },
+    {
+        "domanda": "L’architettura di un calcolatore ha 1024 Megabyte di memoria massima di primo livello, l’indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 15 bit.\nQuale è la dimensione in byte di una pagina",
+        "opzioni": [
+            "Risultato: 32768,00"
         ],
         "corrette": [
             0
@@ -77,6 +82,7 @@
     },
     {
         "domanda": "Relativamente allo schema di seguito relativo alla comunicazione fra processi, è vero che:",
+        "immagine": "../assets/domanda7file1.png",
         "opzioni": [
             "Lo scambio di messaggi utilizza lo schema b",
             "Le pipe utilizzano lo schema b",
@@ -94,7 +100,7 @@
         "opzioni": [
             "Quando un processo del kernel invoca una System call",
             "In caso di esecuzione di una routine di interrupt da periferica",
-            "Quando è in esecuzione un processo, qualunque esso sia, per tutto il tempo",
+            "Quando è in esecuzione  un processo, qualunque esso sia, per tutto il tempo",
             "In caso di esecuzione di codice assembly",
             "All'avvio del sistema, dopo il reset",
             "In seguito alla generazione di una eccezione",
@@ -109,12 +115,13 @@
     },
     {
         "domanda": "Relativamente al seguente codice che permette la comunicazione fra thread a livello utente:",
+        "immagine": "../assets/domanda9file1.png",
         "opzioni": [
             "Il produttore cicla indefinitamente in caso di buffer completamente pieno",
-            "La variabile condivisa preleva indica l'elemento del buffer su cui scrivere",
+            "La variabile condivisa preleva indica l'elemento del buffer su cui  scrivere",
             "Il codice non è soggetto a corse critiche",
-            "Il consumatore cicla indefinitamente in caso di buffer completamente vuoto",
-            "La variabile condivisa inserisci indica l'elemento del buffer su cui leggere"
+            "Il consumatore cicla indefinitamente in caso di buffer completamente vuoto",
+            "La variabile condivisa inserisci indica l'elemento del buffer su cui  leggere"
         ],
         "corrette": [
             2,
@@ -123,18 +130,19 @@
     },
     {
         "domanda": "Relativamente allo schema a blocchi rappresentativo della segmentazione descritto nel seguito, sono vere le seguenti affermazioni:",
+        "immagine": "../assets/domanda10file1.png",
         "opzioni": [
             "G = Test fallito",
-            "C = test di uguaglianza fra numero di segmento indirizzato e numero presente nella tabella dei segmenti",
+            "C = test di uguaglianza fra numero di segmento indirizzato e numero presente nella tabella dei segmenti",
             "E = Numero del segmento",
             "H = Memoria di primo livello",
             "A = numero della pagina",
             "F = test avvenuto con successo",
-            "D = somma il displacement con il numero di segmento per formare indirizzo completo",
+            "D =  somma il displacement con il numero di segmento per formare indirizzo completo",
             "B = Numero del segmento",
             "N= indica la routine di interrupt che viene lanciata al termine della istruzione che ha provocato l'accesso illegale in memoria",
             "M = Tabella dei segmenti",
-            "I = base = indirizzo base del segmento",
+            "I =  base = indirizzo base del segmento",
             "L =limite"
         ],
         "corrette": [
@@ -146,7 +154,7 @@
         ]
     },
     {
-        "domanda": "Si consideri il seguente scenario:\nUn sistema multiprocessore sul quale opera un applicativo multithread basato sul many- to-many threading model e che è l'unico\nprocesso in esecuzione. \nIl numero di thread user-level threads è più grande del numero di processori, e il numero di kernel thread è uguale al numero di processori.",
+        "domanda": "Si consideri il seguente scenario:\nUn sistema multiprocessore sul quale opera un applicativo multithread basato sul\nmany- to-many threading model e che è l'unico processo in esecuzione.\nIl numero di thread user-level threads è più grande del numero di processori, e il numero di kernel thread è uguale al numero di processori.",
         "opzioni": [
             "E' possibile che tutti i processori siano utilizzati simultaneamente",
             "Nessun processore rimarrà mai idle",
@@ -163,12 +171,12 @@
         "domanda": "Per quanto spiegato nel materiale del corso, è vero che il formato di una istruzione:",
         "opzioni": [
             "Non dipende dall'Instruction Set Architecture",
-            "Non dipende dal compilatore  Dipende solo dall'ISA",
+            "Non dipende dal compilatore Dipende solo dall'ISA",
             "Viene utilizzato dal compilatore per decidere la logica di salvataggio e ripristino del contesto",
             "Specifica come i simboli di una istruzione Assembly vengono trasformati in opportuni campi di bit",
             "Specifica di quanti bit è composto l'opcode di una istruzione",
             "E' sempre uguale per ogni istruzione dell'Instruction Set",
-            "Produce i bit necessari per indirizzare registri sorgente"
+            "Produce i bit  necessari per indirizzare registri sorgente"
         ],
         "corrette": [
             3,

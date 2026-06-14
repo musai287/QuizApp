@@ -23,4 +23,4 @@ def main(page: ft.Page):
     go_to_home()
 
 if __name__ == "__main__":
-    ft.app(target=main)
+    ft.run(main, assets_dir="assets")
