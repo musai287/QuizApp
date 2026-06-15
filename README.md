@@ -1,6 +1,6 @@
 SOPR Quiz Master PRO
 
-Applicazione desktop modulare progettata per lo studio e la simulazione di esami per Sistemi Operativi (SOPR). L'applicativo è progettato per gestire database di oltre 160 domande.
+Applicazione desktop modulare progettata per lo studio e la simulazione di esamia risposta multipla . L'applicativo è progettato per gestire database di oltre 160 domande.
 Features Principali
 
     Architettura Modulare (MVC): Codice organizzato in Model, View e Controller.
@@ -57,7 +57,7 @@ source quiz/bin/activate
 # Avvia l'applicazione
 python3 src/main.py
 
-Tramite il pulsante "Seleziona File JSON", carica uno dei file presenti nella directory data/ (es. sopr_quiz_completo.json).
+Tramite il pulsante "Seleziona File JSON", carica uno dei file presenti nella directory data/ (es. dataset.json).
 Struttura del Progetto
 
 Il codice sorgente è suddiviso nei seguenti moduli:
