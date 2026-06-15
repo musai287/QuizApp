@@ -1,0 +1,699 @@
+[
+  {
+    "domanda": "Relativamente alla possibile architettura di un bus di comunicazione a supporto del memory mapping",
+    "opzioni": [
+      "Il Mux di tipo lw ha lo scopo di selezionare quale periferica è abilitata a collegarsi alla porta dati di ingresso della cpu durante le operazioni di scrittura.",
+      "E' possibile che gli spazi di indirizzamento delle periferiche siano parzialmente sovrapposti nel caso di memoria condivisa fra i processori",
+      "la cpu usa parte del decoder centralizzato su una periferica sollecita i decoder interni a ciascuna delle periferiche, al contrario delle letture che da parte del processore dei dati da una periferica",
+      "per le operazioni di scrittura tipo sw il decoder del bus è indispensabile",
+      "Il dato in scrittura sulle periferiche viene inviato in parallelo a tutte le porte dati in scrittura delle periferiche presenti nel sistema"
+    ],
+    "corrette": [0, 4]
+  },
+  {
+    "domanda": "Se la invocazione della fork() non va a buon fine è vero che:",
+    "opzioni": [
+      "Sia il processo figlio che il processo padre vengono terminati",
+      "Al processo padre viene restituito il valore -1",
+      "Il processo figlio viene terminato",
+      "Al processo figlio viene assegnato il pid 1",
+      "Al processo figlio viene restituito il valore -1"
+    ],
+    "corrette": [1, 4]
+  },
+  {
+    "domanda": "Domanda: Il problema produttore consumatore affrontato con la memoria condivisa richiede l'utilizzo di un buffer:",
+    "opzioni": [
+      "Sempre illimitato, in modo che il consumatore non deve mai attendere nuovi oggetti",
+      "Limitato: lo scambio avviene sempre tramite utilizzo di contatori",
+      "Illimitato: il produttore non potrà inserire nuovi oggetti finché l'ultimo non è stato consumato.",
+      "Limitato, il consumatore dovrà attendere in caso di buffer vuoto.",
+      "Limitato, il produttore dovrà attendere in caso di buffer vuoto.",
+      "Limitato, il produttore dovrà attendere in caso di buffer pieno"
+    ],
+    "corrette": [3, 4]
+  },
+  {
+    "domanda": "Domanda: Si consideri lo scenario: Un sistema multiprocessore con applicativo multithread many-to-many, unico processo in esecuzione. N. thread utente > N. processori, N. kernel thread = N. processori.",
+    "opzioni": [
+      "Non sempre tutti gli user level thread sono in esecuzione",
+      "Non è possibile che tutti i processori siano idle",
+      "Tutti i kernel level thread sono sempre in esecuzione",
+      "Nessun processore rimarrà mai idle",
+      "E' possibile che tutti i processori siano utilizzati simultaneamente"
+    ],
+    "corrette": [0, 4]
+  },
+  {
+    "domanda": "Domanda: Secondo quanto visto nel materiale del corso, la funzionalità della set on less than dell'ISA MIPS, caso della specifica slt $4, $2, $3:",
+    "opzioni": [
+      "if(REGS[$2]<REGS[$3]) REGS[$4] = 1",
+      "if(REGS[$2]<= REGS[$3]) REGS[$4] = 1",
+      "if(REGS[$2]>REGS[$4]) REGS[$3] = 1",
+      "if(REGS[$2]>REGS[$3]) REGS[$4] = 0",
+      "if(REGS[$2]<REGS[$3]) REGS[$4] = 1"
+    ],
+    "corrette": [0, 4]
+  },
+  {
+    "domanda": "Flashcard 6 Domanda: Affinché l'implementazione della chiamata a subroutine sia correttamente funzionante è necessario che:",
+    "opzioni": [
+      "Vengano introdotte istruzioni assembly per salvare il contenuto di tutti i registri general purpose",
+      "Vengano introdotte istruzioni assembly per il salvataggio dei registri sporcati dalla funzione chiamante",
+      "venga allocato spazio per tutti i dati privati di ciascuna nel suo frame di attivazione",
+      "Vengano introdotte istruzioni assembly per ripristino dei registri sporcati dalla funzione chiamata",
+      "Al termine della funzione chiamata sia introdotta un istruzione jr $31 che funziona in coppia con la jal della funzione chiamante"
+    ],
+    "corrette": [2, 4]
+  },
+  {
+    "domanda": "Domanda: Il PCB di un processo:",
+    "opzioni": [
+      "Non contiene dati sullo scheduling della CPU",
+      "Contiene solo informazioni sullo stato del processo",
+      "Contiene fra le altre cose lo stato del processo e il valore dei registri della CPU",
+      "Viene utilizzato esclusivamente nei sistemi Linux",
+      "Serve al compilatore per dimensionare lo stack"
+    ],
+    "corrette": [2, 3]
+  },
+  {
+    "domanda": "Domanda: Il seguente supporto HW per protezione memoria: ",
+    "opzioni": [
+      "In caso di verificarsi delle condizioni di accesso illegale scatena un interrupt che comunque completa l'esecuzione dell'accesso in memoria prima di lanciare la routine associata",
+      "Rende impossibile al codice utente di accedere alle periferiche",
+      "Prevede che i registri base e limite siano modificati dal kernel prima di mandare in esecuzione il codice utente. Opzionalmente il kernel può cambiare modalità di esecuzione prima di mandare in esecuzione il codice utente",
+      "E' valido per qualunque modalità di allocazione di memoria si utilizzi",
+      "Prevede che il contenuto dei registri base e limite siano dei parametri del kernel"
+    ],
+    "corrette": [1, 3]
+  },
+  {
+    "domanda": "Domanda: Relativamente ai modelli di multi threading:",
+    "opzioni": [
+      "Il modello molti a molti è l'unico che richiede il supporto del kernel",
+      "Il modello uno a uno prevede che non vengano usate le librerie di supporto agli user thread",
+      "Il modello molti a uno prevede che il numero dei thread utente sia sempre molto maggiore del numero dei thread kernel",
+      "Il modello uno a uno è gestito tramite librerie a livello utente",
+      "Il modello molti a molti è possibile solo in caso di supporto del sistema operativo"
+    ],
+    "corrette": [1, 4]
+  },
+  {
+    "domanda": "Flashcard 10 Domanda: Relativamente ai threads è vero che:",
+    "opzioni": [
+      "Rispetto alla percentuale di utilizzo della cpu non ci sono correlazioni con la tipologia di thread utilizzati",
+      "La cancellazione di un thread utente ha lo stesso costo della cancellazione di un thread kernel",
+      "I thread utente sono schedati tramite implementazione a livello di libreria utente",
+      "I thread utente hanno meno overhead dei thread kernel",
+      "I thread utente massimizzano la concorrenza rispetto ai thread kernel"
+    ],
+    "corrette": [2, 3, 4]
+  },
+  {
+    "domanda": "Relativamente allo schema che codifica gli stati di esecuzione di un processo è vero che:",
+    "opzioni": [
+      "Esiste una sola coda di processi waiting e una sola coda di processi ready",
+      "Il passaggio da running a waiting può dipendere da una decisione dello scheduler",
+      "Il passaggio da waiting a ready avviene anche sulla base di una decisione dello scheduler",
+      "Il passaggio da ready a running avviene sulla base di una decisione dell'algoritmo di scheduling",
+      "Il passaggio da running a ready dipende dal timer"
+    ],
+    "corrette": [0, 3, 4]
+  },
+  {
+    "domanda": "Relativamente al thread pool:",
+    "opzioni": [
+      "E' basato su un numero fisso di thread creati all'avvio della applicazione, i singoli thread vengono attivati e disattivati all'occorrenza e il numero complessivo di thread attivi cambia continuamente.",
+      "Quando un thread ha terminato l'esecuzione di una attività viene disattivato e reso nuovamente reso disponibile per nuova attivazione",
+      "Viene utilizzato in caso di raggiungimento del massimo numero di thread allocabili",
+      "Ha un numero di thread allocati predefinito basato sulle priorità del processo",
+      "Ciascun thread del pool è sempre collegato a un diverso processo/task a livello kernel",
+      "Viene utilizzato ad esempio in caso di applicazioni webserver multithread"
+    ],
+    "corrette": [0, 1, 2, 5]
+  },
+  {
+    "domanda": "Qual è la differenza tra thread a livello utente e thread a livello kernel?",
+    "opzioni": [
+      "I thread a livello utente sono gestiti dal sistema operativo, mentre i thread a livello kernel sono gestiti dalle librerie utente.",
+      "I thread a livello kernel possono essere eseguiti in parallelo su più processori, mentre i thread a livello utente no.",
+      "I thread a livello utente sono più facili da implementare rispetto ai thread a livello kernel.",
+      "I thread a livello utente sono schedulati dalle librerie utente, mentre i thread a livello kernel sono schedulati dal sistema operativo."
+    ],
+    "corrette": [3]
+  },
+  {
+    "domanda": "Descrivere il funzionamento del modello di multithreading molti-a-molti.",
+    "opzioni": [
+      "Ogni thread utente è associato a un thread kernel dedicato.",
+      "Molteplici thread utente possono essere associati a un singolo thread kernel.",
+      "Multiplexing di molti thread utente su un numero inferiore di thread kernel.",
+      "Non è possibile utilizzare il modello molti-a-molti senza il supporto del kernel."
+    ],
+    "corrette": [2]
+  },
+  {
+    "domanda": "Cosa succede quando viene invocata la funzione fork() in un programma C?",
+    "opzioni": [
+      "Il processo figlio riceve una copia di tutti i dati del processo padre.",
+      "Sia il processo padre che il processo figlio continuano l'esecuzione dall'istruzione successiva alla fork().",
+      "Al processo padre viene restituito l'ID del processo figlio, mentre al processo figlio viene restituito 0.",
+      "Se la fork() ha esito negativo, al processo padre viene restituito -1.",
+      "Il processo padre viene terminato."
+    ],
+    "corrette": [0, 1, 2, 3]
+  },
+  {
+    "domanda": "Cosa contiene il Process Control Block (PCB) di un processo?",
+    "opzioni": [
+      "Lo stato del processo (new, ready, running, waiting, terminated).",
+      "Il valore dei registri della CPU.",
+      "Informazioni sulla gestione della memoria.",
+      "Informazioni sullo scheduling della CPU.",
+      "Dati statistici sull'utilizzo delle risorse."
+    ],
+    "corrette": [1, 3]
+  },
+  {
+    "domanda": "Quali sono le possibili transizioni di stato di un processo?",
+    "opzioni": [
+      "Da new a running.",
+      "Da running a terminated.",
+      "Da running a waiting a causa di una richiesta di I/O o di un evento.",
+      "Da waiting a ready quando l'evento atteso si verifica.",
+      "Da ready a running quando lo scheduler seleziona il processo per l'esecuzione."
+    ],
+    "corrette": [2, 3, 4]
+  },
+  {
+    "domanda": "Spiegare il concetto di thread pool e i suoi vantaggi.",
+    "opzioni": [
+      "Un thread pool è un gruppo di thread pre-allocati e pronti per l'esecuzione.",
+      "Riduce l'overhead di creazione e distruzione dei thread per ogni attività.",
+      "Permette un migliore utilizzo delle risorse del sistema, in quanto i thread inattivi non consumano risorse.",
+      "Utile per applicazioni server che gestiscono numerose richieste client.",
+      "Ogni thread del pool è permanentemente associato a un processo specifico."
+    ],
+    "corrette": [0, 1, 2, 3]
+  },
+  {
+    "domanda": "Quali di queste descrizioni del concetto di processo sono corrette?",
+    "opzioni": [
+      "Una infrastruttura software che consente al kernel di accedere alle risorse condivise",
+      "Una infrastruttura software di supporto alla comunicazione fra le applicazioni",
+      "Una infrastruttura software di supporto all'accesso allo scheduling",
+      "Una infrastruttura software che ha anche lo scopo di far sì che il programma in esecuzione percepisca di essere l'unico a usufruire di tutte le risorse del sistema di elaborazione, anche se le condivide con altri programmi in esecuzione",
+      "Una infrastruttura software di supporto alla monoprogrammazione",
+      "Una infrastruttura software di supporto all'accesso alle periferiche"
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "Per quanto spiegato nel materiale del corso, è vero che l'assembler:",
+    "opzioni": [
+      "Si occupa di produrre il codice per il salvataggio e ripristino dei registri della CPU",
+      "Si occupa di tradurre le istruzioni Assembly espresse in formato testuale in stringhe di bit",
+      "Si occupa di risolvere le label presenti nel codice assembly",
+      "Si occupa di produrre il codice per la gestione della memoria automatica",
+      "Trasforma un algoritmo espresso in linguaggio ad alto livello in una sequenza di istruzioni Assembly",
+      "Si occupa di definire quali registri vengono utilizzati per implementare una funzione",
+      "Si occupa di calcolare quante istruzioni vanno saltate per ogni jump o branch"
+    ],
+    "corrette": [1, 2, 5, 6]
+  },
+  {
+    "domanda": "Quali sono le modalità di esecuzione di una moderna CPU secondo quanto visto a lezione?",
+    "opzioni": [
+      "Modalità kernel e modalità controllo accessi",
+      "Almeno due: kernel e user",
+      "Tre: input, output e kernel",
+      "Modalità privilegiata e modalità utente",
+      "Tre: Trasferimento dati, modifica dati, interrupt",
+      "Modalità esecuzione, modalità lettura e modalità scrittura",
+      "Solo la modalità kernel"
+    ],
+    "corrette": [1, 3, 4]
+  },
+  {
+    "domanda": "Relativamente alla architettura SW Round Robin per sistemi di elaborazione Bare Metal / Embedded:",
+    "opzioni": [
+      "E' in grado di gestire solo applicazioni con vincoli di interazione real time relativamente molto limitati",
+      "Non ha alcuna applicazione pratica",
+      "E' basato su un ciclo principale che si occupa di processamento dei dati, mentre la comunicazione con le periferiche è implementata tramite routine di interrupt",
+      "E' basata su un ciclo principale (loop infinito) che si occupa di gestire sia processamento dati che lettura scrittura dalle periferiche",
+      "Esegue i task uno alla volta e poi si interrompe"
+    ],
+    "corrette": [0, 3]
+  },
+  {
+    "domanda": "Secondo quanto visto nel materiale del corso, la funzionalità della branch if qual dell'ISA MIPS, caso della specifica beq $2, $3, label1:",
+    "opzioni": [
+      "if(REGS[$2]>=REGS[$3]) PC = imm",
+      "if(REGS[$2]>=REGS[$3]) PC = PC +4+imm",
+      "if(REGS[$2]>=REGS[$3]) PC = PC -1+imm",
+      "if(REGS[$2]>=REGS[$3]) PC = PC +imm",
+      "if(REGS[$2]==REGS[$3]) PC = PC +4+imm"
+    ],
+    "corrette": [4]
+  },
+  {
+    "domanda": "L'esecuzione del seguente codice assembly, sulla base dell'ISA MIPS:",
+    "opzioni": [
+      "È malfunzionante perché non viene salvato e ripristinato lo stato dei registri",
+      "È malfunzionante in quanto all'istruzione al indirizzo 0x114 sovra scrive un registro in maniera errata",
+      "È malfunzionante in quanto sovra scrive il registro $31 durante esecuzione della sub2",
+      "È funzionante",
+      "È malfunzionante in quanto la routine sub2 non torna correttamente dopo esecuzione della jr"
+    ],
+    "corrette": [0, 2]
+  },
+  {
+    "domanda": "Quali sono i modelli fondamentali di comunicazione fra processi (IPC)?",
+    "opzioni": [
+      "Condivisione e scambio di memoria",
+      "Memoria condivisa e scambio di messaggi",
+      "Memoria condivisa e memoria paginata",
+      "Parallelismo e time sharing",
+      "Modularità e convenienza",
+      "Scambio di messaggi e modularità"
+    ],
+    "corrette": [1]
+  },
+  {
+    "domanda": "Relativamente al memory mapping è vero che:",
+    "opzioni": [
+      "Il processore accede alle periferiche usando load e store",
+      "Permette l'accesso alle periferiche ma esclusivamente in sola lettura o in sola scrittura",
+      "Dal punto di vista della comunicazione con la cpu rende le periferiche simili a memorie special purpose",
+      "Funziona solo se memoria e periferiche hanno spazi di indirizzamento non sovrapposti",
+      "Permette alle periferiche di accedere alla memoria istruzioni"
+    ],
+    "corrette": [0, 2, 3]
+  },
+  {
+    "domanda": "Relativamente all'inversione delle priorità, soluzione valida:",
+    "opzioni": [
+      "Quando un processo a priorità alta richiede una risorsa i processi a priorità intermedia vengono messi in attesa",
+      "In caso di inversione di priorità, il processo a priorità intermedia acquisisce priorità superiore rispetto al processo a priorità alta",
+      "Quando un processo ottiene l'acceso a una risorsa acquisisce temporaneamente la priorità più alta possibile",
+      "In caso di inversione di priorità, il processo a priorità bassa va in esecuzione al posto del processo a priorità alta",
+      "Quando un processo ottiene l'acceso a una risorsa viene messo in prima posizione nella coda di waiting",
+      "Quando un processo ottiene l'acceso a una risorsa acquisisce temporaneamente la priorità più bassa possibile"
+    ],
+    "corrette": [2]
+  },
+  {
+    "domanda": "Relativamente ai criteri di scheduling, è vero che:",
+    "opzioni": [
+      "Un criterio è il tempo di attesa o waiting time",
+      "Un criterio è il turnaround time",
+      "Un criterio è la % di utilizzo della cpu",
+      "Un criterio è il Throughput",
+      "Un criterio è il Response time"
+    ],
+    "corrette": [0, 1, 2, 3, 4]
+  },
+  {
+    "domanda": "Relativamente al lancio di un processo su sistema Linux, è vero che:",
+    "opzioni": [
+      "Il processo figlio invoca la fork, il padre invoca la exec",
+      "Il processo padre invoca la fork, il figlio invoca la exec con il nome dell'eseguibile",
+      "Il processo figlio invoca la fork con il nome dell'eseguibile",
+      "Il processo padre invoca la fork e il figlio lancia direttamente l'eseguibile",
+      "Il processo padre invoca la system call exec con il nome dell'eseguibile"
+    ],
+    "corrette": [1, 4]
+  },
+  {
+    "domanda": "Il tempo di attesa in caso di algoritmo di scheduling round robin è:",
+    "opzioni": [
+      "La somma degli istanti trascorsi dal processo nella ready queue",
+      "Il tempo in cui il processo attende prima di ottenere la cpu per il primo burst",
+      "Il tempo totale dall'inizio alla fine dell'esecuzione del processo meno il tempo in cui il processo ha utilizzato la cpu",
+      "Il tempo necessario a concludere l'elaborazione",
+      "Il tempo necessario affinché il processo produca il primo risultato"
+    ],
+    "corrette": [0, 2]
+  },
+  {
+    "domanda": "Circa la funzionalità di interrupt:",
+    "opzioni": [
+      "Alla conclusione della routine ripristina sempre il valore del registro 31",
+      "Consente l'esecuzione di sottoprogrammi in maniera asincrona rispetto al flusso principale",
+      "Via software si occupa di salvare e ripristinare i registri interni",
+      "Esegue codice in modalità utente",
+      "E' una funzionalità esclusivamente software"
+    ],
+    "corrette": [1]
+  },
+  {
+    "domanda": "Nello schema di bus di sistema cpu-periferiche, il ruolo del multiplexer è:",
+    "opzioni": [
+      "Evitare l'utilizzo di decoder interni alle periferiche",
+      "Supportare l'accesso alle periferiche sia in scrittura che in lettura",
+      "Collegare la giusta periferica per scrivere sulla porta di ingresso della CPU",
+      "Collegare la giusta periferica per leggere dalla porta di uscita della CPU",
+      "Fare in modo che non ci siano conflitti di scrittura",
+      "Disaccoppiare le letture dalle scritture"
+    ],
+    "corrette": [2]
+  },
+  {
+    "domanda": "Cos'è il frame di attivazione della funzione?",
+    "opzioni": [
+      "Una porzione di memoria di grandezza fissata ma modificabile",
+      "Una parte della memoria visibile al programmatore",
+      "Una zona di memoria che serve a salvare i parametri passati alla funzione",
+      "Una porzione di memoria allocata all'invocazione di una funzione con la dimensione dei dati necessari",
+      "Uno speciale zona di memoria da attivare"
+    ],
+    "corrette": [3]
+  },
+  {
+    "domanda": "Quale delle seguenti affermazioni sullo scheduler a breve termine è FALSA?",
+    "opzioni": [
+      "Si attiva ogni volta che un processo termina o si blocca.",
+      "Seleziona il processo da eseguire tra quelli pronti.",
+      "Si attiva solo in presenza di più processori.",
+      "Assegna la CPU al processo selezionato."
+    ],
+    "corrette": [2]
+  },
+  {
+    "domanda": "Cosa si intende per starvation in un sistema operativo?",
+    "opzioni": [
+      "Un processo che non riesce ad ottenere le risorse di cui ha bisogno.",
+      "Un processo che viene interrotto continuamente da altri processi.",
+      "Un processo che rimane bloccato in uno stato di attesa indefinito.",
+      "Un processo che termina in modo anomalo."
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "Quale dei seguenti algoritmi di scheduling NON è preemptive?",
+    "opzioni": [
+      "Round Robin.",
+      "First-Come, First-Served (FCFS).",
+      "Shortest Job First (SJF).",
+      "Priority Scheduling."
+    ],
+    "corrette": [1]
+  },
+  {
+    "domanda": "In cosa consiste l'algoritmo di scheduling Round Robin?",
+    "opzioni": [
+      "I processi vengono eseguiti nell'ordine di arrivo.",
+      "I processi vengono eseguiti in base alla loro priorità.",
+      "I processi vengono eseguiti a turno per un tempo massimo definito.",
+      "I processi vengono eseguiti in base al tempo stimato di completamento."
+    ],
+    "corrette": [2]
+  },
+  {
+    "domanda": "Quale dei seguenti algoritmi di scheduling può causare starvation?",
+    "opzioni": [
+      "Round Robin.",
+      "First-Come, First-Served (FCFS).",
+      "Shortest Job First (SJF).",
+      "Priority Scheduling."
+    ],
+    "corrette": [3]
+  },
+  {
+    "domanda": "Quale dei seguenti NON è un obiettivo tipico degli algoritmi di scheduling?",
+    "opzioni": [
+      "Massimizzare l'utilizzo della CPU.",
+      "Minimizzare il tempo di risposta dei processi.",
+      "Garantire la fairness tra i processi.",
+      "Massimizzare il numero di processi in esecuzione contemporanea."
+    ],
+    "corrette": [3]
+  },
+  {
+    "domanda": "Quale dei seguenti termini NON è legato al concetto di scheduling?",
+    "opzioni": [
+      "Quantum.",
+      "Context switch.",
+      "Thread.",
+      "Page fault."
+    ],
+    "corrette": [3]
+  },
+  {
+    "domanda": "In cosa consiste la tecnica di scheduling multilivello?",
+    "opzioni": [
+      "Utilizzo di diversi algoritmi di scheduling per diverse code di processi.",
+      "Assegnazione di priorità diverse ai processi in base al loro tipo.",
+      "Suddivisione del tempo di CPU tra i processi in modo dinamico.",
+      "Esecuzione di più processi contemporaneamente su diversi processori."
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "Cosa si intende per scheduling real-time?",
+    "opzioni": [
+      "Scheduling di processi con vincoli temporali rigidi.",
+      "Scheduling di processi interattivi.",
+      "Scheduling di processi batch.",
+      "Scheduling di processi in background."
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "Quale delle seguenti affermazioni relative al time sharing è VERA?",
+    "opzioni": [
+      "È una tecnica di scheduling adatta ai sistemi batch.",
+      "Permette a più utenti di utilizzare il sistema contemporaneamente.",
+      "Assegna la CPU ad un processo fino al suo completamento.",
+      "È basato sull'utilizzo di quantum di tempo molto lunghi."
+    ],
+    "corrette": [1]
+  },
+  {
+    "domanda": "Quale dei seguenti algoritmi di scheduling è tipicamente utilizzato nei sistemi real-time?",
+    "opzioni": [
+      "First-Come, First-Served (FCFS).",
+      "Shortest Job First (SJF).",
+      "Round Robin.",
+      "Earliest Deadline First (EDF)."
+    ],
+    "corrette": [3]
+  },
+  {
+    "domanda": "Per la gestione dei blocchi liberi del filesystem",
+    "opzioni": [
+      "Quando si usa la bitmap è utile una ISA che preveda istruzioni di salto basate su singolo bit",
+      "Si usa sempre una bitmap",
+      "Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto vuoto rispetto all'uso di una bitmap",
+      "Utilizzando l'allocazione indicizzata si ottimizza il caso di disco molto pieno rispetto all'uso di una bitmap",
+      "Si può usare l'allocazione indicizzata insieme a una bitmap"
+    ],
+    "corrette": [0, 4]
+  },
+  {
+    "domanda": "Relativamente alla primitiva Test and Set Lock (TSL), secondo quanto visto nel materiale del corso, è vero che:",
+    "opzioni": [
+      "Non si può scrivere sullo stesso registro della TSL con una istruzione normale di write",
+      "E' una istruzione che legge il contenuto di un registro dedicato e scrive un valore non nullo",
+      "Non si può utilizzare per implementare un mutex",
+      "E' una primitiva hardware/ software di supporto alla gestione della sincronizzazione",
+      "Permette di controllare e modificare il contenuto di una parola di memoria dedicata in maniera atomica"
+    ],
+    "corrette": [1, 4]
+  },
+  {
+    "domanda": "Seleziona unicamente i livelli del modello OSI che hanno una corrispondenza diretta con livelli dello stack TCP/IP:",
+    "opzioni": [
+      "Livello di presentazione",
+      "Livello di sessione",
+      "Livello di trasporto",
+      "Livello di rete"
+    ],
+    "corrette": [2, 3]
+  },
+  {
+    "domanda": "I semafori con busy waiting (spinlock), quando attivati per un processo",
+    "opzioni": [
+      "Sono meno problematici sui sistemi multiprocessore",
+      "Non tengono occupata la cpu ciclando a vuoto",
+      "Non mandano il processo fra i processi waiting",
+      "A livello di implementazione prevedono l'utilizzo di un loop in ciascuna delle primitive",
+      "Se implementati con una libreria utente, devono necessariamente richiamare una system call"
+    ],
+    "corrette": [2, 3]
+  },
+  {
+    "domanda": "Il page fault si può verificare quando:",
+    "opzioni": [
+      "Viene indirizzata una pagina non presente in TLB",
+      "Viene settato il bit di modifica che certifica un accesso in scrittura a una pagina",
+      "Viene indirizzata una pagina non presente nel segmento principale del processo",
+      "Viene indirizzata una pagina non presente in memoria principale",
+      "Non vi sono più pagine disponibili da allocare per il processo in esecuzione"
+    ],
+    "corrette": [3]
+  },
+  {
+    "domanda": "Relativamente alla Tabella delle Pagine Invertita",
+    "opzioni": [
+      "Consente di ridurre la memoria dedicata alla associazione fra numero di pagina e numero di frame che la contiene rispetto alla tabella delle pagine standard",
+      "È indicizzata implicitamente per numero di pagina",
+      "Contiene in ogni sua riga il numero del frame",
+      "Contiene una riga per ogni frame del sistema",
+      "Non richiede che venga letto il contenuto di più righe per ottenere il numero di frame che serve",
+      "E' indicizzata utilizzando il numero di frame e si cerca il numero di pagina in ogni sua riga in modo da ottenere l'offset"
+    ],
+    "corrette": [0, 3]
+  },
+  {
+    "domanda": "Nel caso di paginazione con utilizzo della TLB, con α = 0,5, Tmem = 500 ns e ε = 10 ns:",
+    "opzioni": [
+      "Risultato: 760,00"
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "Relativamente all'algoritmo di Peterson, è vero che:",
+    "opzioni": [
+      "All'uscita dalla sezione critica lo scalare viene settato a false",
+      "Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti",
+      "Per ingresso nella sezione critica viene verificato che il processo abbia una priorità superiore all'altro processo",
+      "Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti",
+      "Rappresenta una delle soluzioni al problema della sezione critica in caso di due o più processi"
+    ],
+    "corrette": [1, 3, 4]
+  },
+  {
+    "domanda": "Si supponga di avere un processo (codice 234KB, dati 258KB, stack 89KB). Pagine 8KB, indirizzamento logico 22 bit. Quante sono le righe valide della tabella delle pagine?",
+    "opzioni": [
+      "Risultato: 75"
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "Relativamente al fenomeno del trashing",
+    "opzioni": [
+      "Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza",
+      "Il numero di processi attivi nel sistema non è correlato",
+      "La percentuale di pagine che viene utilizzata solo in lettura non è correlata",
+      "L'efficienza complessiva del sistema di memoria di secondo livello è correlata",
+      "Si può gestire anche ignorando il parametro delta = numero di riferimenti"
+    ],
+    "corrette": [0, 3, 4]
+  },
+  {
+    "domanda": "Un sistema di elaborazione ha 512 Megabyte di memoria fisica di primo livello, indirizzamento 26 bit, riga tabella pagine 14 bit. Numero di bit del displacement?",
+    "opzioni": [
+      "Risultato: 15,00"
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "Un sistema di elaborazione ha 128 Megabyte di memoria fisica di primo livello, indirizzamento 26 bit, riga tabella pagine 14 bit. Numero di bit del displacement?",
+    "opzioni": [
+      "Risultato: 13,00"
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "L'architettura di un calcolatore ha 1024 Megabyte di memoria massima di primo livello, indirizzamento 26 bit, riga tabella pagine 15 bit. Dimensione pagina in byte?",
+    "opzioni": [
+      "Risultato: 32768,00"
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "L'architettura di un calcolatore ha 8 Megabyte di memoria massima di primo livello, indirizzamento 26 bit, riga tabella pagine 15 bit. Dimensione pagina in byte?",
+    "opzioni": [
+      "Risultato: 256,00"
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "Si supponga di avere un processo (codice 234KB, dati 258KB, stack 42KB). Pagine 8KB. Quante righe valide?",
+    "opzioni": [
+      "Risultato: 69"
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "Nel caso di paginazione con TLB, con α = 0,5, Tmem = 200 ns e ε = 20 ns:",
+    "opzioni": [
+      "Risultato: 320,00"
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "Relativamente alla implementazione del semaforo NON Busy waiting, è vero che:",
+    "opzioni": [
+      "Entrambe le primitive devono essere non interrompibili",
+      "La signal è implementata dal codice seguente: S= S+1;",
+      "La chiamata della wait prevede che un processo vada tutte le volte nello stato waiting",
+      "E' previsto l'utilizzo di una lista solo nella implementazione della primitiva wait",
+      "La wait è implementata utilizzando la primitiva hardware TSL"
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "Considerando il working set model, quale è l'effetto dell'incremento del valore di delta?",
+    "opzioni": [
+      "Il numero di pagine allocate per un processo tende a decrescere",
+      "Il page fault rate rimane invariato",
+      "Il context switch overhead tende a crescere",
+      "Il page fault rate tende a crescere",
+      "Il numero di pagine allocate per un processo tende a crescere",
+      "Il page fault rate tende a decrescere"
+    ],
+    "corrette": [4, 5]
+  },
+  {
+    "domanda": "Si supponga di avere un processo (codice 234KB, dati 258KB, stack 66KB). Pagine 8KB. Quante sono le righe valide?",
+    "opzioni": [
+      "Risultato: 72"
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "Si supponga di avere un processo (codice 234KB, dati 258KB, stack 18KB). Pagine 8KB. Quante sono le righe valide?",
+    "opzioni": [
+      "Risultato: 66"
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "Nel caso di paginazione con TLB, con α = 0,5, Tmem = 400 ns e ε = 20 ns:",
+    "opzioni": [
+      "Risultato: 620,00"
+    ],
+    "corrette": [0]
+  },
+  {
+    "domanda": "I socket di tipo stream (o connection):",
+    "opzioni": [
+      "costituiscono primitive di livello 2 del modello OSI",
+      "non garantiscono l'ordine di consegna dei messaggi (segmenti)",
+      "sono implementati dal protocollo UDP",
+      "permettono di instaurare un canale logico di comunicazione tra mittente e destinario"
+    ],
+    "corrette": [3]
+  },
+  {
+    "domanda": "Relativamente alla formulazione generale del problema della sezione critica, è vero che:",
+    "opzioni": [
+      "Uno dei requisiti è che nessun processo in esecuzione al di fuori della sua sezione critica puo' bloccare altri processi",
+      "Un requisito è che nessun processo dovrebbe attendere un tempo arbitrariamente lungo prima di uscire dalla sezione critica",
+      "Prevede che la sezione critica sia preceduta da una sezione di ingresso e seguita da una sezione di uscita",
+      "Uno dei requisiti è che due processi non possono essere mai contemporaneamente nelle loro sezioni critiche",
+      "Prevede che la sezione non critica sia seguita da una sezione di uscita"
+    ],
+    "corrette": [0, 2, 3, 4]
+  },
+  {
+    "domanda": "Nel caso di paginazione con TLB, con α = 0,5, Tmem = 300 ns e ε = 30 ns:",
+    "opzioni": [
+      "Risultato: 480,00"
+    ],
+    "corrette": [0]
+  }
+]
