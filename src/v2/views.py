@@ -1,3 +1,4 @@
+import os
 import flet as ft
 from utils import seleziona_file_finder
 
@@ -87,11 +88,15 @@ def render_quiz(page: ft.Page, state, on_home):
         # 2. RENDERING DELL'IMMAGINE (NUOVO BLOCCO)
         # ==========================================
         if "immagine" in q and q["immagine"]:
+            # Costruiamo il path come lo vede Python dalla cartella QuizApp/
+            path_test = os.path.join("assets", q["immagine"].lstrip("/"))
+            print(f"DEBUG: Cerco il file in: {os.path.abspath(path_test)}")
+            print(f"DEBUG: Il file esiste? {os.path.exists(path_test)}")
+            
             main_content.controls.append(
-                # La scatola (Container) è l'UNICO elemento passato ad append()
                 ft.Container(
                     content=ft.Image(
-                        src=q["immagine"],
+                        src=q["immagine"].lstrip("/"), # Rimuove eventuali slash
                         fit="scaleDown", 
                         border_radius=8
                     ),

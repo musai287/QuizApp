@@ -1,0 +1,542 @@
+[
+    {
+        "domanda": "Quali di queste condizioni sono necessarie ma non sufficienti per lo stallo",
+        "opzioni": [
+            "Mutua esclusione",
+            "Possesso e attesa",
+            "Ordinamento delle richieste e delle risorse in modo che ogni processo possa richiedere le risorse in ordine crescente di numerazione",
+            "Attesa Circolare",
+            "Presenza di un ciclo nel grafo di allocazione delle risorse con solo istanza singole",
+            "Assenza di cicli nel grafo di allocazione delle risorse",
+            "Presenza di più cicli nel grafo di allocazione delle risorse",
+            "Impossibilità di prelazione"
+        ],
+        "corrette": [
+            0,
+            1,
+            3,
+            6,
+            7
+        ]
+    },
+    {
+        "domanda": "Relativamente alle architetture di SO, è vero che:",
+        "opzioni": [
+            "Le architetture monolitiche sono relativamente meno manutenibili di quelle layered",
+            "Le architetture di rete sono un caso particolare delle architetture layered",
+            "L'architettura di Linux è monolitica ma modulare",
+            "Le architetture microkernel minimizzano il numero di cambi di modalità della CPU rispetto a monolitico e layered",
+            "Le architetture monolitiche sono relativamente meno performanti di quelle layered"
+        ],
+        "corrette": [
+            0,
+            2
+        ]
+    },
+    {
+        "domanda": "Nel caso di paginazione con utilizzo della TLB, con α = 0,5, Tmem = 200 ns e ε = 20 ns:",
+        "opzioni": [
+            "Risultato: 320,00"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Relativamente al fenomeno del trashing",
+        "opzioni": [
+            "Il numero di processi attivi nel sistema non è correlato",
+            "La percentuale di pagine che viene utilizzata solo in lettura non è correlata",
+            "L’efficienza complessiva del sistema di memoria di secondo livello è correlata",
+            "Per risolverlo può essere sufficiente contare il page fault rate e agire di conseguenza",
+            "Si può gestire anche ignorando il parametro delta = numero di riferimenti"
+        ],
+        "corrette": [
+            2,
+            3,
+            4
+        ]
+    },
+    {
+        "domanda": "Relativamente ai criteri di scheduling, è vero che:",
+        "opzioni": [
+            "Tempo di completamento medio (turnaround time) e tempo di attesa massimo (maximum waiting time) sono criteri fra di loro in conflitto)",
+            "Utilizzo della CPU (CPU utilization) e Tempo di Risposta (response time) sono criteri fra di loro in conflitto",
+            "Utilizzo della CPU e occupazione della memoria di secondo livello sono criteri fra di loro in conflitto",
+            "Utilizzo della CPU (CPU Utilization) e Utilizzo dei dispositivi di I/O sono criteri fra di loro in conflitto"
+        ],
+        "corrette": [
+            0,
+            1,
+            3
+        ]
+    },
+    {
+        "domanda": "L’architettura di un calcolatore ha 1024 Megabyte di memoria massima di primo livello, l’indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 15 bit.\nQuale è la dimensione in byte di una pagina",
+        "opzioni": [
+            "Risultato: 32768,00"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Relativamente allo schema di seguito relativo alla comunicazione fra processi, è vero che:",
+        "immagine": "../assets/domanda7file1.png",
+        "opzioni": [
+            "Lo scambio di messaggi utilizza lo schema b",
+            "Le pipe utilizzano lo schema b",
+            "Entrambi gli schemi utilizzano memoria condivisa",
+            "La memoria condivisa può essere utilizzata per scambiare le informazioni anche bypassando l'intervento del kernel",
+            "Lo schema a è riferibile ai socket"
+        ],
+        "corrette": [
+            3,
+            4
+        ]
+    },
+    {
+        "domanda": "E' vero che uno dei casi in cui Il kernel viene eseguito é:",
+        "opzioni": [
+            "Quando un processo del kernel invoca una System call",
+            "In caso di esecuzione di una routine di interrupt da periferica",
+            "Quando è in esecuzione  un processo, qualunque esso sia, per tutto il tempo",
+            "In caso di esecuzione di codice assembly",
+            "All'avvio del sistema, dopo il reset",
+            "In seguito alla generazione di una eccezione",
+            "Durante l'esecuzione di una System call"
+        ],
+        "corrette": [
+            1,
+            4,
+            5,
+            6
+        ]
+    },
+    {
+        "domanda": "Relativamente al seguente codice che permette la comunicazione fra thread a livello utente:",
+        "immagine": "../assets/domanda9file1.png",
+        "opzioni": [
+            "Il produttore cicla indefinitamente in caso di buffer completamente pieno",
+            "La variabile condivisa preleva indica l'elemento del buffer su cui  scrivere",
+            "Il codice non è soggetto a corse critiche",
+            "Il consumatore cicla indefinitamente in caso di buffer completamente vuoto",
+            "La variabile condivisa inserisci indica l'elemento del buffer su cui  leggere"
+        ],
+        "corrette": [
+            2,
+            3
+        ]
+    },
+    {
+        "domanda": "Relativamente allo schema a blocchi rappresentativo della segmentazione descritto nel seguito, sono vere le seguenti affermazioni:",
+        "immagine": "../assets/domanda10file1.png",
+        "opzioni": [
+            "G = Test fallito",
+            "C = test di uguaglianza fra numero di segmento indirizzato e numero presente nella tabella dei segmenti",
+            "E = Numero del segmento",
+            "H = Memoria di primo livello",
+            "A = numero della pagina",
+            "F = test avvenuto con successo",
+            "D =  somma il displacement con il numero di segmento per formare indirizzo completo",
+            "B = Numero del segmento",
+            "N= indica la routine di interrupt che viene lanciata al termine della istruzione che ha provocato l'accesso illegale in memoria",
+            "M = Tabella dei segmenti",
+            "I =  base = indirizzo base del segmento",
+            "L =limite"
+        ],
+        "corrette": [
+            0,
+            2,
+            3,
+            5,
+            9
+        ]
+    },
+    {
+        "domanda": "Si consideri il seguente scenario:\nUn sistema multiprocessore sul quale opera un applicativo multithread basato sul\nmany- to-many threading model e che è l'unico processo in esecuzione.\nIl numero di thread user-level threads è più grande del numero di processori, e il numero di kernel thread è uguale al numero di processori.",
+        "opzioni": [
+            "E' possibile che tutti i processori siano utilizzati simultaneamente",
+            "Nessun processore rimarrà mai idle",
+            "Tutti i kernel level thread sono sempre in esecuzione",
+            "Non è possibile che tutti i processori siano idle",
+            "Non sempre tutti gli user level thread sono in esecuzione"
+        ],
+        "corrette": [
+            0,
+            4
+        ]
+    },
+    {
+        "domanda": "Per quanto spiegato nel materiale del corso, è vero che il formato di una istruzione:",
+        "opzioni": [
+            "Non dipende dall'Instruction Set Architecture",
+            "Non dipende dal compilatore Dipende solo dall'ISA",
+            "Viene utilizzato dal compilatore per decidere la logica di salvataggio e ripristino del contesto",
+            "Specifica come i simboli di una istruzione Assembly vengono trasformati in opportuni campi di bit",
+            "Specifica di quanti bit è composto l'opcode di una istruzione",
+            "E' sempre uguale per ogni istruzione dell'Instruction Set",
+            "Produce i bit  necessari per indirizzare registri sorgente"
+        ],
+        "corrette": [
+            3,
+            4,
+            6
+        ]
+    },
+    {
+        "domanda": "Secondo quanto visto nel materiale del corso, la funzionalità della branch ife qual dell'ISA MIPS, caso della specifica espressa in linguaggio Assembly:\nbeq$2, $3, label1\nè la seguente",
+        "opzioni": [
+            "if(REGS[$2]>REGS[$3]) PC = PC+4+imm",
+            "if(REGS[$2]==REGS[$3]) PC = imm",
+            "if(REGS[$2]==REGS[$3]) PC = PC+imm",
+            "if(REGS[$2]==REGS[$3]) PC = PC+4+imm",
+            "if(REGS[$2]==REGS[$3]) PC = PC+1+imm"
+        ],
+        "corrette": [
+            0,
+            3
+        ]
+    },
+    {
+        "domanda": "Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 33 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina\nSi ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che '􏰀indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione.\nLa memoria è organizzata a pagine, con pagine di 8 Kbyte.\nQuante sono le righe valide della tabella delle pagine del processo?",
+        "opzioni": [
+            "Risultato: 68"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Il PCB di un processo:",
+        "opzioni": [
+            "Contiene fra le altre cose lo stato del processo e il valore dei registri della CPU",
+            "Contiene solo informazioni sullo stato del processo",
+            "Non contiene dati sullo scheduling della CPU",
+            "Serve al compilatore per dimensionare lo stack",
+            "Viene utilizzato esclusivamente nei sistemi Linux"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Relativamente alla modalità di interrupt, è vero che:",
+        "opzioni": [
+            "E' una funzionalità esclusivamente software",
+            "Quando si verifica durante l'esecuzione di una istruzione assembly del programma principale ne stoppa l'esecuzione, che non viene completata",
+            "Consente l'esecuzione di sottoprogrammi in modalità asincrona rispetto al flusso di esecuzione principale",
+            "Esegue codice in modalità utente",
+            "Via software (o meglio firmware) si occupa di salvare e quindi ripristinare il valore di tutti i registri della cpu"
+        ],
+        "corrette": [
+            2
+        ]
+    },
+    {
+        "domanda": "Sono vere le seguenti affermazioni relative ai threads",
+        "opzioni": [
+            "I thread non sono adatti all'implementazione di una applicazione server che deve servire molti client in parallelo che svolgono operazioni diverse",
+            "In caso di processi comunicanti tramite pipes non è obbligatorio usare i processi ma si possono comunque usare i thread",
+            "Se si implementa una stessa applicazione sotto forma di task concorrenti è meglio usare i processi",
+            "In  caso di task scorrelati è indifferente utilizzare processi o threads",
+            "L'utilizzo di passaggio informazioni tramite buffer circolare gestito in memoria condivisa è meno efficiente dell'utilizzo delle pipes"
+        ],
+        "corrette": [
+            1
+        ]
+    },
+    {
+        "domanda": "Si consideri un sistema che usa la memoria virtuale (paginazione on demand) che presenti le seguenti misurazioni di utilizzo:\nPercentuale di utilizzo della CPU: 25%\nPercentuale di utilizzo delle periferiche di I/O: 7%\nPercentuale di utilizzo del sottosistema HW di supporto alla paginazione: 92%\nSotto queste ipotesi si può dire che sono vere le seguenti affermazioni:",
+        "opzioni": [
+            "Incrementare il livello di multiprogrammazione può incrementare la % di occupazione della CPU",
+            "Decrementare la dimensione delle pagine non incrementa in nessun caso  la % di occupazione della CPU",
+            "Incrementare la dimensione delle pagine non incrementa in nessun caso  la % di occupazione della CPU",
+            "Installare una CPU più lenta può incrementare la % di occupazione della CPU",
+            "Installare una memoria di primo livello di maggiori dimensioni può incrementare la % di occupazione della CPU"
+        ],
+        "corrette": [
+            3,
+            4
+        ]
+    },
+    {
+        "domanda": "Relativamente allo schema a blocchi rappresentativo della TLB descritto nel seguito, sono vere le seguenti affermazioni:",
+        "immagine": "../assets/domanda7file3.png",
+        "opzioni": [
+            "B = TLB Hit",
+            "I = Memoria Secondaria",
+            "M = numero di pagina",
+            "E = Tabella delle pagine che risiede su supporto di memoria dedicato",
+            "C = TLB Miss",
+            "H = d = scostamento di pagina",
+            "G = f = Numero di pagina",
+            "D = Numero di pagina",
+            "F = numero di frame",
+            "N = f = numero di frame",
+            "A = numero di pagina",
+            "L = d = displacement"
+        ],
+        "corrette": [
+            0,
+            2,
+            4,
+            5,
+            8,
+            10,
+            11
+        ]
+    },
+    {
+        "domanda": "Per quanto spiegato nel materiale del corso, è vero che il compilatore:",
+        "opzioni": [
+            "Trasforma un algoritmo espresso in linguaggio ad alto livello in una sequenza di istruzioni Assembly",
+            "Si occupa di calcolare quante istruzioni vanno saltate per ogni jump o branch",
+            "Si occupa di produrre il codice per il salvataggio e ripristino dei registri della CPU",
+            "Si occupa di produrre il codice per la gestione della memoria automatica",
+            "Si occupa di definire quali registri vengono utilizzati per implementare una funzione"
+        ],
+        "corrette": [
+            0,
+            2,
+            3,
+            4
+        ]
+    },
+    {
+        "domanda": "Relativamente all'algoritmo di Peterson, è vero che:",
+        "opzioni": [
+            "Nel suo codice viene utilizzato un vettore di booleani condiviso fra tutti i processi coinvolti",
+            "All'uscita dalla sezione critica lo scalare viene settato a false",
+            "Nel suo codice viene utilizzato uno scalare condiviso fra tutti i processi coinvolti",
+            "Rappresenta una delle soluzioni al problema della sezione critica in caso di due o più processi",
+            "Per ingresso nella sezione critica viene verificato che il processo abbia una priorità superiore all'altro processo"
+        ],
+        "corrette": [
+            0,
+            2
+        ]
+    },
+    {
+        "domanda": "Un sistema di elaborazione ha 256 Megabyte di memoria fisica di primo livello, l’indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 14 bit.\nQuale è il numero di bit del displacement (o offset) che rappresenta una parte dell'indirizzo logico.",
+        "opzioni": [
+            "Risultato: 14,00"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Relativamente alle modalità di utilizzo della CPU da parte dei processi, è vero che:",
+        "opzioni": [
+            "Un processo si dice CPU bound quando occupa la CPU e con molti burst brevi",
+            "Si dice CPU burst una sequenza di cicli consecutivi di utilizzo della CPU da parte di un processo",
+            "I processi CPU bound sono quelli molto interattivi",
+            "La distribuzione della durata delle sequenze di CPU burst di solito prevede vi siano molte sequenze brevi e poche sequenze lunghe",
+            "Un processo si dice IO bound quando occupa la CPU e con pochi burst lunghi"
+        ],
+        "corrette": [
+            1,
+            3
+        ]
+    },
+    {
+        "domanda": "Relativamente al grafo di allocazione delle risorse, è vero che:",
+        "opzioni": [
+            "Un arco che va da un processo a una risorsa indica che il processo ha richiesto la risorsa ed è in attesa",
+            "Un arco orientato che va da una risorsa a un processo indica che la risorsa è stata allocata per un processo",
+            "I vertici del grafo rappresentano i processi, gli archi non orientati  rappresentano le risorse",
+            "Una risorsa ha sempre una istanza",
+            "un ciclo nel grafo di allocazione delle risorse implica la presenza di un deadlock"
+        ],
+        "corrette": [
+            0,
+            1
+        ]
+    },
+    {
+        "domanda": "Quale delle seguenti affermazioni fa parte della definizione di stato sicuro secondo quanto visto a lezione e sul libro di testo",
+        "opzioni": [
+            "Per ogni sequenza di processi P1...Pn, le risorse di Pi devono soddisfare le richieste di Pj con j<i. Pi deve eventualmente attendere che i Pj finiscano",
+            "Deve esistere una ed una sola sequenza di processi P1...Pn tale che per ogni Pi, le sue richieste sono soddisfatte con le risorse disponibili più quelle di Pj con j<i. Pi deve eventualmente attendere che i Pj finiscano",
+            "Deve esistere almeno una sequenza di processi P1...Pn tale che per ogni Pi, le sue richieste sono soddisfatte con le risorse disponibili più quelle possedute da Pj con j<i. Pi deve eventualmente attendere che i Pj finiscano",
+            "Deve esistere almeno una sequenza di processi P1...Pn tale per cui le risorse richieste da Pi non devono coincidere con le risorse possedute da Pj con j<i. Pi deve eventualmente attendere che i Pj finiscano",
+            "Per ogni sequenza di processi P1...Pn, le risorse di Pi devono soddisfare le richieste di un Pj con j>i. Pj deve eventualmente attendere che i Pi finiscano"
+        ],
+        "corrette": [
+            2
+        ]
+    },
+    {
+        "domanda": "Relativamente alla istruzione BEQ:",
+        "immagine": "../assets/domanda2file2.png",
+        "opzioni": [
+            "Il valore Imm dipende dalla label. Il calcolo di Imm viene svolto dal compilatore Il calcolo di Imm viene risolto dall'Assembler",
+            "Il PC viene incrementato di 4 e non di uno perché le istruzioni sono a 32 bit",
+            "Il PC viene indirizzato in maniera assoluta",
+            "Il campo Imm quantifica quante istruzioni verranno eventualmente saltate",
+            "Il PC viene incrementato di 4 perché l'ISA MIPS supporta anche dai a 16 bit"
+        ],
+        "corrette": [
+            1,
+            3
+        ]
+    },
+    {
+        "domanda": "Relativamente al seguente esempio di flusso di esecuzione, è vero che:",
+        "immagine": "../assets/domanda3file2.png",
+        "opzioni": [
+            "In caso di allocazione contigua della memoria, è sufficiente per proteggere completamente sia la memoria che la cpu da comportamenti dannosi da parte del codice utente",
+            "Protegge la CPU perché al termine del quanto di tempo si verifica una trap",
+            "Non consente accesso alle periferiche, solo alla memoria protetta",
+            "Non protegge completamente sia la memoria che la cpu da comportamenti dannosi da parte del codice , in utente, in nessun caso",
+            "I registri base e limite sono accessibili solo dal codice del kernel",
+            "Se anche all'avvio venisse eseguito codice utente, è sufficiente che il sistema si avvii in modalità kernel perché il sistema sia protetto",
+            "Il Timer, insieme alla doppia modalità di esecuzione, viene utilizzato per proteggere in maniera inespugnabile la memoria da accessi indesiderati del codice utente",
+            "I registri base e limite sono accessibili al momento dell'avvio del sistema"
+        ],
+        "corrette": [
+            0,
+            4,
+            7
+        ]
+    },
+    {
+        "domanda": "Relativamente ai thread, è vero che:",
+        "opzioni": [
+            "Possono ma non necessariamente devono, condividere i file, il codice,  lo stack e i dati globali",
+            "Un thread a livello utente non può mai scrivere sullo stack di un altro thread",
+            "Un thread a livello kernel di un processo può usare le syscall senza rischiare di bloccare gli altri thread dello stesso processo",
+            "A livello utente possono condividere i file, mentre a livello kernel non possono",
+            "Utilizzando i kernel thread parte della gestione della sincronizzazione può essere a carico del programmatore"
+        ],
+        "corrette": [
+            2,
+            4
+        ]
+    },
+    {
+        "domanda": "I semafori con busy waiting (spinlock), quando attivati per un processo",
+        "opzioni": [
+            "Non tengono occupata la cpu ciclando a vuoto",
+            "Non mandano il processo fra i processi waiting",
+            "Se implementati con una libreria utente, devono necessariamente richiamare una system call",
+            "A livello di implementazione prevedono l'utilizzo di un loop in ciascuna delle primitive",
+            "Sono meno problematici sui sistemi multiprocessore"
+        ],
+        "corrette": [
+            1,
+            4
+        ]
+    },
+    {
+        "domanda": "Un sistema di elaborazione ha 32 Megabyte di memoria fisica di primo livello, l’indirizzamento è su 26 bit, e la dimensione di una riga della tabella delle pagine è di 14 bit.\nQuale è il numero di bit del displacement (o offset) che rappresenta una parte dell'indirizzo logico.",
+        "opzioni": [
+            "Risultato: 11,00"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Per quanto spiegato nel materiale del corso, è vero che l'assembler:",
+        "opzioni": [
+            "Si occupa di calcolare quante istruzioni vanno saltate per ogni jump o branch",
+            "Si occupa di risolvere le label presenti nel codice assembly",
+            "Si occupa di tradurre le istruzioni Assembly espresse in formato testuale in stringhe di bit",
+            "Trasforma un algoritmo espresso in linguaggio ad alto livello in una sequenza di istruzioni Assembly",
+            "Si occupa di definire quali registri vengono utilizzati per implementare una funzione",
+            "Si occupa di produrre il codice per il salvataggio e ripristino dei registri della CPU",
+            "Si occupa di produrre il codice per la gestione della memoria automatica"
+        ],
+        "corrette": [
+            0,
+            1,
+            2
+        ]
+    },
+    {
+        "domanda": "Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 18 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina\nSi ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che '􏰀indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione.\nLa memoria è organizzata a pagine, con pagine di 8 Kbyte.\nQuante sono le righe valide della tabella delle pagine del processo?",
+        "opzioni": [
+            "Risultato: 66"
+        ],
+        "corrette": [
+            0
+        ]
+    },
+    {
+        "domanda": "Le transizioni di stato possibili per un processo sono le seguenti:",
+        "opzioni": [
+            "Da ready a waiting",
+            "Da waiting a waiting per un evento di altro tipo",
+            "Da waiting a ready",
+            "Da running a ready",
+            "Da ready a running",
+            "Da runnning a waiting",
+            "Da waiting a completed Da waiting a completed",
+            "Da ready a completed"
+        ],
+        "corrette": [
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    {
+        "domanda": "Considerando il working set model e il suo utilizzo per la allocazione delle pagine ai processi, quale è l’effetto dell'incremento del valore di delta",
+        "opzioni": [
+            "Il page fault rate tende a decrescere",
+            "Il page fault rate rimane invariato",
+            "Il numero di pagine allocate per un processo tende a crescere",
+            "Il numero di pagine allocate per un processo tende a decrescere",
+            "Il context switch overhead tende a crescere",
+            "Il page fault rate tende a crescere"
+        ],
+        "corrette": [
+            0,
+            2
+        ]
+    },
+    {
+        "domanda": "Relativamente alla problematica della inversione delle priorità nell'accesso alle risorse, quale potrebbe essere una soluzione sempre valida?",
+        "opzioni": [
+            "Nell'esempio visto nel materiale del corso, in caso di inversione di priorità, il processo a priorità intermedia acquisisce priorità superiore rispetto al processo a priorità alta",
+            "Nell'esempio visto nel materiale del corso, in caso di inversione di priorità, il processo a priorità bassa va in esecuzione al posto del processo a priorità alta",
+            "Quando un processo ottiene l'acceso a una risorsa viene messo in prima posizione nella coda di waiting",
+            "Quando un processo a priorità alta richiede una risorsa i processi a priorità intermedia vengono messi in attesa",
+            "Quando un processo ottiene l'acceso a una risorsa acquisisce temporaneamente la priorità più bassa possibile",
+            "Quando un processo ottiene l'acceso a una risorsa acquisisce temporaneamente la priorità più alta possibile",
+            "Quando un processo a priorità alta richiede una risorsa forza la preemption della risorsa",
+            "Quando un processo ottiene l'acceso a una risorsa acquisisce temporaneamente la priorità di un altro processo"
+        ],
+        "corrette": [
+            1,
+            5
+        ]
+    },
+    {
+        "domanda": "Relativamente allo schema a blocchi rappresentativo della paginazione descritto nel seguito, sono vere le seguenti affermazioni:",
+        "immagine": "../assets/domanda12file2.png",
+        "opzioni": [
+            "I = d = scostamento di pagina",
+            "E = Indirizzo Logico",
+            "F = f = numero del frame",
+            "H = p = numero di pagina",
+            "B = p = numero di pagina",
+            "C = f =  frame che ha dimensione uguale a quella della pagina",
+            "L = f = numero del segmento",
+            "D = Tabella delle pagine che risiede su supporto di memoria dedicato",
+            "M = d = dimensione del segmento",
+            "G = Memoria Principale",
+            "A = indirizzo fisico"
+        ],
+        "corrette": [
+            0,
+            2,
+            3,
+            4,
+            9
+        ]
+    }
+]

@@ -1,3 +1,4 @@
+import os
 import flet as ft
 from models import QuizState
 from views import render_home, render_quiz
@@ -23,4 +24,5 @@ def main(page: ft.Page):
     go_to_home()
 
 if __name__ == "__main__":
-    ft.run(main, assets_dir="assets")
+    percorso_assets = os.path.abspath("assets") 
+    ft.run(main, assets_dir=percorso_assets)

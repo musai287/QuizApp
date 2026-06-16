@@ -75,7 +75,7 @@
       "Viene utilizzato esclusivamente nei sistemi Linux",
       "Serve al compilatore per dimensionare lo stack"
     ],
-    "corrette": [2, 3]
+    "corrette": [2]
   },
   {
     "domanda": "Domanda: Il seguente supporto HW per protezione memoria: ",
