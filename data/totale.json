@@ -171,7 +171,7 @@
         "domanda": "Per quanto spiegato nel materiale del corso, è vero che il formato di una istruzione:",
         "opzioni": [
             "Non dipende dall'Instruction Set Architecture",
-            "Non dipende dal compilatore Dipende solo dall'ISA",
+            "Non dipende dal compilatore",
             "Viene utilizzato dal compilatore per decidere la logica di salvataggio e ripristino del contesto",
             "Specifica come i simboli di una istruzione Assembly vengono trasformati in opportuni campi di bit",
             "Specifica di quanti bit è composto l'opcode di una istruzione",
