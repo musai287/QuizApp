@@ -1,6 +1,8 @@
 import os
 import flet as ft
 from utils import seleziona_file_finder
+from session_manager import salva_sessione, carica_sessione, elimina_sessione
+from test_mode import genera_test_casuale
 
 def render_home(page: ft.Page, state, on_start):
     """Disegna la schermata iniziale"""
@@ -13,17 +15,48 @@ def render_home(page: ft.Page, state, on_start):
                 state.carica_da_file(file_path)
                 on_start() # Chiama la funzione per passare al quiz
             except Exception as ex:
-                page.snack_bar = ft.SnackBar(ft.Text(f"Errore: {ex}"))
-                page.snack_bar.open = True
-                page.update()
+                mostra_errore(f"Errore caricamento: {ex}")
+
+    # --- NUOVE FUNZIONI PER LA HOME ---
+    def gestisci_ripresa_sessione(e):
+        stato_recuperato = carica_sessione()
+        if stato_recuperato:
+            # Sovrascrive lo stato attuale con quello recuperato dal file
+            state.__dict__.update(stato_recuperato.__dict__)
+            on_start()
+        else:
+            mostra_errore("Nessuna sessione salvata trovata.")
+
+    def gestisci_test_casuale(e):
+        try:
+            stato_test = genera_test_casuale()
+            if not stato_test.domande:
+                raise ValueError("Nessuna domanda trovata in cartella 'data'.")
+            state.__dict__.update(stato_test.__dict__)
+            on_start()
+        except Exception as ex:
+            mostra_errore(f"Errore generazione test: {ex}")
+
+    def mostra_errore(messaggio):
+        page.snack_bar = ft.SnackBar(ft.Text(messaggio))
+        page.snack_bar.open = True
+        page.update()
+    # ----------------------------------
 
     page.add(
         ft.Container(
             content=ft.Column([
                 ft.Icon(ft.Icons.QUIZ, size=100, color="blue400"),
                 ft.Text("SOPR Quiz Master PRO", size=32, weight="bold"),
-                ft.ElevatedButton("Seleziona File JSON", icon=ft.Icons.FOLDER_OPEN, on_click=gestisci_selezione, width=300, height=50)
-            ], horizontal_alignment="center", spacing=30),
+                
+                # Bottoni principali
+                ft.ElevatedButton("Seleziona File JSON", icon=ft.Icons.FOLDER_OPEN, on_click=gestisci_selezione, width=300, height=50),
+                
+                # Nuovi Bottoni Test e Sessione
+                ft.ElevatedButton("Riprendi Sessione", icon=ft.Icons.RESTORE, on_click=gestisci_ripresa_sessione, color="#FCFCFA", bgcolor="#2D2A2E", width=300, height=50),
+                ft.ElevatedButton("Test Casuale (12 Domande)", icon=ft.Icons.SHUFFLE, on_click=gestisci_test_casuale, color="#2D2A2E", bgcolor="#FFD866", width=300, height=50)
+                
+            ], horizontal_alignment="center", spacing=20),
             alignment=ft.alignment.Alignment(0, 0),
             expand=True
         )
@@ -59,7 +92,10 @@ def render_quiz(page: ft.Page, state, on_home):
         main_content.controls.clear()
         aggiorna_sidebar()
         
+        # --- SCHERMATA FINALE ---
         if state.indice >= len(state.domande):
+            elimina_sessione() # ELIMINA LA SESSIONE QUANDO IL QUIZ E' FINITO
+            
             perc = (state.punti / len(state.domande)) * 100
             main_content.controls.append(
                 ft.Column([
@@ -73,10 +109,21 @@ def render_quiz(page: ft.Page, state, on_home):
 
         q = state.domande[state.indice]
         
+        # --- BARRA DI NAVIGAZIONE CON BOTTONE SALVATAGGIO ---
+        def esegui_salvataggio(e):
+            salva_sessione(state)
+            page.snack_bar = ft.SnackBar(ft.Text("Sessione salvata con successo!"))
+            page.snack_bar.open = True
+            page.update()
+
         main_content.controls.append(
             ft.Row([
                 ft.IconButton(ft.Icons.ARROW_BACK, on_click=lambda _: vai_a_domanda(state.indice-1), disabled=state.indice==0),
                 ft.Text(f"Domanda {state.indice+1}/{len(state.domande)}", size=20, weight="bold", color="blue200"),
+                
+                # BOTTONE SALVA AGGIUNTO QUI
+                ft.IconButton(ft.Icons.SAVE, icon_color="green400", tooltip="Salva stato quiz", on_click=esegui_salvataggio),
+                
                 ft.IconButton(ft.Icons.ARROW_FORWARD, on_click=lambda _: vai_a_domanda(state.indice+1), disabled=state.indice==len(state.domande)-1),
             ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN)
         )
@@ -85,7 +132,7 @@ def render_quiz(page: ft.Page, state, on_home):
         main_content.controls.append(ft.Text(q["domanda"], size=22, weight="bold", selectable=True))
 
         # ==========================================
-        # 2. RENDERING DELL'IMMAGINE (NUOVO BLOCCO)
+        # 2. RENDERING DELL'IMMAGINE 
         # ==========================================
         if "immagine" in q and q["immagine"]:
             # Costruiamo il path come lo vede Python dalla cartella QuizApp/
@@ -153,4 +200,4 @@ def render_quiz(page: ft.Page, state, on_home):
             ft.Container(content=main_content, expand=True, padding=30)
         ], expand=True)
     )
-    mostra_domanda()
+    mostra_domanda() 
