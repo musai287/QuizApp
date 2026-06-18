@@ -151,7 +151,7 @@
       "H = Memoria di primo livello",
       "M = Tabella dei segmenti"
     ],
-    "img": "lab_013.png"
+    "immagine": "assets/lab_013.png"
   },
   {
     "domanda": "Relativamente al codice (parzialmente offuscato) dell'algoritmo del banchiere visto nel materiale del corso e descritto nel seguito, è vero che:",
@@ -166,7 +166,7 @@
       "Vettore Lavoro = identifica il numero di risorse accumulate e rese disponibili dai processi man mano che si procede con le iterazioni e si simula terminazione di ciascuno di essi",
       "Necessità matrice che indica la necessità di risorse residue di ciascun tipo per ciascun processo"
     ],
-    "img": "lab_014.png"
+    "immagine": "assets/lab_014.png"
   },
   {
     "domanda": "Si supponga di avere un processo caratterizzato da un codice di 234 Kbyte, un'area dati di 258 Kbyte e uno stack di 66 Kbyte. Si consideri che diversi segmenti non possono condividere la stessa pagina. Si ipotizzi che la macchina fisica possa avere 128 Megabyte di memoria massima teorica, che l'indirizzamento logico sia su 22 bit, e che il processo sia tutto in memoria durante l'esecuzione. La memoria è organizzata a pagine, con pagine di 8 Kbyte. Quante sono le righe valide della tabella delle pagine del processo?",
@@ -208,7 +208,7 @@
       "Si può verificare una corsa critica perché le istruzioni di aggiornamento della variabile counter non sono implementate in maniera atomica",
       "Si può verificare una corsa critica legata al fatti che l'ISA assembly che a basso livello traduce l'implementazione scritta in C è di tipo load store"
     ],
-    "img": "lab_015.png"
+    "immagine": "assets/lab_015.png"
   },
   {
     "domanda": "Per la gestione dei blocchi liberi del filesystem",
@@ -316,7 +316,7 @@
       "H=p= numero di pagina",
       "I=d= scostamento di pagina"
     ],
-    "img": "lab_016.png"
+    "immagine": "assets/lab_016.png"
   },
   {
     "domanda": "Relativamente allo schema a blocchi rappresentativo della TLB descritto nel seguito, sono vere le seguenti affermazioni:",
@@ -343,7 +343,7 @@
       "L=d= displacement",
       "M= numero di pagina"
     ],
-    "img": "lab_017.png"
+    "immagine": "assets/lab_017.png"
   },
   {
     "domanda": "Quali corrette per la protezione degli spazi di memoria da parte del kernel sono efficaci per almeno una delle tecniche di allocazione viste durante il corso (contigua, segmentata, paginata)",
@@ -388,7 +388,7 @@
       "Il consumatore cicla indefinitamente in caso di buffer completamente vuoto",
       "Il codice non è soggetto a corse critiche"
     ],
-    "img": "lab_022.png"
+    "immagine": "assets/lab_022.png"
   },
   {
     "domanda": "Quale delle seguenti affermazioni fa parte della definizione di stato sicuro secondo quanto visto a lezione e sul libro di testo",
